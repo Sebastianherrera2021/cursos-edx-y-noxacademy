@@ -1,0 +1,181 @@
+- In this video, we'll talk about k-means clustering.
+By the end of this video, you should be able to:
+describe the steps in the k-means algorithm,
+explain what the k stands for in k-means,
+and define what the cluster centroid is.
+Recall that cluster analysis divides samples in data set
+into groups or clusters.
+The idea is to group similar items in the same cluster
+where similar is defined by some metric that measures
+similarity between data samples.
+The goal of cluster analysis is to divide data samples
+such that samples within a cluster are as close together
+as possible and samples from different clusters
+are as far apart as possible.
+K-means is a classic algorithm used for cluster analysis.
+The algorithm is very simple.
+The first step is to select k initial centroids.
+A centroid is simply the center of a cluster
+as you see in the diagram here.
+Next, assign each sample in a data set
+to the closest centroid.
+This means you calculate the distance
+between the sample and each cluster center
+and assign the sample to the cluster
+with the closest centroid.
+Then you calculate the mean or average of each cluster
+to determine a new centroid.
+Those two steps are done repeatedly
+until some stopping criteria is reached.
+Here is an illustration of how k-means works.
+A in the diagram shows the original data set
+with some samples.
+In b, initial centroids are randomly selected.
+C shows the first iteration.
+Here samples are assigned to the closest centroid.
+In d, the centroids are re-calculated.
+E shows the second iterations.
+Samples are assigned to the closest centroid.
+Notice some samples changed cluster assignments
+during this step.
+In f, the centroids are re-calculated again.
+Cluster assignments and centroid re-calculation
+are repeated until some stopping criterion is reached
+and you get your final clusters as shown in f.
+How are initial centroids selected?
+The issue is that the final clusters are sensitive
+to initial centroids.
+This means that if cluster results with one set
+of initial centroids can be different from results
+with another set of initial centroids.
+There are many approaches to selecting
+the initial centroids for k-means
+varying in levels of sophistication.
+The easiest and most widely used approach
+is to apply k-means several times with different
+initial centroids randomly chosen to cluster your data set
+and then select the centroids that give you
+the best clustering results.
+To evaluate the cluster results an error measure known
+as the Within-Cluster Sum of Squared Error can be used.
+The error associated with a sample within a cluster
+is the distance between the sample and the cluster centroid.
+The squared error for the sample then
+is the square of that distance.
+We sum up all the squared errors for all samples
+for a cluster to get the squared error for that cluster.
+We then do the same thing for all clusters
+to get the final calculation
+for the Within-Cluster Sum of Squared Error
+for all clusters in the results of a cluster analysis run.
+Given two clustering results, the one with the smaller WSSE
+provides the better solution numerically.
+However, as we've discussed before, there's no ground truth
+to mathematically determine which set of clusters
+is more correct than the other.
+In addition, note that increasing the number of clusters
+that is a value for k always reduces the WSSE.
+So WSSE should be used with caution.
+It only makes sense to use WSSE to compare two sets
+of clusters with the same value for k
+and generated from the same data set.
+Also the set of clusters with the smallest WSSE
+may not always be the best solution
+for the application at hand.
+Again, interpretation and domain knowledge
+about what the cluster should represent
+and how they will be used are crucial in determining
+which clustering results are best.
+Note that there are several other metrics
+that are used to evaluate cluster results.
+Choosing the optimal value for k is always
+a big question in using k-means.
+There are several methods to determine the value
+for k, and we will discuss a few here.
+Visualization techniques can be used
+to examine the data set to see if there
+are natural groupings of the samples.
+Scatterplots and the use of dimensionality reduction
+are useful here to visualize the data.
+A good value for k is application dependent.
+So domain knowledge of the application can drive
+the selection for the value of k.
+For example, if you want to cluster types of products
+customers are purchasing, a natural choice for k
+might be the number of broad product categories
+that you offer.
+Or k might be selected to represent
+the geographical locations of respondents to a survey
+in which case a good value for k would be
+the number of regions you're interested in analyzing.
+There are also Data-Driven methods
+for determining the value of k.
+These methods calculate some metric for different values
+of k to determine the best selection for k.
+One such method is the Elbow method.
+The Elbow method for determining the value of k
+is shown on this plot.
+As we saw in the previous slide, WSSE
+or Within-Cluster Sum of Squared Error measures
+how much data samples deviate
+from their respective centroids in a set
+of clustering results.
+If you plot WSSE for different values for k,
+we can see how this error measure changes
+as the value of k changes as seen in the plot.
+The bend in this error curve indicates a drop
+in gain by adding more clusters.
+This Elbow in the curve provides a suggestion
+for a good value of k.
+Note that the elbow cannot
+always be unambiguously determined
+especially for complex data.
+In many cases, the error curve will not have
+a clear suggestion for one value but multiple values.
+This can be used as a guideline
+for the range of values to try for k.
+We have discussed choosing the initial centroids
+and looked at ways to select a value for k,
+the number of clusters.
+Let's now look at when to stop.
+How do you know when to stop iterating
+when using k-means?
+One obvious stopping criteria is when
+there are no changes to the centroids.
+This means that no samples will change cluster assignments,
+and re-calculating the centroids
+will not result in any changes.
+Additional iterations will not bring any more changes
+to the cluster results.
+It's time to stop.
+The stopping criteria can be relaxed
+to the second stopping criteria listed here
+which is when the number of samples change in clusters
+is below a certain threshold, say one percent for example.
+At this point, the clusters are changing
+only by a few samples resulting in only minimal
+changes to the final clustering results.
+The algorithm can be stopped here as well.
+At the end of k-means, we have selected
+a set of clusters each with a centroid.
+Each centroid is the mean of the samples
+assigned to that cluster.
+You can think of the centroid
+as a representative sample for that cluster.
+So to interpret the cluster analysis results,
+we can examine the cluster centroids.
+Comparing the values of the variables between the centroids
+will reveal how different or alike clusters are
+and provide insight into what each cluster represents.
+For example, if the value for h is different
+for a different customer clusters,
+this indicates that the clusters
+are including different customers segments
+by h among other variables.
+In summary, k-means is a classic algorithm
+for performing cluster analysis.
+It is an algorithm that is simple to understand
+and implement and is also efficient.
+The value of k, the number of clusters,
+must be specified.
+Final clusters are sensitive to initial centroids.

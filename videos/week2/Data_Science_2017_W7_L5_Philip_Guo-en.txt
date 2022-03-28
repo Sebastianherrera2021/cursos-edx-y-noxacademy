@@ -1,0 +1,111 @@
+- Hi, I'm Philip, and I'm an assistant professor
+of cognitive science here at UC San Diego.
+Now, a lot of my research actually revolves
+around studying and building systems for online learning,
+very similar to these massive open online courses
+that you're taking right now.
+And today, I wanna tell you a story
+about how I used Python to perform data science
+on video watching data from these MOOCs,
+these massive online open courses.
+And this was published in a paper
+at the Learning at Scale Conference in 2014,
+which you can check out by looking at the link
+at the bottom of the video.
+But before I talk about my study,
+I wanna first go over a little bit
+about why you should use Python for data science.
+So, there's a lot of reasons why people say
+that Python is great for data science,
+and I wanna summarize a lot of what people have been saying
+into one phrase, which is that Python has a giant ecosystem
+of tools for connecting and working with many sources
+of real-world data across lots of domains.
+So, this means that by learning Python
+in this class you're taking right now,
+you're actually very marketable in the job market,
+no matter what domain you're working in,
+because chances are, there'll be some set of libraries
+or tools that can actually work with Python
+and connect to the data in your domain
+that you can work with and to process the data
+and produce reports.
+So as an example, I wanna show you a research study I did
+that actually is in the domain of online learning.
+So, what I did is that I took 862 videos
+from popular massive open online courses, from MOOCs,
+and I took the log data of how people,
+how students actually watched these videos.
+So other are over 127 students in my data set,
+and there they had over 6.9 million video watching sessions.
+So every time a student watched a video,
+the log recorded how long they were watching the video for,
+which part of the video they were watching, et cetera.
+So all this data was in a MongoDB database,
+and I used Python with the PyMongo library
+to extract the data from MongoDB.
+Then I used the NumPy library to analyze this data
+using various numerical analysis techniques.
+I ran some statistical tests for my research paper
+using the SciPy library,
+and then I produced graphs for my research paper
+using the Matplotlib library.
+And I organized all of this analysis in a Jupyter Notebook.
+So these libraries, which you should definitely check out,
+are very powerful and widely used stacks
+for doing data science in Python right now.
+So I wanna show you
+some of the most salient results from the analysis.
+So, this graph shows various bars,
+and each kind of column represents a group of videos
+by the video length.
+So, the first one is videos that are very short,
+zero to three minutes,
+and then three to six minutes,
+six to nine minutes, et cetera.
+And the y axis shows, on average, how much time
+were people watching these videos for?
+And if you actually look, it kind of goes up
+around six to nine minutes, and then goes down again,
+which means that at six to nine minutes,
+those six- to nine-minute videos, people are watching
+actually a fair amount, and if you actually look
+at the long videos, nine to 12 minutes and 12 to 40 minutes,
+these really long videos,
+people actually didn't watch that many minutes,
+because intuitively, if you have a really long video,
+you might zone out after the first few minutes or get bored.
+So a second analysis shows this a bit more strikingly.
+So this is the same graph as before,
+except the y axis now is normalized.
+So 1.0 means that somebody watched
+the entire length of the video,
+and the red bars show that about six to nine minutes,
+people are still watching most of the video,
+but at nine to 12 minutes or 12 to 40 minutes,
+people are watching less than half
+or maybe even a quarter of the video.
+Again, this shows really strikingly
+that short videos, zero to three minutes,
+three to six minutes, maybe six- to nine-minute videos,
+are good, but any longer,
+and people are not gonna watch that long.
+So people have taken these results from this paper
+I did with colleagues a few years ago
+and applied it to their own use of creating movies.
+So right now, it's standard practice
+for people to make these videos that are MOOCs in MOOCs
+that are actually very short, so five minutes or less,
+just like this video right here,
+because we know the research
+that people are actually not gonna watch long videos.
+And if you want more help
+on learning Python as you're taking this course,
+check out this tool called pythontutor.com,
+which is an interactive visual tool that I've created
+to help people debug Python code and learn Python better.
+And I wish you the best of luck
+in your journey in learning data science and Python,
+and I think it's a really exciting journey.
+I'm looking forward
+to what you do after you finish this class.

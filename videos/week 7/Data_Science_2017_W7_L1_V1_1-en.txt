@@ -1,0 +1,157 @@
+- This week, we will introduce you to the basic concepts
+in Machine Learning, and show you some example notebooks
+using Scikit-learn, a popular
+Machine Learning library in Python.
+You won't be an expert in Machine Learning after this week,
+but you will be able to go through and understand
+Machine Learning analysis, the basic ones,
+as well as create simple Machine Learning
+tasks in Python.
+You will build up on this knowledge and know more
+about Machine Learning, after taking the Machine Learning
+class in this Micro Masters.
+So take this week as an appetizer to what's coming later.
+Since this week is about Machine Learning, let's start
+by defining what that means.
+We hear this term a lot these days, used in many contexts,
+so it's good to start out with a solid definition of what
+Machine Learning means.
+By the end of this video, you should be able to explain
+what Machine Learning is,
+and list three applications of Machine Learning
+encountered in everyday life.
+Machine learning is a field of study that focuses
+on computer systems that can learn from data.
+That is, these systems, often called models,
+can learn to perform a specific task
+by analyzing lots of examples for a particular problem.
+For example, a Machine Learning model can learn
+to recognize an image of a cat by being shown lots and lots
+of images of cats.
+This notion of learning from data means that a
+Machine Learning model can learn a specific task on its own.
+The Machine Learning algorithm is programmed to learn
+from the data that there's nothing in the algorithm
+or program which directly aims to learn the given task.
+In other words, Machine Learning models are not given
+the step by step instructions on how to recognize
+the image of a cat.
+Instead, the model learns on its own what features
+are important in determining that a picture
+contains a cat from the data that it has analyzed.
+Because the model learns to perform this task from data,
+it's good to note that the amount and quality of data
+available for building the model are important factors
+in how well the model learns from the task.
+Because Machine Learning models can learn from data,
+they can be used to discover hidden patterns and trends
+in the data as well.
+These trends and patterns lead to valuable insights
+into the data, thus the use of Machine Learning
+allows for data driven functions to be made
+for a particular problem.
+So to summarize, the field of Machine Learning
+focuses on the study and construction of computer systems
+that can learn from data
+without being explicitly programmed.
+Machine Learning algorithms and techniques are used
+to build models to discover hidden patterns and trends
+in the data, allowing for data driven decisions to be made.
+Machine Learning has been used
+in many different applications, many of which
+you probably encounter in your everyday life,
+perhaps without even realizing it.
+One application of Machine Learning that you likely used
+this past weekend, or even just today,
+is credit card fraud detection.
+Every time you use your credit card, the current purchase
+is analyzed against your history of credit card transactions
+to determine if the current purchase
+is a legitimate transaction,
+or a potentially fraudulent one.
+If the purchase is very different from your past purchases,
+such as for a big ticket item in a category
+that you never show an interest in, or at the point of sale
+location is from another country, then it will be flagged
+as a suspicious activity.
+In that case, the transaction may be denied or you might
+get a phone call from your credit card company to confirm
+that the purchase was indeed made by you.
+This is a very common use of Machine Learning
+that's encountered in everyday life.
+Another example application of Machine Learning
+encountered in daily life
+is a handwritten digit recognition.
+When you deposit a handwritten check into an ATM,
+a Machine Learning process is used to read the numbers
+written on the check to determine the amount
+of the deposit.
+Handwritten digits are trickier to decipher
+than typed digits, due to the many variations
+in people's handwriting.
+A Machine Learning system can sift
+through different variations to find similar patterns
+to distinguish a one from a nine, for example.
+Recommendations on websites is another example application
+of Machine Learning that most people
+have experienced firsthand.
+After you buy an item on a website, you will often
+get a list of related items.
+Often, this will be displayed as
+customer who bought this item also bought these items,
+or, you may also like.
+These related items have been associated with the item
+you purchased by a Machine Learning model and are now
+being shown to you since you may also be interested
+in them also.
+This is a common application of Machine Learning
+used often in sales and marketing.
+These were just a few examples among many.
+As we have discussed, data science has its roots
+and statistics, Machine Learning, artificial intelligence
+and computer science among other fields.
+So Machine Learning is the part of this field
+that encompasses the algorithms and techniques
+used to learn from data.
+There are a number of other terms we hear in conversations
+about Machine Learning.
+The term data mining became popular around the time that
+the use of databases became commonplace.
+So data mining was used to refer to activities related
+to finding patterns in databases and data warehouses.
+There are some practical data management aspects
+to data mining related to accessing data from databases,
+but the process of finding patterns in data is similar
+to Machine Learning and often uses similar algorithms
+and techniques.
+Predictive analytics is another term, and it refers
+to analyzing data in order to predict future outcomes.
+This term is usually used in the business context
+to describe activities such as sales forecasting
+or predicting the purchase of behavior of a customer.
+But again, the techniques used to make these predictions
+are the same techniques for Machine Learning.
+As we have discussed before, data science is a new term
+that's used to describe the process of processing
+and analyzing data to extract meaning.
+And again, Machine Learning techniques
+can also be used here.
+Because the term data science became popular
+at the same time that big data began appearing,
+data science usually refers to extracting meaning
+from big data.
+So it includes a purchase for collecting, storing
+and managing big data, as well as Machine Learning.
+To summarize, in this lecture, we've discussed
+what Machine Learning is, and how it is being used
+in our daily lives.
+Machine Learning models learn from data to perform a task
+without being explicitly programmed.
+They are used to discover patterns and trends in the data,
+and allow for data driven decisions to be made
+for the problem being studied.
+We also discussed in this lecture some examples
+of how Machine Learning is being used.
+We see from the example applications that Machine Learning
+can be applied to many different areas,
+and it's practically everywhere.

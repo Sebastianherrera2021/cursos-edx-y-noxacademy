@@ -1,0 +1,201 @@
+- [Instructor] Now that we looked at data cleaning
+and visualization,
+let's dive into some transformations.
+The machinery of Pandas helps you to perform analytics
+in an efficient manner.
+So we'll slice out some columns.
+Let's look at the first few rows of tag column
+in the table tags.
+So if you would remember the head function
+is what we do to get that.
+We can just say tags, select the head column,
+and then head function.
+Then next we'll get the title and genres column
+in the movies table.
+So for that we'll say movies and then put our title
+and genres columns as a list inside that selection
+and then get the first few rows of that using head.
+By default it's going to give you the first five rows.
+Let's now think of slicing out or picking something
+from the middle of the ratings table.
+For this I'll use rows 1000 through 1010.
+The notation for this would be
+get ratings from 1000 to 1010.
+We can easily extract the elements of a list this way
+from an index to an index.
+We could here actually just say get the rows
+until a certain number.
+Just like here I can say until row 10 from the ratings.
+And here we see zero through nine with the indexes.
+Or I could just say from the end,
+give me 10 rows from the end.
+For that I can say minus 10
+and I'll get the bottom 10 rows of the same ratings table.
+Okay, you can also select a particular column
+by using its name.
+For example, tags tag as you would remember.
+Here we'll use the value_counts function.
+Value_counts function will let you find out
+the count of each unique value occurring in the input.
+In this case the inputs to that will be what we typed here,
+tags tag and then we'll count the values.
+If you would remember our Unix content,
+this is similar to the unique function in Unix.
+So we'll assign the value counts for all the tags
+using our unique function here is value_counts
+into a series called tag_counts
+and then we'll get the first 10 elements of that.
+So let's run this.
+We'll see that sci-fi as a tag was the most,
+3384 is the count for it.
+And it goes onwards like that.
+Negative indexes work here too.
+So if you want to make a copy of the same list in reverse,
+I can say what are the bottom 10 counts.
+And they should be ones, a bunch of ones
+as you might guess.
+Whoops.
+So let's run this.
+We'll see a bunch of ones
+because those only were mentioned once for example.
+So what can we do with this?
+Now that we've sliced out the top 10 and minus 10,
+last 10 values in the series,
+we can now leverage the in built plot functions.
+I'm going to use the plot on tags for this.
+Let's look at this line.
+Notice how this line performs the slicing of rows.
+So we plot only the first 10 rows.
+And now we apply the plot function
+and we create a bar chart out of that.
+So when we do that, we'll see the top 10 tags
+in our tags data frame.
+We can now also look at filtering out some rows.
+What was filtering?
+Filtering is a common functionality
+when you select data that matches a criteria,
+that matches your criteria.
+Think of it as two steps.
+First we need to develop a filter that encodes our criteria.
+Then we need to..
+That filter will be applied as a mask to our data frame.
+So the filter criteria
+we'll label each row in our filter as true or false.
+As you might remember we've done this before.
+Here what we'll do is
+we'll create a filter called is_highly_rated.
+What is highly rated?
+It's any movie with rating four point zero or more.
+So we'll use a filter to select out rows
+with rating greater than or equal to four point oh.
+So here we do that.
+We assign actually is_highly_rated the ratings.
+We'll select the rating column out of the ratings table.
+And then we check if that value is greater than
+or equal to four point oh.
+And then we'll just display here the bottom five rows
+in the ratings data frame to match this criteria, okay?
+So let's run this.
+Is_highly_rated will have true false values
+that will contain boolean values so to say.
+And the checking will be performed by again greater than
+or equals sign if you noticed that.
+And we applied that as a filter to the ratings table here
+and just displayed the bottom five rows.
+Or we could have done rows let's say 30 through 50.
+We could have seen other rows in that same output.
+And we sliced out the dynamic output
+of that filtered ratings data frame.
+And we displayed about 20 rows in there.
+You see that it just so happens in this slice
+all the ratings are four point oh
+but they should have all been four point oh or more.
+We'll do a very similar thing with is_animation.
+What is animation?
+It's a movie with a genre of animation.
+So then we need to find in our movies data frame
+all movies with genres that has animation mentioned in them.
+So genres in the movies table, the column genres,
+will be a string value.
+We'll see in our filter
+if that string value contains animation.
+The way to do that is if you look at here,
+we pull out here we select movies,
+the genres column from the movies.
+And then to what we get, we apply string contains function.
+It's a string function that we'll review also later.
+But what it does is it gives us true or false values
+based on the string it's applied to.
+So for each string value in each row in the genres column,
+this is going to check if that string contains animation.
+And this will generate a filter series called is_animation.
+We'll take that with true or false values in it again.
+We'll take that and we'll apply that filter to movies
+and let's get rows five through 15.
+Let's run this.
+We see that there are some movies here
+and each of them will have that animation
+somewhere in their genres column.
+So in order to get the rows which match our criteria,
+we simply index the data frame using a filter we created.
+For example, again just to review,
+movies(is_animation) will give us all the animation movies
+with animation mentioned in their genres.
+So now let's see a few aggregations.
+Aggregating values across rows
+gives us a big picture about the whole data set.
+So it's very useful.
+Pandas provides a function,
+as you would remember, called group by.
+We will use this function to perform aggregation
+on a data frame.
+So once we performed a group by,
+we'll see that we can use other functions,
+such as count or mean,
+to get the exact statistics we are looking for
+or to do something else with this series object
+or data frame we get from group by function.
+For example here in this first one,
+ratings_count will give us the count of movies
+for each rating.
+So the rating for each movie.
+So here we select movieID, rating
+from the ratings data frame.
+We'll apply group by function
+and we'll group over rating and we'll count those.
+So when we have that we could see that we have the movieID
+and the rating for that.
+So next let's look at average rating for each movie.
+So for that which makes more sense
+than our first query in that sense, first grouping.
+For this we'll group the movies
+or the ratings we select by movieIDs.
+So here something to recognize is that
+the column we used for grouping by over,
+in this case movieID,
+it will become an index for the data frame.
+Which I say makes more sense because it's an ideal index,
+it's the identifier for the movie
+rather than the rating of a movie.
+So once we have that,
+we can actually apply an average function for this.
+We'll call this an average rating
+because we are taking the mean off these groups by movieID.
+So here then we can get the tail of it or the head of it.
+And let's also turn this into head.
+We can get the average rating
+for every movie in our ratings database.
+This is always a good thing to know
+especially when you are selecting a movie.
+We can also count how many ratings are there in our database
+for each movieID.
+We do the same query or same group by aggregation.
+We get ratings, movieID,
+and rating from the columns that it has
+and we are grouping things by movieID
+and then we are applying this count function to it.
+When we do that we could see how many ratings per movie.
+We could also see the tail of it as we've done before.
+And we see some movies have only one rating each.
+Okay let's stop here
+and review some data frame merging operations next.

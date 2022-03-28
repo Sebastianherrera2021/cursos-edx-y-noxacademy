@@ -1,0 +1,84 @@
+- In this lesson, we will focus on a category
+of machine learning problem called classification.
+By the end of this video, you should be able to define
+what classification is, discuss whether classification
+is supervised or unsupervised,
+and describe how binomial classification differs
+from multinomial classification.
+As we discussed before, classification
+is one type of machine learning problem.
+In a classification problem, the input data is
+presented to the machine learning model,
+and the task is to predict the target
+corresponding to the input data.
+The target is a categorical variable.
+So the classification task is to predict
+the category or label of the target given the input data.
+For example, the classification problem
+we discussed before, and illustrated in this image,
+is to predict the type of weather.
+The target that the model has to predict is the weather.
+And the possible values for weather in this case
+is sunny, windy, rainy, or cloudy.
+The input data can consist of measurements
+like temperature, relative humidity, atmospheric pressure,
+wind speed, wind direction, et cetera.
+So given specific values for temperature, relative humidity,
+and all those other measurements, the task for the model
+is to predict if the weather will be
+sunny, windy, rainy, or cloudy for the day.
+This is what the data set might look like
+for the weather classification problem.
+Each row is a sample with input variables.
+Temperature, humidity, and pressure,
+and target variable, weather.
+Each row has specific values for the input variables
+and a corresponding value for the target variable.
+The classification task is to predict the value
+of the target variable from the values
+of the input variables.
+Since a target is provided, we have label data,
+and so classification is a supervised task.
+Recall that in a supervised task, the target,
+or design output for each sample is given.
+Note that the target variable goes by many names
+such as target, label, output,
+class variable, category, and class.
+A classification problem can be binary,
+or multi-class.
+With the binary classification, the target variable
+has two possible values, for example yes and no.
+With multi-class classification, the target variable
+has more than two possible values, for example
+the target can be short, medium, and tall.
+Multi-class classification is also referred to as
+multinomial or multi-label classification.
+Remember, though, the target is always
+a categorical variable in classification.
+Some examples of binary classification are
+predicting whether it will rain tomorrow or not.
+Here, there are only two possible outcomes.
+Yes, it will rain tomorrow,
+or no, it will not rain tomorrow.
+Another example is identifying whether a credit card
+transaction is legitimate or fraudulent.
+Again, there are only two possible values
+for the target, legitimate and fraudulent.
+Some examples of multi-class classification
+are predicting what the type of product
+that a customer will buy.
+In this case, the possible values for the target
+variables will be product categories, such as
+kitchen, electronics, clothes, and things like that.
+And there are more than one categories of products.
+So, this is a multi-class classification problem.
+Another example is categorizing a tweet as
+having positive, negative, or neutral sentiment.
+Again, the number of possible values
+for the target is more than two here, although it's three.
+So this is, also a multi-class classification task.
+In summary, in classification, the model has to predict
+the category corresponding to the input data.
+Since the target is provided for each sample,
+classification is a supervised task.
+The target variable is always categorical in classification.

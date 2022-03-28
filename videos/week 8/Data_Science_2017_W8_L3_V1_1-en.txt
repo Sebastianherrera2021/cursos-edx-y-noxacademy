@@ -1,0 +1,102 @@
+- In this lesson we will be using Twitter's web data API
+to access Tweets and do some analysis on it using Python.
+This is our last lesson before your final project.
+So it's a little bit more advanced than our other notebooks,
+but nothing you can't understand at this point.
+So please don't be discouraged.
+By the end of this video, you should be able to
+understand what is the Twitter API,
+create a Twitter application,
+download authentication credentials,
+and save them to disk for later usage.
+Twitter offers a Web Application Programming Interface,
+or shortly API,
+to access all Tweets on their website.
+Through this API, we can send queries to Twitter
+to search for data related to various topics,
+find out about trends, user interactions,
+and many other analysis tasks spelled on Twitter data.
+This will require authentication on Twitter.
+So please create a Twitter account if you don't have one
+and this account won't be sufficient.
+We will also need to create an app that identifies
+all the requests we send to the platform.
+To do this, we will need a sample application.
+After watching this video, go to the URL here
+and create a sample application.
+You will need your Twitter account to be able to do this
+so please create one if you haven't done so yet.
+Once you create a new application,
+it will give you links to follow.
+For example, when you're in the application settings,
+please click Manage Keys and Access Tokens
+next to the your consumer key.
+You have to follow the links until this point probably.
+There, you need to follow one more link
+to create your consumer key, consumer secret access token,
+and access token secret.
+Once you complete this step,
+please locate the Twitter notebook in week eight
+to get started with the next video and our notebook.
+As we just reviewed, in this notebook we will be using
+Twitter's web data API to access Tweets
+and do some analysis on it using Python.
+Let's get started.
+We first need to access tokens for Twitter's
+standard authentication mechanism and in order to
+use it to make requests to the Twitter's API.
+You probably already have done this after the last video,
+but if you haven't, please stop the video
+and go to the URL here and create a sample application.
+And you will need a Twitter account, again to remind you,
+so please create one if you don't
+have an ordinary Twitter account.
+Once you create a new application,
+it will give you links to follow
+in the application settings.
+Please click manage keys and access tokens.
+And that's next to the consumer key probably.
+You need to follow the links to create your consumer key,
+consumer secret access token, and access token secret.
+Now you have them,
+please copy and paste those
+into the code block below.
+You need to only do it for the first time
+you run this notebook.
+Here what we are doing is we are creating a pickle file
+called secret_twitter_credentials.pkl
+to store your credentials.
+That's why you only need to do this once and this file,
+secret_twitter_credentials will enable you
+to authenticate with the Twitter API
+to access the data we need for this notebook.
+Once you do it,
+please remove your credentials
+from the notebook and don't share that file with anybody.
+Here, let's review what's going on in this code block.
+As you see in this code block, in this if statement,
+we create an object called Twitter and we use it
+to store our access credentials.
+So consumer key, consumer secret,
+they are all stored in the Twitter object.
+If the pickled credentials exist,
+it will just load the credentials from the pickle file
+into the Twitter object.
+How do we use pickle?
+We import the package and also the os package
+to check your files.
+What does pickle do, right?
+It's a cute name for a Python utility module
+to save any Python object or data structure on disk.
+Pickle will do something special called serialization.
+To convert any Python object or in this case,
+this Twitter object, into a character stream
+so the object can be created later in Python
+when we need it.
+Reconstruction of that object is called deserialization.
+So pickle will do this for your Twitter access credentials
+and when we come back, it loads it
+back into Twitter as an object.
+As a big warning, please don't share that pickle file
+as anyone can use it to
+deserialize it and access your Twitter account.

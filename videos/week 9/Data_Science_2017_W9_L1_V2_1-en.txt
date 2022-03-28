@@ -1,0 +1,5 @@
+- This week, in addition to the project,
+we would like to provide you with example notebooks,
+with additional use cases
+applying various Python data science libraries
+to real life scientific applications.

@@ -1,0 +1,160 @@
+- [Woman] Now let's look at what we can do further.
+To analyze word frequencies.
+By the end of this video, you should be able to:
+count how many times an item appears in a list,
+plot word frequency in logarithmic axes,
+and plot word counts histograms.
+When we switch to our notebook,
+we will see that a quick check
+of the amount of words in our movie review database
+shows 1.6 million words,
+which can then be reduced to 710 thousand
+wire removal of useless words as we called it.
+This is still a lot of words.
+How can you find out the frequency of each word
+that is how many times each word appears in this corpus?
+We will use the counter object
+from the collection package in Python for this purpose.
+Counter works very similar to the unique commanding units,
+we discussed before.
+We can provide it with a list of words.
+And it returns an object wire,
+which we can find out the reputation of each word.
+You would already guess that "movie"
+is a very frequent word in a movie database.
+And, indeed, it occurs
+5,771 times
+in this script corpus.
+Once we have frequency, in a counter,
+for each word, we will see,
+how we can plot the distribution of words,
+using matplotlib.
+This graph, just copy it, from our notebook,
+where we sorted the word counts
+and plotted their values on logarithmic axes.
+To check the shape of the distribution.
+This visualization is particularly useful,
+if you're comparing two or more data sets.
+If flatter distribution indicates a large vocabulary,
+while a peak distribution
+indicates a restricted vocabulary.
+Often due to a focused topic,
+or a specialized language.
+We will also create histograms of the words
+for visualization of the frequencies.
+Let's now switch to our notebook
+to see what we just reviewed in action.
+We are now starting to count frequencies of words
+in the movies reviews corpus.
+Let's go to our notebook
+and first check the number of words
+quickly using the len function.
+So you imagine before,
+we can get all the words in the movie reviews
+and assign it to all words.
+And we'll use the len function around those all words.
+And print it in the millions format.
+We reviewed some of these in our very early videos,
+so if you still remember.
+So what we are doing here is we are turning this number
+into a millions format.
+So we have about 1.6 million words.
+It's a lot of words but this number
+includes the useless words we listed before.
+Let's filter those words out
+here.
+Using a for loop.
+And call this result,
+or the resulting list filtered words.
+So what we'll do, we'll assign the filtered words,
+the output of this word loop.
+The for loop.
+It says word for word in movie reviews words
+so if for each word in the movie reviews.
+Only do this if word is not in useless words.
+So we can execute this
+if you'd like to see the type of this filtered words.
+Let's execute this again.
+Takes a little while because it's checking constantly
+if the word is in a list.
+We see that filtered words is indeed a list.
+And we'll get to a number words in this list.
+It's now down to about
+710 thousand.
+So zero point 71 million.
+So it's about half.
+We were able to reduce the amount of words to about half.
+And next let's create a counter object
+using these filtered words.
+What we'll do is,
+we'll start by importing counter from collections.
+And we'll give counter this filtered words
+that's like 710 thousand words.
+And we'll turn that into a counter object.
+This counter class that we are initializing here,
+I will create a word counter object.
+So I'm running this.
+Once we have this word counter object successfully ran,
+it goes fast as you saw.
+We can use any function the counter class provides us,
+or the properties of this class.
+Most common function of the counter object,
+let's us see the most frequency words,
+in our movie database.
+Let's actually execute that.
+And in the next one, I'll print this most common words,
+the top ten, as you see in here.
+As we see here, most common words
+are the ones with the highest frequency,
+in our movie database as expected are:
+film, one, and movie.
+Let's plot now, this word found counter.
+We need to sort this list,
+before we can plot it actually.
+We will use matplotlib, as you seen before,
+matplotlib you're familiar with it.
+We'll use it to generate a logarithmic plot
+of the list.
+So we had sorted
+word counter and the values in it.
+And we assigned that to a list called sorted word counts.
+We'll give those sorted word counts
+to the log log function to create that logarithmic.
+And we'll name our x-label word rank
+and y-label frequency.
+So if you do this,
+we'll have that graph be over viewed in our
+slides before.
+It's a logarithmic flat,
+and as we describe here,
+this flatter distribution indicates a large vocabulary.
+Like we have.
+We can also plot the histogram of sorted word counts,
+which displays how many words have a count,
+in a specific range.
+Not per word but the words are bent
+to be together, if they have a similar count.
+Since we have many words with low frequencies,
+in our histogram,
+or in our corpus.
+We'll see that the histogram peaks on this low counts.
+Right close to zero we have a huge spike of words.
+And it sort of trickles down to be less and less.
+In the order of five thousands.
+Displaying this at log scale,
+in this case, would give us a better plot
+to communicate this information.
+So what we'll do is,
+instead of histogram sorted value counts,
+we'll say log true here.
+The same 50 bins.
+And we'll have a better, more informative graph.
+And you will learn more about it,
+as you go through probability in other classes,
+in this specialization.
+Great, we are almost at the end of our notebook,
+as usual, we saved the best for last.
+That is to use the exploratory analysis,
+we just went through in a classification model.
+Let's go through this in the next set of videos.
+To see how we can achieve it.

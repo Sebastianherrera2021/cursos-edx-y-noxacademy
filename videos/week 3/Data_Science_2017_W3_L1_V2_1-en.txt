@@ -1,0 +1,6 @@
+- To get you started, we'll be working
+with the real basics of Jupyter notebook
+so that by the end of this video
+you'll be able to create a Jupyter Notebook
+and run Python code in that notebook.
+Let's go straight to the notebooks to get started.

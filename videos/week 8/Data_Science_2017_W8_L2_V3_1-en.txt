@@ -1,0 +1,76 @@
+- Now let's talk about Tokenizing the words and text.
+By the end of this video, you should be able to
+explain what Tokenization means,
+and use an nltk word Tokenizer.
+The first step in NLP is generally
+to split the text into words.
+This process might appear simple,
+but it is very tedious to handle all corner cases.
+What are corner cases?
+They include inconsistent use of punctuation,
+or contractions, or shortened versions of words.
+They can also be hyphenated words
+that include characters like the
+New York-based example here.
+How do we Tokenize such cases?
+Nltk offers libraries to remedy these challenges.
+When we switch to a notebook in a few seconds,
+we will first use a simple white space based Tokenizer.
+Then, we will learn how to do it better and easier
+using nltk.
+Okay, let's now switch back to our notebook.
+For our Tokenization example,
+let's use the short text of Romeo.
+We see that the example here has some punctuations.
+Let's go to this Romeo.
+And, there are some punctuations like love here,
+love exclamation mark, and we also have
+for example, a hyphenated still-walking.
+If you use now the string-splitter function in Python
+in the next line here,
+it will give us a list of these words.
+Let's execute that.
+Oh, sorry I didn't run the line before.
+Don't forget to run the lines, one after another.
+After line 12, or code cell 12,
+we are gonna use this Romeo text that's split.
+And let's check this out for a little bit.
+We see that there are some punctuations with the
+one with love or hate here,
+and combined words like well-seeming.
+They were all listed as one word.
+Ideally, we would have love as one word
+and that punctuation, the exclamation mark,
+as one word or maybe we wanna even remove that.
+But how do we remove these punctuations?
+For that task, we need to download an
+already-trained English Tokenizer.
+That one is called punkt
+to come up with the punctuations.
+Let's execute this code cell.
+The we can use this word Tokenizer to generate the tokens.
+So, remember before we actually used just a split operation,
+romeo_text.split, and it was what the string provides us,
+so we are trying to do more.
+We are trying to actually use nltk, punkt,
+which has these punctuations already defined,
+and we are using the word Tokenize from this
+to come up with a list of words.
+Now, if we display these lists of words,
+we indeed see that love exclamation mark we had above
+is separated nicely.
+The good news is all corpora in nltk
+already provides a way to generate Tokenized words
+for each data file.
+So for our movie database...
+Let's go find that.
+Words for the first positive files
+can be accessed using the code block here.
+We have movie reviews dot words
+and positive file IDs, and zero is our first record.
+Let's execute this.
+We have a list here, right.
+We have a list of words from that first positive record.
+Now that we have our words, in the next set of videos
+let's see how we can use these words
+to build a simple bag-of-words model for them.

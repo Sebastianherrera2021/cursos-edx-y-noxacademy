@@ -1,0 +1,81 @@
+- Hope you were able to explore the datasets
+nltk offers interactively.
+Now, we will review of the corpora nltk provides.
+By the end of this video,
+you should be able to describe what corpus means,
+list some datasets in the nltk corpora,
+and recite the basic features
+of the movie reviews corpus in nltk.
+NL techniques depends on large amounts of text
+or other linguistics data.
+These digital collections are called corpora all together.
+Another word you will hear is a corpus,
+which is the singular form of corpora.
+As you have seen in our brief live session,
+nltk provides means to download some these large datasets.
+After importing nltk, you were able to interact
+with a download interface for all of these datasets
+using nltk download, and more specifically,
+we downloaded the movie reviews corpus
+to start processing our notebook.
+The movie reviews corpus,
+was downloaded in your home folder.
+So if you list directories under this folder
+you will see that the corpus has 2000 reviews,
+half of which are positive and other half negative.
+Each review in these files or directories
+has a significant amount of text,
+not just short opinions on movies
+averaging around 800 words.
+Let's now switch to our notebook
+to look at some of these reviews.
+Let's continue from where we left
+and import the movie reviews we downloaded.
+So we'll go to our next code line, it says
+from nltk.corpus import movie_reviews,
+I'm gonna execute that one.
+The file ID's method provided
+by all the datasets in nltk corpus,
+gives access to a list of all the files available.
+We can look at the length of this list using
+the LAN function, but first let's find out all the
+files that we got from our corpus.
+Maybe the top five files,
+which are in the negative,
+neg folder and we see the file names
+and the bottom five files.
+But again, this is a list,
+so we can actually
+run the length operation for both of these lists.
+So if you wanted to get the length of movie reviews,
+all of them, all the reviews,
+the movie reviews gives us using the files ID's,
+we could have done
+LAN movie reviews here.
+Okay.
+When we looked at the negative fields and positive fields,
+we saw that it started with the negative reviews
+and switched over to positive reviews in the 'pos directory.
+So it shows us our two directories,
+1000 of them are negative reviews
+and 1000 of them for positive.
+And in line seven here and In (7), what we've done
+is we've filtered the list
+as positive and negative categories.
+We saw that we had two equal lists for each.
+So we could also inspect one of the reviews using
+the raw method of movie reviews.
+Each file is split into sentences
+and the curators of this dataset
+also removes from each review
+from any direct mention of the rating of the movie.
+So, in the next code line,
+we get that positive file ID zero,
+the first review in the positive reviews.
+And here is the review.
+It's indeed a significant amount of text,
+but how do we start working with this text.
+One way is to tokenize this text.
+In the next video, we will talk about this technique
+to tokenize any text like this
+and use it for natural language processing.

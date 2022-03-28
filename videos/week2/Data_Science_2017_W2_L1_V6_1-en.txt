@@ -1,0 +1,36 @@
+- Here's the explanation for the quiz that you just took.
+In the quiz you were asked
+how many times i is less than 10 gets evaluated.
+Students commonly get this wrong,
+mainly because of the confusion about the term evaluated.
+But let's see how this works.
+i is initially zero
+and the condition i is less than 10 is tested.
+The result being true.
+i increments to one, we test i is less than 10 again.
+Getting true back.
+The loop continues.
+i keeps incrementing.
+The condition continues to be evaluated true and so on.
+Before the last iteration the loop executes,
+i is nine and nine is still less than 10.
+If you said that 10 is the answer,
+you were likely answering the question,
+how many times does the loop execute?
+But that isn't what was asked.
+We asked how many times the condition,
+i less than 10 is evaluated.
+For that answer
+we have to evaluate the condition one final time.
+When 10 less than 10 is evaluated to be false,
+that's when the loop condition terminates.
+We've asked this question for the two reasons.
+The first is it helps new programmers
+see the step by step execution of a while loop.
+The second reason is for more advanced programmers,
+who might put a statement which has side effects,
+like a function call into a loop condition.
+It's easy to forget about that last evaluation of false
+and if there's a side effect of that test,
+that could be problematic.
+Either way we hope this example was useful for you.

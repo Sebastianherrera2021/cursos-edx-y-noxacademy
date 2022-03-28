@@ -1,0 +1,144 @@
+- Now that we simply went over the relational model
+without going into the details,
+we will talk about how we can retrieve data
+from a relational database.
+By the end of this video,
+you should be able to
+describe what data retrieval means,
+explain the purpose of SQL,
+and create simple SELECT queries.
+Data retrieval refers to the way in which
+data desired by a user is specified
+and retrieved from a data source.
+Note that in this course,
+we are using the term data retrieval in two ways.
+I assume that your data is stored in a data store
+that follows a specific data model,
+like, for example, the relational data model.
+By data retrieval, we will refer to
+the way you specify how to get the desired data
+out of the relational data store,
+and the internal processing that occurs
+within the data management system
+to compute or evaluate that specified retrieval request.
+Now let's see the query specification
+happening using a specific language called
+Structured Query Language, or SQL.
+SQL is the ubiquitous query language
+when the data is structured,
+but it has been extended in many ways
+to accommodate other types of data.
+For this lesson, we will stick to the structured
+aspect of the language.
+You should know that SQL is used
+in classical database management systems like Oracle
+as well as modern distributive big data systems
+such as Spark in the form of Spark SQL.
+Let's work, now, with an illustrative example.
+Our schema for this business has three relations, or tables.
+The first table lists these bars,
+their name, address, and the license number of the bar.
+Notice that the attribute called name
+is underlined because it is
+the primary key of the bars relationship.
+Recall that primary key refers to a set of attributes,
+in this case just name, that make a record unique.
+Note that the relation bars with the attribute names
+within parentheses is the same as the table
+shown on the right.
+We will use both representations as we go forward.
+The second table, called beers,
+lists the names and manufacturers of beer.
+Not every bar sells the same brands of beer.
+Even when they do, they may have different prices
+for the same product, because difference
+in establishment cost.
+So the sells table records which bar
+sells which beer at what price.
+The most basic structure of a SQL query
+is a select from where clause,
+in this example where we are looking for beer names
+that are made by Heineken.
+So we need to specify our attribute,
+which is our output, in this case the name of the beer,
+the logical table which should be used to answer the query,
+in this case beers, and the condition
+that all the desired data items should satisfy,
+namely the value of the attribute called manf
+is equal to Heineken.
+There are a few things to notice here.
+So our query is select name from beers,
+where manf equals Heineken.
+First, the literal Heineken is put within quotes
+because it's a string literal.
+Remember that, in this case,
+the string is supposed to match exactly, including the case.
+Secondly, if you go back to the data operations
+we discussed in pandas,
+you will recognize that this form of query
+can also be represented as a selection operation
+on the relation beers with the condition
+on the manf attribute, followed by
+a projection operation that outputs the name attribute
+from the result of the selection operation.
+So the selection operation finds all tuples in beers
+for which the manufacturer is Heineken,
+and from those tuples it projects only the name column.
+The result of this query is a table
+with one single attribute called name.
+This would be the column inside pandas or a series object.
+We illustrate some more features of SQL
+using two more example queries.
+The first looks for expensive beer and it's price.
+Select distinct beer and price,
+from sells, where price is larger than 15.
+Let's say, because they're beers, to be expensive
+if it costs more than 15 dollars a bottle,
+from the schema we know that price information
+is available from the table called Sells.
+So the FROM clause should use Sells in this case.
+The WHERE clause is intuitive and specifies
+the price to be greater than 15.
+Now, notice that the sells relationship
+also has a column called bar.
+Now, if two different bars sells the same beer
+at the same price, we will get both entries in the result.
+That's not what we want.
+Regardless of the multiplicity of bars
+that have the same price for the same beer,
+we want the result just once.
+This is achieved through the SELECT DISTINCT
+statement in the first row,
+which ensures that the result relationship
+has no duplicates.
+The second example shows the case
+where more than one condition must be satisfied
+by the result.
+In this query, the business must be in San Diego,
+and at the same time it must be a temporary license holder,
+which means the license number should start with 32.
+As we see here, these conditions are put together
+by the AND operator.
+Thus, this query will pick the third record in the table,
+because the first two records satisfy the first condition
+and not the second condition.
+One can also place a limit
+on the number of results to return.
+If our database is large
+and we need only five results, for example,
+a sample to display,
+we can say LIMIT 5.
+The exact syntax of this LIMIT clause
+may vary between database management system vendors
+or even in Python.
+As a summary, SQL is the standard querying language
+for structured relational data,
+and it resembles pandas data frames,
+although it can provide more operations.
+SQL allows for joining and other operations
+in addition to the simple data selection query
+as we focused on in this video,
+but we will not go into the details for those operations,
+and we'll show you a notebook next,
+how to use some of these selection queries
+in the context of Python Jupyter Notebooks.

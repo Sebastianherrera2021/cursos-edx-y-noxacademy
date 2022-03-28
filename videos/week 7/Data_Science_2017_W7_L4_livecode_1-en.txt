@@ -1,0 +1,258 @@
+- We now learned regression allows us
+to predict continuous variables.
+Now, we will use regression technique
+to predict a player's overall performance
+based on their attributes.
+For this,
+we will use the soccer data set from back in week one,
+where we've seen that overall analysis.
+Over the last seven weeks, you learned quite a bit.
+So we'll do a more hands-on analysis of this data set.
+We are ready for that now with the tools we've learned.
+Let's locate our notebook.
+It's called European Soccer Regression Analysis
+using scikit-learn.
+It's in your folder for the week
+along with the data set it needs.
+After you open,
+let's get started by importing the libraries.
+Before we import our data set, we'll import our libraries.
+Just look through them quickly.
+We have some regression methods imported there.
+The pandas sqlite, which is to interact
+with a relational database, which is the data set for this.
+But we'll learn more about that next week in week eight.
+And some other mathematical
+and error detection related modules.
+Okay, let's import these libraries.
+Now, we'll import the data set into a data frame.
+And then let's check out that data frame.
+What we are doing here is
+we are connecting to the data set
+and we are using this connection
+to select the player attributes
+and load them into a data frame called df.
+You might have noticed by now
+that once you get used to the data ingestion,
+it is always similar functions to ingest the data
+into a pandas data frame.
+So look at our example notebooks,
+the example notebooks we gave you,
+and that should be enough for you to find the data set
+and load that type of data into a pandas data frame
+in your exercises and things like that.
+So, let's look at the first five rows of this data frame
+to familiarize ourselves with the data.
+We see that there are some features related to players:
+overall rating, potential, preferred foot,
+attacking work rate, defensive work rate,
+and things like that.
+We can look at the shape of this function, the data frame.
+So I'll say df.shape.
+We see that there are about 42 features,
+a little less than that with the identifiers.
+Let's declare a list of these features.
+We can say df.columns.
+We could see all of them.
+So, now we'll select some of them.
+We'll select the ones we want to use
+for predicting the overall rating.
+After this video, of course,
+you can further play with this list
+and reduce it to see the effect
+on the accuracy of predictions.
+But for now,
+we'll use a lot of these features to get started.
+Except, here, we won't see the overall rating
+because that's our prediction target.
+Based on the input data from these features,
+by selecting that,
+we will predict a numeric overall rating value of a player.
+So, let's do these declarations
+of the columns in the feature
+and target will be named overall rating.
+Let's now start cleaning the data.
+We'll simply drop the null values.
+As we know from week one,
+this is an issue with this data set.
+We'll use a data frame and say df.dropna.
+Now, we have a slice of the data
+that doesn't have null values.
+Let's now create the two data frames.
+Like you're used to it now, we need an x, the input,
+and a y to go from, with the analogy again,
+of y=f(x), with features and target values.
+X will be our input data frame.
+And we'll select the features we wanted,
+we described, declared in our features list.
+We'll load the data frame, without the null values now,
+into x with those features.
+Feel free to stop and look what's in x and what's in y
+if you are getting confused.
+But we are doing the same operation we've been doing
+in our earlier notebooks
+for machine learning for this week.
+Let's look at a glimpse of the data.
+We print one row for x.
+Let's say two.
+We see the values in the x data frame.
+The potential, crossing, and things like that.
+We can also display y to see the range of values in it.
+What kind of overall rating scores exist?
+And we see the range is between 67 to about, like, 77.
+Things like that.
+81 we see there.
+Please refer to the soccer data analysis notebook
+in week one for further explorations through this data set.
+And now, we should be able to understand a lot of the
+code cells in that notebook.
+So now, it's a good time to go and have more fun
+with that analysis.
+Okay.
+We have, I'm assuming you stopped the video, maybe
+did some more explorations.
+Now, I'll start with a regression analysis task.
+We are doing the same operation using train_test_split.
+We are splitting the data set
+into test and training sets so we can use one for training
+and the rest for testing of the regression algorithm.
+Let's run this cell.
+We'll perform two different modeling operations
+using different regression techniques.
+First, we will use a linear regressor.
+We'll select the features and use a linear regressor
+to predict a player's overall rating.
+Here, we store a linear regression object right here.
+And I'll call it regressor.
+This is the linear regression module
+we selected from scikit-learn.
+We will then use that regressor
+and give it our training input and
+label data sets,
+numeric labels in this case, x_train and y_train.
+So, using the fit method of the regressor,
+we fine-tuned the parameters of the linear regressor
+to capture the interactions between the two sets,
+the x_train and y_train.
+So, we are trying to fit
+x_train and y_train and create a model.
+We can then use this predict method,
+because we now have a model,
+a linear-regression-based model.
+We'll use the predict method of that trained model
+to perform the prediction on the test set,
+which is our x_test.
+As a reminder,
+note that the model has never seen any sample
+from this test set.
+So it's predicting on a new data set.
+Okay, let's go and execute that.
+And we see a predicted set of values for y.
+As you know, we can compare them to the values
+in the y_test and see how accurate they are.
+If you look at and describe some things about this data set,
+we see that the overall mean is around 67.6
+and the minimum and maximum are 33 and 94.
+So, we see that the predicted scores
+are actually within the range with y_test.
+We can also try to describe y_prediction and compare them.
+But we'll do something different.
+We use, actually, as we describe Root Mean Square Error
+to measure the prediction accuracy of our regressor.
+That's the RMSE, Root Mean Square Error, in short.
+So RMSE captures the variation of the predicted value,
+as you would remember, from the observed value.
+So, an RMSE score of zero
+means perfect prediction with no errors,
+which is the ideal scenario, which almost never happens.
+When comparing two regression models,
+then the one with the smaller RMSE will be better
+since its predictions will have smaller difference
+from the observed values, or the measured values, before.
+So, let's check that.
+RMSE equals square root of mean error
+and y_true is y_test, and y_prediction is,
+y_pred is y_prediction here,
+which are the arguments that we give
+to mean squared error function.
+So when we compute RMSE
+and print it out,
+we see that the linear model gives us an RMSE of 2.8.
+This is a good start.
+Since the range of overall rating is from 33 to 94
+with a mean of, as you would remember, approximately 68.
+Okay.
+Good start.
+Let's see if we can improve upon the prediction accuracy now
+by using a slightly more complex model.
+That would be, let's say, a decision tree regressor.
+A decision tree regressor
+builds a model in a top-down manner
+by splitting data set on an attribute.
+So the algorithm chooses the attribute
+which gives maximum reduction in standard deviation.
+You'll here more about these
+in your machine learning course.
+So I'm gonna quickly describe it here
+and then move on to applying it.
+Take this.
+Hopefully an appetizer for the machine learning,
+upcoming machine learning course.
+You'll learn all about this.
+So now, let's use the decision tree regressor
+to capture player performance as a function of,
+again, their attributes.
+The fifth method performs the fine-tuning again.
+So we are doing the exact same thing.
+We have a regressor,
+but, since this is a tree, it has a depth.
+The maximum depth is 20.
+And we are using that regressor
+to fit the training and
+input and output training data sets, so x_train and y_train.
+We changed the method, but the fifth line stays the same.
+The regressor will be just of another class
+and another method.
+So,
+it's done.
+We have now a model
+and we'll use this model to predict on the test data again.
+So let's do that.
+And we see the values changed a bit, right?
+We have the 66 here and 62 and things like that.
+To get an idea of the RMSE,
+we know that a Root Mean Square Error of 100,
+for example, would be too high because our mean is 68.
+And our RMSE is higher than our mean value.
+So let's run this.
+Again, we can describe the test
+and do the RMSE for this new
+linear, decision tree regressor.
+So remember, our linear regression operation
+gave us an RMSE of 2.8.
+And decision tree regression algorithm
+gave us an even lower one, 1.44,
+which is better, in terms of prediction accuracy,
+than the linear model.
+Again, the RMSE captures variance of the predicted value
+from the actual value by our system.
+So, it is a measure of how
+model performs against operations.
+So I'd say
+an RMSE of 1.44 for a test set
+that has a mean of 68 for the target variable
+is pretty good.
+And the model never got a chance to look at the test set
+before the prediction,
+so that ensures our evaluation was
+on a data set
+that the model hasn't seen.
+And we saw that linear regression model performed
+a little less well than,
+or a little worse than,
+the decision-tree-based regressor.
+Great, we've finished our machine learning lecture content
+for this week, week seven.
+I hope you'll enjoy the test notebooks that we give you
+and have some more hands-on experience
+with what we just discussed.

@@ -1,0 +1,113 @@
+- Visualizations play a number
+of different roles in data science.
+And the role that they play changes
+how we'll handle the visualization.
+By the end of this video,
+you should be able to understand the different ways
+that data visualization is used in data science.
+There are two key ways to categorize data visualization.
+The first is whether this is conceptual or data-driven.
+Most of what we'll focus on this week
+and in this course is data-driven.
+But visualization of concepts is important as well.
+Particularly when we aim to explain
+how things work conceptually.
+For example, economists may seek to visualize the notion
+of the classic supply and demand curve
+without using real data.
+And then back it up with data supporting the concept
+from, say, Uber surge pricing.
+Because data-driven is where we spend much
+of our time as data scientists,
+let's look at the second categorization in that context.
+Declarative.
+There's a point when we've analyzed the data,
+and we have data supported conclusion
+we wish to articulate to our audience.
+At the point of presenting,
+we want our visualization to convey
+this conclusion to the observer
+in the most straight forward possible manner.
+Exploratory.
+We spend much of our time exploring data,
+and visualization plays a key role in that.
+Visualizations often encourage us,
+and enable us to look deeper into the data.
+Let's take a look at some examples
+from these categories.
+So this is the classic supply-demand curve
+from economics that I just mentioned.
+It explains the relationship between supply,
+or the quantity of goods available,
+with demand,
+or the amount someone is willing to pay for the item.
+When quantity is low, demand is high.
+As quantity goes up, demand will decline.
+This is conceptual,
+and these lines are hypothetical.
+But since much of our work is going to be data-driven,
+let's focus on that for now.
+Here I'm taking a declarative example
+from a research paper of mine
+where we show the peer instruction,
+that the peer instruction pedagogy
+resulted in a significant decrease in failure rates
+for students, relative to standard instruction,
+in computer science classes at UC San Diego.
+My goal in presenting these results
+was to convey to the reader the impact
+peer instruction had on failure rates
+in our classes.
+Without diving into the details too much,
+we had failure rates from a number of classes
+at UC San Diego, where instructors either taught
+using the active learning pedagogy of peer instruction,
+or using standard lecture-style pedagogy.
+If you're interested, please read the full paper
+for a complete explanation
+of our experimental mental methods,
+and possible limitations of these results.
+As good science will always detail potential limitations
+of results, along with study methods,
+I hesitate to use the word declarative here,
+as it doesn't quite seem right.
+Rather, I prefer the term presenting.
+We knew the result that we had,
+and we were aiming to present it to the audience
+in a clear and useful manner.
+The example of the correlation
+between midterm and final exam scores
+from our previous video is likely explorative.
+I might create a plot like this when trying
+to better understand the relationship between
+these exam scores in my class.
+And its results would likely cause me
+to explore the data more.
+With explorative data visualizations,
+I'm not gonna spend as much time polishing the appearance,
+so long as I can interpret it, that's fine.
+Likewise, I'll often want to be able
+to quickly plug in different parts of my data set
+into the figure to explore different relationships.
+Say HOMER scores against the final exam,
+rather than midterm against the final exam.
+Exploration is really at the heart
+of the data science process,
+which we talked about in week one.
+When we're finding outliers or trends,
+we're often using visualization tools.
+And those visualizations lead us
+to dig deeper into the data.
+As we dig deeper, we do the same thing.
+Looking at data distributions using histograms.
+Exploring relationships between variables,
+or seeking other trends.
+Ultimately, we find ourselves zooming in and out
+of various parts of the data set
+as we try to gain a better understanding.
+And this process of zooming in and out of the data
+is almost always accompanied by
+and facilitated by data visualization.
+So now that we understand the different uses
+for data-driven visualization,
+let's explore metrics of success for those visualizations.

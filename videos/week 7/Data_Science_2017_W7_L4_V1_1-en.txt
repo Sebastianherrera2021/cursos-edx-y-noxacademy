@@ -1,0 +1,121 @@
+- In this lesson
+we'll talk about regression analysis
+and review regression analysis toolkit and scikit-learn.
+By the end of this video
+you should be able to define what regression is,
+explain the difference between regression
+and classification
+and name some applications of regression.
+Before we talk about regression,
+let's review classification again.
+In a classification problem
+the input data is presented to the machine learning model
+and the task is to predict the target
+corresponding to the input data.
+The target is a category called variables,
+so the classification task
+is to predict the category or the label
+of the target given the input data.
+The classification examples shown here
+is one we have seen before.
+The input variables and measurements
+such as temperature, relative humidity,
+atmospheric pressure,
+wind speed and wind direction.
+The task for the model
+is to predict the weather category
+associated with the input data.
+The possible values
+for the weather category
+is sunny,
+windy,
+rainy or cloudy.
+Since we are predicting the category,
+this is a classification task.
+With that context in mind,
+let's now discuss regression.
+When the model has to predict a numeric value
+instead of a category,
+then the task becomes a regression problem.
+An example of regression
+is to predict the price of a stock.
+The stock price is numeric and not a category,
+so this is regression task
+instead of a classification task.
+Note that if you were to predict
+not the actual price of the stock
+but whether the stock price will go up or go down,
+then that would be a classification task.
+That is the main difference
+between classification and regression.
+In classification you're predicting a category
+and in regression,
+you're predicting a numeric value.
+Here are some examples
+where a regression can be used.
+We can use it for forecasting
+the high temperature for the next day,
+or estimating the average housing price
+for a particular region.
+Determining the demand for a new product,
+a new book, for example,
+based on similar existing products
+is also a regression task,
+as well as predicting the power usage
+for a particular smart grid.
+This is what the dataset
+might look like for the regression task
+of predicting tomorrow's high temperature.
+The input variables could be
+the high temperature for today,
+the low temperature for today and the month,
+and the target is the high temperature for tomorrow.
+The model has to predict this target value
+for each sample.
+Recall that in a supervised task,
+the target is provided,
+while for an unsupervised task,
+the target is not available or not known.
+Since the target label is provided for each sample,
+as a numeric value here,
+the regression task is a supervised one
+similar to classification.
+As with classification,
+building a regression model
+also involves two phases,
+a training phase in which the model is built,
+and a testing phase in which the model
+is applied to new data
+that the model hasn't seen before.
+The model is built using training data,
+and evaluated on test data.
+Similarly, with classification
+the goal in building a regression model
+is also to have the model perform well
+on training data
+as well as generalized to new data.
+The use of two different datasets
+that we have previously discussed,
+also applied to regression.
+Recall that the two datasets are used as follows,
+the training dataset is used to train the model,
+that is to adjust the parameters of the model
+to learn the input to output mapping.
+The test data set is used to evaluate
+the performance of the model
+on new data or the leftover data.
+Something that we haven't discussed yet
+but you will hear a lot in your machine-learning class
+later on is validation data.
+The validation dataset
+is used to determine when stopping
+training in order to avoid model overfitting.
+In summary,
+in regression,
+the model has to predict a numeric value
+corresponding to the input data.
+Since the target is provided for each sample,
+regression is a supervised task.
+The target is always a numerical variable in regression.
+Next, we will discuss a specific algorithm
+to build a regression model.

@@ -1,0 +1,11 @@
+- Let's quickly discuss the answer to that last quiz.
+In this last quiz you had two functions.
+The question was which of these returns the absolute value?
+Only function one returns the absolute value.
+There's a pretty common misconception.
+Printing and returning a value are the same thing
+in programming, and this simply isn't true.
+Whoever calls function two won't get a value back from it
+to work with, so function two isn't returning
+the absolute value.
+It's just printing it.

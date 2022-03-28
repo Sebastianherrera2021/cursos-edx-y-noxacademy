@@ -1,0 +1,224 @@
+- In this notebook we will use
+a popular database called Iris.
+It features 50 iris flowers
+and their classification into three species.
+We will use the Iris Database
+from Kaggle in SQLite format for the rest of the notebook.
+If you could locate the notebook in your week eight folder,
+it's called Working with Databases.
+The notebook on top has a Kaggle link,
+kaggle.com/uciml/iris/.
+You need to download the data
+from this link.
+The dataset is called database.sqlite,
+and it should be placed in the data/iris folder
+you have for week eight.
+So, now please stop the video,
+go to this link,
+and download the dataset.
+Assuming you stopped the video
+and downloaded the dataset before we move on,
+please run the next two code cells
+to check that you were successfully able
+to complete this step.
+So, what's in those next two cells?
+The first one says
+import os
+and it actually
+brings the data.iris to a object
+called data_iris_folder_content,
+and the error message is a string
+that we would display
+if that wasn't there
+or the database.sqlite
+wasn't in that folder.
+So, we are checking,
+we put an assertion called database_sqlite
+in data_iris_folder error_message.
+Please note that
+this error message operation
+shows an assertion
+or a good way of capturing errors
+in a program using an assert statement.
+Assert statements generally help you locate
+or identify bugs in your Python programs,
+as a way of creating such built-in tests.
+If you do a lot of testing,
+you'll actually do a lot of assert statements.
+Okay, assuming this worked great,
+let's move on to
+interacting with our database,
+the database.sqlite
+that you downloaded.
+We will import sqlite first.
+Sqlite3
+is a
+Python module that allows us
+to do easy SQL operations.
+And we'll use that to connect
+to database.sqlite
+in that Iris folder that we placed.
+Now we have a connection object,
+and we'll use this connection object
+to get a cursor object.
+That cursor object
+is actually our interface to the database.
+Before we move on,
+I'd also like to also mention that SQLite
+comes with your standard Python,
+so it's not a library that you need to go and install
+separately,
+so it's a pretty easy and nice way
+of interacting with a simple database
+using simple database queries.
+Let's look at the type of that cursor object, right.
+It's the type of type cursor.
+So, as I mentioned,
+this is our interface to the database,
+and mostly true
+the execute method of this cursor object
+will be able to run any SQL query
+on our database
+in our database.sqlite
+that we have connected to using that connection object.
+For example,
+we can get a list of all tables
+saved into the database.
+This is done by reading the column name
+from the SQL master metadata table.
+So sqlite_master,
+we are reading from that,
+that's the metadata table for our database,
+and the output of this execution
+will be turned into
+an iterator,
+so if I just ran cursor.execute select blah,
+I would get an iterator.
+So, now I'm using that iterator in a for loop
+to print each row.
+So, in the case of the iris database,
+we only have one table
+so we get that one back.
+As you see, it's called Iris here.
+A shortcut to directly execute the query
+and gather the results
+is also called the fetchall method.
+So, we can retrieve data from a particular table
+using a select query
+or in this case SQL master
+and fetch it all with for loop,
+we should get a list out of this.
+I can do a similar thing
+with another database,
+that data table like from Iris table
+instead of the sqlite_master.
+It's going to definitely return a list, right.
+If we print the sample of this type
+we see that it's off class list.
+We could work with this list
+but it's very low level
+and
+not the most efficient way.
+We also remember that limit that we mentioned
+in the video
+just prior to this hands-on session,
+this last query statement,
+SELECT star FROM Iris LIMIT 3
+brings us the top three rows.
+You can change it to five
+or 20 or however else you'd like,
+and execute that,
+and if we display that now
+we see all those 20 rows in our list
+that was created as a result of fetchall.
+And it's a list data structure.
+We know how to work with that data structure, right,
+and so we get the columns
+for this list.
+Okay,
+so,
+although it's possible to create many operations like that
+using SQLite,
+Pandas actually, as you know,
+provides a more intuitive and efficient way
+to interact with the data.
+So, like we did for our European soccer database before
+we will now use Pandas read SQL query function
+to load the data in the Iris table
+to a Pandas DataFrame.
+You've seen this before
+but let's review now with the knowledge of SQLite again
+what's going on here, right.
+We have imported Pandas as pd,
+and here to a DataFrame object
+called iris_data,
+we use the read_sql_query method from Pandas
+and we give that a sql_query, a select query,
+SELECT star FROM Iris.
+Now, you know what that means.
+And the connection the object.
+So, through this connection token
+and the query
+Pandas knows
+or the read_sql_query function knows
+how to get the results of that query
+and create a DataFrame for us.
+Let's run these.
+Let's first import Pandas.
+Iris_data.
+We are loading the data now.
+Let's get the first five using our head operation,
+and we can also do the dtypes
+of each column.
+We see that this is simple.
+You know now how to work with Pandas.
+We can also create
+more complex queries
+that constraints the data we load into the DataFrame
+because if the data is big, large
+the table is maybe a lot of rows, columns,
+and we maybe want to pick
+a part of it.
+We can actually create constraints
+using those SQL queries
+now that you know what you know about these select queries.
+Here for example,
+it's the exact same but we are selecting iris_setosa
+rather than rather than all three species.
+We have a query that says
+SELECT star FROM Iris
+WHERE species is Iris-setosa.
+So, once we execute this,
+we'll see that we only have
+one species in our resulting DataFrame.
+If we actually go and say
+iris_setosa
+dot shape,
+and our earlier one was iris_data,
+and
+let's do a print,
+and print
+iris_data.shape
+we'll see that we have one third
+in our iris-setosa table.
+So, we have 50 of each species
+and Iris database, 150 rows,
+and with this new query
+we were able to slice out
+to say in a relational query sense
+the 50 that belongs to the Iris setosa species.
+Although we can expand on these SQL queries,
+let's stop here for simplicity.
+I as usual
+encourage you to build an exercise for yourself
+using this database,
+for example, using the Iris database
+for building models
+using the machine learning libraries
+we discussed last week.
+In fact, the Iris database
+is commonly used to demonstrate
+different machine learning algorithms.
+So, this is a good time to introduce this dataset
+and hoping you will use it
+to create exercises for yourself.

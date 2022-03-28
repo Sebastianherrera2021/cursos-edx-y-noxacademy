@@ -1,0 +1,271 @@
+- The last thing we will do
+with Twitter data is frequency analysis.
+After this video,
+you should be able to create frequency distributions
+with collections counter,
+space padding in string formatting
+and sort a list of tuples.
+As you remember from the last lesson,
+the collections package in the standard library
+contains the counter class,
+which is handy for creating frequency distributions.
+It gets lists and counts how many times
+each items is repeated in a list.
+Its most common method
+returns the sorted counts.
+The final output works
+but it's hard to read with all that syntax.
+We will create a nicely formatted table out of this output.
+In the notebook,
+we will use advanced string formatting operations in Python.
+So let's review them before we use them.
+In any string printing,
+if you format it with colon 20,
+it will pad the string to be 20 characters
+with spaces in the end.
+Carat 20 in the second line here,
+will format the string to be centered
+in the middle of 20 spaces.
+And greater than in the third line,
+will do the same thing while right aligning the string.
+Pyformat dot IoT, the URL shown here,
+shows examples for many formatting options.
+I strongly recommend you to review it after this lesson.
+In our notebook,
+we will give you an example
+to nicely print frequencies of the words,
+or word counts in Tweets.
+We will then move on to finding the most popular Tweets
+by extracting the number of reTweets.
+The user and the text for the Tweet message.
+We will include a more advanced version
+of the prettyprint for this purpose.
+Let's now switch to the notebook
+for our last live coding session.
+As we just reviewed,
+Python offers a counter class for the purpose
+of counting the number of items in each collection.
+So in this notebook,
+now we are going to use again the counter
+like we did in our LP example.
+To count the frequencies of all
+the words in the Tweets.
+So are counting.
+Here, the counting object provides a convenient method,
+as you know.
+That gives us the commonly used words.
+Here we have the four item
+in words, screen names, hashtags.
+All those lists we created.
+And we are iterating
+over the counter,
+to come up with the most common words for each of them.
+So we create a counter with the item, first words,
+then screen names then hashtags.
+And we are printing them.
+For the most common 20 words.
+Let's display this.
+So, we have definitely the RT and MTVAwards,
+the first one in the words.
+The second was for screen names,
+these are some common users,
+or Twitter screen names.
+And the MTVAwards
+and other hashtags are also represented.
+You see also here,
+MTVAwards is displayed
+a few times in different
+character settings.
+There's the upper case, lower case, combinations there.
+They are all listed separately
+because we didn't do a data cleaning.
+Turn the data into all caps or all lower cases.
+So they'll definitely be counted separately.
+Okay, we execute our example seven.
+The c object is our counter.
+And we explored with it a little bit, right.
+We could have received less, for example, first 10.
+If you re-ran this,
+we tried to print it out.
+It's like a dictionary,
+by slicing it with one of the words,
+we can also check its output, for example.
+So the counter works fine.
+As you see this is the most common.
+And we just print it.
+But the output is still hard to read.
+It is a list of tuples so it has a lot of syntax
+like parenthesis
+and the rectangular parenthesis,
+square parenthesis, codes, and things like that.
+There's actually a better way to do it in Python,
+using advanced string formatting.
+And we'll use that now to display
+the same output in a better format.
+We actually reviewed this
+just before we switched to our notebook.
+But again,
+we are using the padding option
+in advanced string formatting.
+You can format a string to a specific length
+using a format string like we do for here,
+the 20.
+It's gonna be definitely printing 20.
+And here, we have
+the left alignment
+and here we have the right alignment.
+And this is centered.
+So,
+let's go through this,
+we are creating a pretty print function.
+We specified in this if we want to center align
+or right align or things like that, that we are printing.
+Just as a reminder, Pyformat.info is a great source.
+If you'd like to learn more about it,
+it was on your lecture slide so after this notebook,
+I really recommend that you go check those out.
+They are pretty useful.
+Okay, let's now use the string padding
+in this function
+and see what goes on in this function, right.
+We call this functionality actually prettyprinting.
+That's a technical word, prettyprinting.
+We want to implement a function that pretty prints,
+takes, let's say here, a list of tuples and a label.
+And writes out
+a nicely formatted table of data objects,
+or data structures.
+In the first line,
+we create a
+the labels on top.
+The second line will give us 40 stars.
+Exactly 40, padded nicely.
+And for each k and v in this list of tuples,
+they are the elements of the list of tuples
+we are going to receive.
+We will
+pad the k
+to be printed with 20,
+completed to 20 characters by spaces behind it.
+And let's see,
+this is going to left align the word.
+So now we can use this prettyprinter function
+for each label and data in word and words.
+Those are our k and v.
+And we are going through the data in our counter.
+We are loading the data into a counter.
+And we are giving this counter
+and the labels to our prettyprint function.
+Let's see what it outputs.
+We definitely have our word and count.
+This was our first one,
+the words one that was printed like this before.
+In this case,
+we are formatting it
+for the word and how many times it happen.
+Nice in a tabular.
+Similarly for screen names,
+it's a little bit easier to read.
+And hashtags,
+how many times a hashtag was mentioned
+in this set of Tweets that we got back.
+So out of 58,
+the unique records,
+we can make sense of these numbers a little bit, right.
+So next, we would like to find the most popular Tweets
+by ordering them by the number of Tweets.
+For those,
+we'd like the printer count
+the author name and the complete text.
+This can be achieved by creating a list of tuples.
+With those three elements
+and making sure that reTweet counters first.
+And then sort them with the Python sorted function.
+Next, we would like to find
+the most popular Tweets by ordering them
+by the number of reTweets.
+And that's exactly what we are doing here.
+For those, we would like to print their count,
+author name and their complete text.
+This can be achieved by creating a list of tuples
+with those three elements,
+making sure the reTweet count is first.
+And then sort them with the Python sorted function.
+So let's actually
+create that list of reTweets here in this code block.
+And
+now we need to create a
+prettyprint
+function
+to start printing them.
+And finally, we can print them in tabular format.
+Here the complication is due to the fact that
+we want to print the entire text of a Tweet.
+And it's 140 characters it would not fit in a single line.
+In this
+code block or the cell,
+code cell here,
+we have the prettyprint Tweets function.
+We need to split the text of a Tweet
+into three lines
+of 50 characters each
+to have some margin.
+We have 140 characters;
+moreover, we want to handle the k's of short Tweets
+that don't need all of the three lines
+with nested statements.
+Please find time to go over this one.
+This is exactly what we are doing.
+We are checking the length of the text of a Tweet.
+And we are formatting it
+to be displayed in exactly the right amount of
+columns and rows,
+to display the whole Tweet.
+And we will give now,
+this function the input that we created, the reTweets
+because we are trying to find the most popular reTweets.
+We'll sort those ReTweets
+and we'll give the first five line as a slice
+to prettyprint Tweets.
+And here you see that,
+we have the count, screen name and text.
+And the Tweets are displayed
+right after, under the text in a few lines
+if they are longer.
+We could have of course changed this to be 80
+or something like that with the printing.
+And if we've done that,
+we see that the stars go a little longer, like we had.
+So it helps, we actually accidentally wrapped it down.
+So you can play with this format
+and create a nice format
+for your own Tweet outputs.
+How do you, for example,
+print out the 10 more reTweeted instead of five, right?
+Actually turn this to be a little less.
+Maybe 60.
+Instead of displaying the five,
+we'll just make it 10.
+And it's gonna give us a longer table.
+It's gonna give us the 10 instead of the next five.
+In order to get more familiar with the Twitter API,
+try to execute all of the notebook again.
+But this time, changing the location of the local trends
+to something other than San Diego.
+Maybe your own location.
+And change the hashtag in example five
+into another topic you're interested in.
+If it's a topic you're interested in,
+you'll likely find some interesting scenarios
+to analyze in that topic.
+And maybe use some of this data to do bag of words
+and identify further topics
+or sentiments related to that topic.
+Or do some other classification algorithms.
+Thank you. This was our last live coding session.
+In the next two weeks,
+we'll ask you actually to do a similar project for yourself.
+Download a data set, and apply what you learned to those.
+And create reports
+or communication presentation out of that.
+I hope you'll have fun with those.

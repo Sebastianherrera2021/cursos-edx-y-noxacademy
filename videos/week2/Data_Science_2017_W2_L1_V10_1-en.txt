@@ -1,0 +1,13 @@
+- Alright, we'll walk through this last quiz
+in some detail here.
+In this last quiz we asked what is printed
+when we ran the code above.
+The answer is six comma three.
+Although the swap function properly swaps values
+within the function, it doesn't change what X and Y
+points to just like in our video on functions.
+If this tripped you up, please go back to that video
+on functions and pay attention to the memory model
+in the last example.
+If you make a similar memory model for this problem,
+you'll see why X and Y are unchanged by the swap function.

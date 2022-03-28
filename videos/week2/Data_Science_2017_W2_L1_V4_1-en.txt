@@ -1,0 +1,29 @@
+- So whenever we have these short quizzes,
+we'll sometimes have an explanation after it.
+This question is a really common misconception
+from new programmers, so let's spend some time with it.
+Your question was, what would this code produce?
+To arrive at the answer,
+let's trace through our memory diagram step-by-step.
+First, we declared x equals seven,
+which means that x now points to a PyIntObject
+which stores the value seven.
+When we say y equals x,
+this assign y to point to the same object as x.
+They both are currently seven.
+When we set x to be three,
+that causes a new PyIntObject to be created
+and x is assigned the value three.
+For those of you mathematicians out there,
+the equal sign could be problematic in programming.
+Y equals x in the second line of this code,
+doesn't mean that y and x have a permanent relationship.
+It just means assign y to point to the same thing as x.
+So when x changes to point to something else in line three,
+when it points to now this new object at the value of three,
+y doesn't change.
+Let's keep going.
+We now print x and y, and we get back three and seven.
+If you ever get stuck with odd behavior when you program,
+I strongly encourage you to draw a memory diagram
+just like the one we've done here.

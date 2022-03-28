@@ -1,0 +1,81 @@
+- We mentioned earlier that there are a number
+of useful libraries outside of Matplotlib.
+Particularly when working with a dataset
+like the world development indicators,
+creating geographic overlays can be a powerful way
+of visualizing your data.
+So by the end of this video, you should be able to
+use the Folium library to create geographic overlays.
+So jumping into our Jupyter notebook--
+before you're able to use Folium,
+you may need to install it on your system.
+You will also want to grab the json file listed below
+and place it in your
+folder under geo/world-countries dot json
+if you haven't already.
+So let's set this up.
+We're gonna import folio, import pandas as pd,
+and then I'll set up this geo.
+So, let's read back the world development indicators.
+And again, this can take some time
+because it's a large dataset.
+And then by running data dot head,
+I can see that this is the same data as before.
+So what we wanna do next is let's pull out the CO2 emissions
+for all the countries in 2011 just like we did before.
+Check in the data, it looks like
+we got back the indicators we wanted.
+So, let's set up our data for plotting
+by keeping just the country code
+and the values that we've plotted.
+We're pulling just those values
+and we can see that we get back
+now the country code and the value.
+We'll also want to extract the name of the indicator
+for use as the legend in the figure.
+Alright, now we're actually set up
+to create the Folium interactive map.
+We'll tell it to create a map
+at a fairly high level of zoom.
+And then next,
+we'll use the built-in method called choropleth
+to attach the country's geographic json and the plot data.
+We need to specify the relevant columns.
+Key on
+feature ID refers to the label in the json object
+which has the country code as the feature ID
+attached to each country's border information.
+And you can find this by reading the json object.
+But this it the tie that we need to set up our data.
+Our country code in the data frame matches
+the feature ID in the json object.
+Next, we specify some of the asthetics,
+like the color scheme and the opacity
+and then we label the legend.
+So the output of this plot is gonna be saved as a html file.
+And the html file is actually interactive.
+So what we'll need to do is save it
+and read it back into the notebook
+in order to interact with it on the map.
+And now we have our map.
+Notice first the dark colors imply
+a higher CO2 emissions per capita.
+The US
+and
+some of the European countries
+as well as the Middle Eastern countries
+stand out as being high producers of CO2 per capita.
+But remember that this is not total CO2 emissions,
+this is CO2 emissions per capita.
+So countries with large populations could have
+high CO2 emissions but still have
+a lower CO2 emissons per capita.
+So, we provide this notebook as an example of how
+to do geographic overlays.
+But also as an example of how
+to use additional visualization libraries
+and how they can be powerful
+depending on your visualization needs.
+So please be sure to check out the readings
+along with our library recommendations on what
+visualization library might work best for your needs.

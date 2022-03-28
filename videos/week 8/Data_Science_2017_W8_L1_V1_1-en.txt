@@ -1,0 +1,130 @@
+- In this lesson,
+we will review a Jupyter Notebook
+to interact with a relational database
+well known to the data science community.
+Before we do that,
+let's spend a few minutes reviewing
+what we mean when we say relational data model,
+and how to interact with relational data.
+By the end of this video,
+you should be able to describe
+the structural components of a relational data model,
+demonstrate which components make up a data model's schema,
+explain the purpose of primary and foreign keys,
+and describe a join operation.
+The primary data structure
+for a relational model is a table,
+like the one shown here for a toy application.
+You might have also noticed
+that table structure is very similar to a Python DataFrame.
+DataFrames can be used to load relational tables
+which are also called relations.
+This table actually represents
+a set of tuples.
+This is a relational tuple
+represented as a row in the table.
+We were informally calling this a record before
+but now we call it a tuple.
+Thus, this relation is a set of six tuples.
+There are six rows and six tuples.
+Remember the definition of sets,
+it's a collection of distinct elements
+of the same type.
+That means I cannot add
+the red record at the end of this table
+as a tuple into this relation
+because if I do,
+it will be introducing a duplicate.
+In practice,
+many systems will allow duplicate tuples in their relation
+but mechanisms are provided
+to prevent duplicate entries
+if the user so chooses.
+Here is another tuple I cannot add.
+The red tuple on the bottom
+has all the right pieces of information
+but it is all in the wrong order.
+So, this tuple
+is dissimilar with the other six tuples in the relation.
+Okay, how does the system know
+that this tuple is different?
+This brings our attention to the first row,
+that is the header of this table painted in black.
+This row is part of the schema of the table.
+These are our columns in a Pandas DataFrame.
+The schema in a relational table
+can also specify keys.
+The first column says that ID is a primary key.
+This means it's unique for each employee.
+And for every employee knowing the primary key
+for an employee,
+we also uniquely know the other five attributes
+for that employee like first name,
+last name, department, title and salary.
+You should now see that a table with a primary key
+logically implies that the table
+cannot have a duplicate record
+because if you do,
+it will violate the uniqueness constraint
+associated with the primary key.
+I will call our first table employees
+with the ID as the primary key.
+Let us now introduce a new table
+containing the salary history of employees.
+The employees are identified
+by the column employee ID, EmpID
+but these are not new values
+that this table happens to have.
+They are the same IDs that are present
+in the ID column of the employees table presented earlier.
+This is reflected in the statement made on the right.
+The term references
+means the values in this column
+can exist only if the same values
+appear in employees,
+the table being referenced.
+This table
+is also called the parent table.
+In the terminology of the relational model,
+the EmpID column
+of the EmpSalaries table
+is called a foreign key
+that refers to the primary key of the employees table.
+Note that EmpID
+is not a primary key in the EmpSalaries table
+because it has multiple tuples
+with the same EmpIDs reflecting the salary of the employee
+at different times.
+You may remember join as an operation we discussed
+as a part of Pandas.
+Here's an example of a relational join
+performed on the first three columns of employee
+and the EmpSalaries table
+where employees.ID
+and the EmpSalaries that EmpID columns
+are matched for equality.
+The output table shows all columns involved.
+The common column
+is represented only once.
+This form of join is called a natural join.
+It is important to understand that join
+is one of the most expensive,
+that is time and space consuming, operations.
+As data becomes larger
+and the tables contains hundreds of millions of tuples,
+the join operation can easily become a bottleneck
+in a larger analytical application.
+So, for data science
+that involves big data,
+when we need joins,
+it's very important to choose
+a suitable data management platform
+that makes its operation efficient.
+As a summary,
+the relational model provides a way
+to describe unique relationships
+between entities and data records,
+including the relationships between record identifiers.
+Pandas DataFrames implements some features
+from the relational data model,
+making it easier to work with relational databases.

@@ -1,0 +1,25 @@
+- We will now start using the Twitter Python package
+which simplifies access to the API.
+By the end of this video, you should be able to
+install the Twitter Python package
+and authenticate successfully with the Twitter API.
+Okay, in the next code block,
+we'll use the Twitter object we started
+and we start working with the Twitter API
+to create a new object called authentication, or auth.
+Here we have our A-U-T-H, the auth.
+We will use this authentication to create
+a Twitter API object.
+So what we've done is, we called twitter.
+We imported twitter package in Python first.
+We called twitter and used the auth function
+to create the authentication object, or that class creation.
+And then we'll now use the Twitter API
+to use this authentication
+and create a Twitter API object.
+This object is what we will use to start
+accessing the data via the Twitter API.
+Let's run this.
+As you see here, the type of that object is Twitter,
+so it's a part of that Twitter class,
+for your Twitter account.

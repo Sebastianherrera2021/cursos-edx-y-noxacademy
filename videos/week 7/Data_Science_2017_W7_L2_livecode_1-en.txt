@@ -1,0 +1,357 @@
+- In this notebook we will use scikit learning action
+to perform a decision tree base classification of metadata.
+This metadata was curated from sensor data
+of a weather station located here in San Diego, California
+and the weather station has sensors that capture
+weather related measurements such as air temperature,
+air pressure, and relative humidity.
+The data was collected from a period of three years.
+So it has longitudinal information from September 2011
+to September 2014 and this ensures also
+that sufficient data for different seasons
+and weather conditions are captured.
+Let us now import our necessary library.
+So we go to our notebook.
+Hope you locate the notebook
+called Weather Data Classification using Decision Trees
+in the zip file for the week that was provided.
+So if you're in week seven,
+Weather Classification Using Decision Trees.
+So I'm going to my first cell
+starting to import the necessary libraries
+to get started with the analysis.
+The task of classification, as you just learned,
+is a supervised learning task
+where we supervise the algorithm
+to learn how to label a given sample by training it.
+Here we will leverage existing methods
+in the scikit library.
+As you see from what we import we will be using
+the decision tree classifier for this example.
+So we have import pandas as a pd,
+sklearn metrics accuracy score,
+skclearn which is a scikit learn model selection
+train test split and then sklearn.tree
+we import decision tree classifier.
+So these are all our imports for this notebook
+and as a side note you can import these libraries
+at any point in your notebook.
+For instance when you use them,
+and you're about to use them.
+But it's also a good practice to have them all listed
+on top of the notebook
+so you'll often seem them like this in practice.
+This ensures that the users of your notebook understand
+what you'll be using when they open the notebook.
+But it really doesn't matter in practice.
+So let's ingest the CSV file.
+Again the CSV file is also given to you for this week
+in the folder called Weather
+and the name of the file is dailyweather.csv,
+daily_weather.CSV.
+You already learned this, we'll be importing this
+into a Pandas DataFrame, we'll call that data,
+using the Read CSV function.
+So let's import our data, okay.
+We'll quickly look at the Pandas DataFrame
+and the null values in it to give us an idea
+about the data set.
+But before that let's remember this data is collected again
+from a weather station, right?
+Let's look at the columns in it.
+We'll see the air pressure am, air temperature at 9 am,
+and things like that are in the data set of the columns.
+And if you look at the markdown cell right below that
+we describe what each of these columns are,
+why are they named like that?
+For example air pressure at 9 am is air pressure
+averaged over a period from 8:55 to 9:04 am
+and the unit is in Fahrenheit.
+You can understand if you read through this markdown,
+feel free to stop the video, you can understand
+more about this data set before we go on.
+And of course we could look at this DataFrame
+after hopefully you've just read through
+what is this data bits in the markdown.
+And we see the values for different columns in the data set.
+And now we can look at the null values in it
+if there are any null values.
+We see that there are some NaNs in this data set
+so we see some rows with null values.
+So let's clean this DataFrame a little bit
+to get it ready for analysis.
+This data set was curated a little bit
+so there's not much to clean, in fact very little to clean
+but that number column for example
+is just a unique number ID for each entry.
+We won't need that
+so I'll go ahead and get rid of that column.
+So let's go back to our notebook
+and delete that number column.
+And we've just looked at it, right?
+There are some null values.
+We'll drop those null values.
+And remember the dropna function in Pandas
+will give you an opportunity to drop all missing values.
+So let's go to that cell.
+I'm just storing the number of rows
+before dropping the null values to a variable called
+drop before rows.
+It's 1,095 rows and let's drop the null values
+using data.dropna and we store that slice of the DataFrame
+into data again itself as a slice.
+And then after rows, just get the shape of that.
+We have 1,064 rows after cleaning those null values.
+Let's see how many rows we dropped.
+If you actually execute this
+we'll see that 31 rows overall was dropped.
+Let's call this, we clean our data set
+and we can now get started with our classification task,
+which is the main goal as a learning objective
+from this notebook.
+We will use a classifier to predict humidity
+on a given afternoon by looking at the weather
+in the morning.
+So it gives us the ability to predict weather
+in the afternoon just by looking at the morning weather.
+It's useful in some contexts.
+And remember we use the dropna function
+to generate a slice of the data and assign that
+to the DataFrame instead.
+Now we'll copy the slice into a new DataFrame
+that is not a slice.
+It's a real DataFrame or what we would call,
+the data is what we would call a view
+over the original data set, the one that we assign it
+we'll call this clean data will be real DataFrame again.
+And after this step we will add clean data in new column
+called High Humidity Label.
+This new column will store one for humidity values
+higher than, as you see here, 24.99.
+And we, if we look at the relative humidity at 3 pm
+if it's higher than 24.99
+it's going to give us a true/false value.
+We multiply this true/false value
+generated by that comparison greater than operator.
+We'll multiply that by one, the true/false value by one
+to turn the column into integer values, zero or one.
+And when we actually print that column
+we see that we have ones and zeroes.
+So to summarize what we did here
+we created a new variable that's zero or one,
+that's our target variable.
+And we call this target variable the High Humidity Label.
+So we labeled our target variable as High Humidity.
+So if it's one we know that value is high humidity
+or above 24.99 and if it's zero we know it's below that.
+Going with the parametric function analogy,
+y = f(x) we will now create a new DataFrame called y
+for what we are trying to predict.
+So by looking at x we'll try to predict y,
+that's the analogy.
+And we will do this
+by storing our High Humidity Label column into y.
+So now we are storing the High Humidity Label
+in our clean data into y.
+Let's uncomment y here to see what's stored in it.
+It shouldn't be a surprise that it stores
+that High Humidity Labels from the clean data.
+So now we have our labels stored in y.
+I'm just going to for cleanness sake uncomment y
+and move on.
+So we can also print out the first five rows of y
+and clean data to compare the humidity values
+with the High Humidity Labels and verify them.
+So let's do clean data humidity at 3 pm.head.
+We see the humidity values ranging from 12 to 76
+in these five rows and then y.head.
+and when we look at these it indeed values,
+remember about 24.99, 36 and 76 are ones
+that are converted to one as a label, high humidity label,
+and values below that are turned into zero.
+Now we'll select the features for the data
+in the morning.
+Remember that we are using the morning data
+to come up with a predictor for the afternoon
+and we will load all these morning 9 am variables
+or features into a list called Morning Features.
+So here let's run this one, Morning Features,
+air pressure at 9 am, air temperature at 9 am,
+all of this is stored in a list called Morning Features.
+After we run this we will create a matrix or a DataFrame
+in this case with only these morning features as columns.
+We will literally copy the values
+in those morning-related columns into a DataFrame called x.
+Remember again we are trying to do y = fx.
+So that's why we call the labels y and the input
+we will be using to train x.
+So given the x we'll try to come up with the y values.
+That's what we are trying to do.
+Here the values in clean data are now in x
+are pretty standard data types.
+However, if they were lists or other more complex data types
+we might have had to use a deep copy.
+In that case we would have said inside those parentheses
+in the copy deep = true for the copy function
+that will ensure if you have any complicated data types
+like arrays or lists in your input matrix
+they'll be copied over to x in this situation.
+Now let's double check the columns for x and y.
+So we can say x.columns.
+We see that everything we selected
+within those morning features are columns of x
+and y will have a label, high humidity label,
+as the column index.
+Great, so far so good I hope.
+Now we will start building a model, our first model,
+a classification model using Decision Trees.
+To do that we will split the data set
+into tests and training samples.
+So just as a reminder, we'll need to use,
+and if you look at this figure here from our slides before,
+we'll need to use some part of our data for training
+and that's the training data
+and we'll use the rest for testing.
+To do this, to be able to do this
+we use train test split function
+to generate these two data sets.
+Now these two data sets
+will be slices of our original data set stored in x
+and labels stored in y.
+Let's discuss a little bit the arguments here.
+We have the train test split, we give it the x, our input,
+and y, the labels for training.
+So in addition to these two we provide a value
+for how much of the data we want to test with
+called the test size.
+So we are telling this function store 33% of the data,
+keep it, don't show it to the trainer
+because we'll use it for testing later.
+We also have the random state seed here set as 324
+in this notebook.
+Although the seed is changeable
+it will lead to different partitioning
+of the original data set
+and later leading to different prediction accuracy.
+So I strongly recommend that you keep it as it is
+if you like to follow along
+and you can later on maybe test with different seeds.
+Okay, let's look at what this function has as a summary.
+Train test split here takes two DataFrames
+and returns four DataFrames, right?
+It's the x train, x test, y train, and y test.
+Now please feel free to stop the video.
+I actually recommend that you do and uncomment
+or add to the lines in the next code cell
+to explore these DataFrames before we go further.
+Hopefully you were able to run uncomment
+and run those lines in the code block.
+Now let's use a decision tree classifier
+to train on the training data set
+and I will name this training data set,
+our decision tree in that sense, a humidity classifier.
+Here we are.
+We are trying to fit on the training data set now.
+We have the humidity classifier and
+to the decision tree classifier
+we will set max leaf nodes as 10.
+So this is our stopping criteria for the tree induction.
+If you left it as default it would have been unlimited,
+making it potential over fit the tree to the training data.
+We don't want that
+but in general you need to experiment with it a little bit.
+And the random state argument in this algorithm
+is used for splitting the nodes.
+Zero here is one of the internal states
+used to build a decision tree.
+Although, just like random seed before,
+this one's changeable.
+Keep it as zero if you would like to replicate the results
+in this video locally on your end.
+Okay, so we use a decision tree classifier.
+We give it the max leaf nodes and random state
+and we assign that to humidity classifier.
+Next, so we created a decision tree classifier object
+called humidity classifier, right?
+We will use the 5th method of this object, kay?
+To make the classifier tune itself
+to learn from the samples.
+So we have the humidity classifier that dot
+and we give it the training sets for x and y
+that we split in the code cell before.
+At the end of this function
+we will have a decision tree-based classifier, a model.
+If we run this we see that the type
+for the humidity classifier object
+is indeed the decision tree classifier.
+Now, we will use the test data for this prediction
+to test the model we just built.
+We will use the predict function
+of the decision tree classifier object
+which was our humidity classifier.
+This function will accept our test data.
+So we are doing humidity classifier.predict.
+It will take x_test, our test data,
+and that means we are asking the classifier
+to predict on the test set which it has not seen at all
+during the training test,
+during the training phase.
+Let's run this and display the first 10 values
+in those predictions and let's also see what y test is.
+Because that's the one that we kept as labels
+from the original data.
+So we have our predictions and that's the predicted
+humidity labels based on what the model learned.
+And when we gave it the test data, x_test, it came up with.
+Now, before we move on to look at the errors,
+let's summarize what we've done.
+We had an x, which is our input data,
+and y, which is our label.
+We created training sets for the input and the labels.
+We also created a training set,
+we also created a test set using our input and labels.
+What we've done is we created a model
+using the training x and training y's.
+And we used our test x to create a predicted y.
+And what we just displayed in predictions
+is the predicted y's but remember in our y test
+we have the labels, the actual labels, for those data.
+for the test data.
+So now we can compare the predictions with the y test
+and when we look at that the first two values are zero
+then we have four ones in the prediction,
+four ones, five ones in the row in our actual data.
+So there's an error there, right?
+One of them didn't get predicted, wasn't predicted right.
+And we have zero, one, one and here we have zero, zero, one
+so again another value.
+So we have about 10 values here and two of them were wrong.
+So overall this is called an error.
+For the classification task an error occurs, just like this,
+when the model's prediction of the class label
+is different from the true class label.
+We can measure these errors by calculating
+the number of correct labels just like I've done now.
+We had two wrong, so if we had 10 rows
+it would be that many wrong in it
+and we can turn it into an error measure.
+For example like we did if we just looked at first 10 rows
+for the generated labels we can see that the values
+and the prediction are pretty close to the values
+and y tests but we can't always count, right?
+How close, especially when we have a large number of rows,
+how do we test the accuracy of our classifier
+by calculating the accuracy store, score?
+We actually have a function for that.
+It's called accuracy score and if you look at that,
+the accuracy of our algorithm here is about 81%.
+We can also define the different types of error
+in the classification depending of the predicted
+and true labels.
+But here we will stop and call this 81% our accuracy score.
+Okay let's think.
+Is this a good enough classifier
+considering it's only looking at the 9 am measurements
+to predict the 3 pm weather?
+I would say so, especially for San Diego
+where the weather varies all the time.

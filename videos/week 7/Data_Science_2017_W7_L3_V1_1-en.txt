@@ -1,0 +1,167 @@
+- Machine Learning in Python: Clustering.
+By the end of this video, you should be able to:
+articulate the goal of cluster analysis.
+Discuss whether cluster analysis is supervised
+or unsupervised.
+And list some ways that cluster results can be applied.
+In cluster analysis, as you would remember,
+the goal is to organize similar items in your data set
+into groups, or clusters.
+By segmenting your data into clusters,
+you can analyze each cluster more carefully.
+Note that the cluster analysis
+is also referred to as clustering.
+A very common application of cluster analysis
+that we have discussed before is
+to divide your customer base into segments
+based on their purchase histories.
+Some other examples of cluster analysis are;
+characterization of different weather patterns
+for a region,
+grouping the latest new articles into topics
+to identify the trending topics of the day,
+and discovering hot spots for different types of crime
+from police reports in order to provide sufficient
+police presence for problem areas.
+Cluster analysis divides all the samples in a data set
+into groups.
+In this diagram, we see that the red, green, and purple
+data points are clustered together.
+Which group a sample is placed in is based on
+some measure of similarity.
+The goal of cluster analysis is to segment data
+so that the differences between samples in the same
+cluster are minimized,
+as shown by the blue arrow for our yellow dots.
+And the differences between samples of different clusters
+are maximized as shown by the blue arrow between the
+red and yellow dots.
+Visually, you can think of this as getting samples
+in each cluster to be as close as possible
+and the samples from different clusters to be as far
+apart as possible.
+Cluster analysis requires some sort of metric
+to measure similarity between two samples.
+Some common similarity measures are:
+Euclidean distance, which is the distance along
+a straight line between two points, A and B,
+as shown on this plot;
+Manhattan distance, which is calculated on a strictly
+horizontal and vertical path as shown in the right plot,
+to go from point A to point B,
+you can only step along either the X axis or the Y axis
+in the two-dimensional case.
+So the path to calculate the Manhattan distance
+crosses two segments along the axis,
+instead of along a diagonal path
+as with the Euclidean distance.
+Cosine similarity measures the Cosine of the angle
+between points A and B as shown in the bottom plot.
+Since distance measures such as Euclidean distance
+are often used to measure similarity between samples
+in clustering algorithms, note that it may be necessary
+to normalize the input variables so that no one value
+dominates the similarity calculation.
+We discussed scaling and normalizing variables
+in an earlier video.
+Normalizing is one method to scale variables.
+Essentially scaling with input variables
+puts the variables on the same scale so that all variables
+have equal weighting in the calculation to determine
+similarity between samples.
+Scaling is necessary when you have variables that have
+very different scales, such as weight and height.
+The magnitude of the weight values which are in pounds,
+will be much larger than the magnitude of the height values
+which are in feet and inches.
+So scaling both variables to a common value range
+will make the contributions
+from both weight and height equal.
+Some things to note about cluster analysis are:
+first, unlike classification and regression in general,
+cluster analysis is an unsupervised task.
+This means that there is no target label for any sample
+in the data set.
+In general, there is no correct clustering results.
+The best set of clusters is highly dependent
+on the application,
+how the resulting clusters will be used.
+There are numerical measures to compare
+two different clusters,
+but since there are no labels to determine whether a sample
+has been correctly clustered,
+there's no grounds to determine if a set
+of clustering results are truly correct or incorrect.
+Clusters don't come with labels.
+You may end up with five different clusters at the end
+of cluster analysis process, but you don't know what each
+cluster represents.
+Only by analyzing the samples in each cluster further,
+you can come up with reasonable labels
+for your clusters.
+Given all this, it is important to keep in mind
+that interpretation and analysis of the clusters
+are required to make sense of and make use of the
+results of cluster analysis.
+There are several ways that the results of cluster analysis
+can be used.
+The most obvious is data segmentation
+and how the benefits that come from that.
+If you segment your customer base into different types
+of readers for example.
+Analyzing each segment separately can provide valuable
+insight into each group's likes, dislikes
+and purchasing behavior, just like we see
+science fiction, non fiction,
+children's book preferences here.
+These insights can be used to provide more effective
+marketing to different customer groups
+based on their preferences.
+Clusters can also be used to classify new data samples.
+When a sample is received, like the orange sample here,
+compute the similarity measure within it
+and the centers of all clusters and assign the new sample
+to the closest cluster.
+The label of cluster manually determined
+through analysis is then used to classify the new sample.
+In our book buyers preferences example any customer
+can be classified as being either a science fiction,
+non fiction, or a children's book customer
+based on which cluster the new customer is most similar to.
+Once cluster labels have been determined,
+samples in each cluster can be used as label data
+for another classification task.
+The samples would be the input to the classification model,
+and the cluster label will be the target class
+for each sample.
+This process can be used to provide much needed label data
+for classification.
+Yet another use of cluster results is
+as a basis for anomaly detection.
+If a sample is very far away or very different
+from any of the cluster centers, like the green sample here,
+then that sample is a cluster outlier and can be flagged
+as anomaly.
+However, these anomalies require further analysis.
+Depending on the application,
+these anomalies can be considered noise
+and should be removed from the data set.
+An example of this would be a sample with value of 150
+for age.
+For other cases, these anomalies cases should be studied
+more carefully.
+Examples of this are in a credit card fraud detection
+or network intrusion detection application.
+In these applications, examples outside of the norm
+are the interesting cases that should be looked at
+to determine if they represent potential problems.
+To summarize: cluster analysis is used to organize
+similar data items into groups or clusters.
+Analyzing the resulting clusters often leads to
+useful insights about the characteristics of each group
+as well as the underlying structure of the entire data set.
+Clusters require analysis and interpretation
+to make sense of the results since there are no labels
+associated with samples or clusters in a clustering task.
+In the next video, we will discuss a specific algorithm
+for a cluster analysis.

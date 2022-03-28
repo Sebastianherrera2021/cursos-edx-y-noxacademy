@@ -1,0 +1,168 @@
+- Let's now start exploring the trends in the Twitter data.
+By the end of this video
+you should be able to request Twitter trends using Python
+and explore local trends.
+When we talk about Twitter trends we mean popular hashtags.
+Twitter categorizes them by location
+for places like the world or United States
+or locally for San Diego.
+The world trends for example show up on the left
+when you go to Twitter.com.
+Twitter tracks trends for using the Yahoo
+where On Earth ID for each major location.
+The World ID is number one.
+Using the trends.place for the Twitter API object
+we can get the top 50 trends for any location.
+You can look it up online for your location
+using the link here.
+We give you two more for US and San Diego
+in the Twitter notebook based on our own location.
+We will switch to the notebook soon
+to retrieve these location's specific trends
+and display the response we receive from Twitter
+using a package for JSON for data format.
+JSON is a semi-structured data format
+that gets used to pass information in internet applications.
+It is roughly equivalent
+to nested Python dictionaries and lists.
+We will then use this data to create Python sets
+that we can run intersection operations over.
+Let's now switch back to our notebook.
+Now let's use this object we created, Twitter_API
+to start reviewing some Twitter data.
+We'll use it
+to retrieve trends coming out of a particular place.
+And as we just reviewed
+Yahoo's Where On Earth ID or WOE ID
+gives you a number, an ID number for each major location
+that it is tracking.
+The world has the ID number one, US has this longer number.
+You can look it up online for your own location
+using the link here.
+I'm in San Diego so I'll use the San Diego's WOE ID,
+this 24 something number here
+from the, after I look up from that URL.
+So here we give you the San Diego lookup.
+Using now the trends.place from the Twitter API
+or for the Twitter API object we created
+we can get the top 50 trends for any location.
+So by default trends.place will give us the top 50 trends.
+Here what we receive, oops I didn't run again the variables.
+Here what we received back is a trend object
+with a response that's in JSON.
+As we just reviewed, JSON is a file format
+that internet applications use to communicate
+semi-structured information.
+It is similar to XML if you're familiar with it
+but it's more concise.
+We can see the response for example for world trends
+by querying the first two records.
+So here in the next code block or code cell
+we say world trends and there's a slicing range query there.
+We get back two trends.
+We see at the top level here, oops.
+That the fields here are as of
+created at locations entrance.
+We can use this field, these four fields
+to check this trend's object further and explore with it
+a little bit.
+Let's say trends is local trends, right
+and we can type it's, we can print it's type
+it's in Twitter list response, that JSON file.
+And the keys for it are trends as of created at locations
+and the trends for the first object
+we can actually slice that out
+and display them here.
+So trends are name Friday feeling,
+url, and things like that.
+And we see another name here and it's going on right now
+as I'm recording this, Anthony Weiner
+and things like that.
+So since the response is a JSON object
+let's work with JSON a little bit.
+You will see this type of data
+in internet applications a lot
+and Python has a module for JSON.
+Let's import that JSON module here
+and use it in something useful.
+So in this line we are using the dumps function of JSON
+to create a better
+or more prettier version of the same output.
+Here we said the indentation format,
+we are saying indent every neve parenthesis
+or every neve level we would call in JSON
+with one character.
+It's better if you look at the output here
+it's better than what we've seen, right?
+We can actually now see the trends.
+What the trends are, Tom Hardy, fridayfeeling
+with a hashtag, Anthony Weiner, endangered species day,
+apparently today is an endangered species day
+and things like that.
+Flashback Friday instead of a throwback Thursday.
+So we see it was bike to work day yesterday,
+actually it's one of our trends here.
+So please explore with this output a little bit
+and see what's going on
+at the moment you are watching this video.
+The output should change and give you about some trends,
+in this case local trends.
+We will keep using this JSON module in the upcoming cells
+but next let's create sets of these trends
+for each location.
+And then we'll find the commonalities between trends
+for those locations.
+So in other words
+we'll find the intersections of these sets.
+Here we are getting the name for all trends
+using a loop set trend name and for trend and world trends.
+So the first one is for world trends,
+we add that to our trend set with the world label,
+the second is for San Diego, so for US,
+and the third is third set we are creating
+is for San Diego.
+So let's run this one.
+We have now this trends set object
+and there are three sets in it, one for the world,
+one for US, one for San Diego.
+In the next cell what we are doing is
+we are first creating a four loop
+that joins all the trends for a particular location
+and prints them in pretty format.
+I'd like to actually separate the next four lines
+into a new code cell as we go along here.
+So it's gonna be a little bit more clear
+as we display things.
+Here we are joining trends for all three locations
+with a four loop.
+So we'll first join the trends for world, then US,
+then San Diego.
+Let's display this, the output of the cell.
+We'll see that the world trends after a padding of 10 dashes
+and the name of our location, the location for world,
+we are printing all the elements of the trends
+for the world and for US we have a similar thing
+and for San Diego we have a similar thing,
+for all three sets.
+Okay, now how do we create intersections
+of these texts, sets?
+We will make use of Python set objects,
+that's what we created here as you remember,
+these are set objects.
+This set object will give us an intersection function.
+So let's use that.
+We are saying here we are getting the set for the world
+for the topics and intersection of it for US.
+So the first one we'll give us the intersection
+of world and US, the second one will give us
+the intersection of San Diego with what's going on in US.
+Let's print these out.
+Intersection of world and US,
+as you see it's a much smaller set.
+And here we have an intersection of San Diego and US,
+it's larger because ya know,
+US affects locally San Diego as well.
+So there we go, great.
+How about if we want to search Twitter
+for a particular topic or hashtag?
+Let's move onto the next video to find out.

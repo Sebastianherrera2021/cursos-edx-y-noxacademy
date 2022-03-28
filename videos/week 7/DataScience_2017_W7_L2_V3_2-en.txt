@@ -1,0 +1,266 @@
+- Let us now look at the decision tree model,
+a popular method used for classification.
+By the end of this video, you should be able to explain
+how a decision tree is used for classification,
+describe the process of constructing a decision tree
+for classification, and interpret how a decision tree
+comes up with a classification decision.
+The idea behind decision trees for classification
+is to split the data into subset,
+where each subset belongs to only one class.
+This is accomplished by dividing
+the input space into pure regions.
+That is, regions with samples from only one class.
+With real data, completely pure subsets may not be possible,
+so the goal is to divide the data into subsets
+that are as pure as possible.
+That is, each subset contains as many samples as possible
+of a single class.
+Graphically, this is equivalent to dividing the input space
+into regions that are as pure as possible.
+Boundaries separating these regions
+are called decision boundaries,
+and the decision tree model makes classification decisions
+based on these decision boundaries.
+A decision tree is a hierarchical structure
+with nodes and directed edges.
+The node at the top is called a root node.
+The nodes at the bottom are called leaf nodes.
+Nodes that are neither the root node or the leaf nodes
+are called internal nodes.
+The root and internal nodes have test conditions.
+Each leaf node has a class label associated with it.
+A classification decision is made by traversing
+the decision tree, starting with the root node.
+At each node, the answer to the test condition
+determines which branch to traverse to.
+When a leaf node is reached, the category at the leaf node
+determines the classification decision.
+The depth of a node is the number of edges
+from the root node to that node.
+The depth of the root node is zero.
+The depth of a decision tree is the number of edges
+in the longest path from the root node to the leaf node.
+The size of a decision tree
+is the number of nodes in the tree.
+This is an example of a decision tree,
+and it can be used to classify an animal
+as a mammal or not a mammal.
+According to this decision tree,
+if an animal is warm-blooded, gives live birth,
+and has a vertebrae, then it is a mammal.
+If an animal does not have any of these
+three characteristics, then it's not a mammal.
+A decision tree is built by starting with all samples
+at a single node, the root node, and adding additional nodes
+when the data is split into subsets.
+At the high level, constructing a decision tree
+consists of the following steps.
+Start with all samples at a node.
+Partition the samples into subsets
+based on the input variables.
+Here, the goal is to create
+subsets of records that are purest.
+That is, each subset contains as many samples as possible
+belonging to just one class.
+Another way to say this is that the subsets
+should be homogenous, or as pure as possible.
+Repeatedly partition data into successively pure subsets
+until stopping criteria are satisfied.
+And an algorithm for constructing a decision tree model
+is referred to as induction algorithm,
+so you may hear the term tree induction
+used to describe the process of building a decision tree.
+Note that at each split,
+the induction algorithm only considers the best way
+to split the particular portion of the data.
+This is referred to as a greedy approach.
+Greedy algorithms solve a subset of the problem
+at the time, and is a necessary approach
+when solving the entire problem is not feasible.
+And by feasible, I mean computable
+in a reasonable amount of time or space.
+Using a greedy algorithm is necessary for decision trees.
+It is not feasible to determine the best tree
+given a dataset, so the tree has to be built
+in a piecemeal fashion by determining the best way
+to split the current node at each step,
+and combining these decisions together
+to form a final decision tree.
+In constructing a decision tree,
+how is the data partitioned?
+How does a decision tree determine the best way
+to split the set of samples at a node?
+Again, the goal is to partition the data at the node
+into subsets that are as pure as possible.
+In this example, the partition shown on the right
+results in more homogenous subsets, since these subsets
+contain more samples belonging to a single class
+than the resulting subsets shown on the left.
+So the partition on the right results in purer subsets,
+and is the preferred partition.
+Therefore, we need a way to measure the purity of a split
+in order to compare different ways
+to partition a set of data.
+It turns out that it works better mathematically
+if you measure the impurity,
+rather than the purity, of a split.
+So the impurity measure of a node
+specifies how mixed the resulting subsets are.
+Since we want the resulting subsets to have
+homogenous class labels, not mixed class labels,
+we want the split that minimizes the impurity measure.
+A common impurity measure used for determining
+the best split is called the Gini index.
+The lower the Gini index, the higher the purity
+of the split, so the decision tree will select the split
+that minimizes the Gini index.
+Besides the Gini index, other impurity measures include
+entropy, or information gain, and misclassification rate.
+The other factor in determining the best way
+to partition a node is which variable to split on.
+The decision tree will test all variables
+to determine the best way to split the nodes,
+using a purity measure such as the Gini index
+to compare the various possibilities.
+Recall that the tree induction algorithm repeatedly
+splits nodes to get more and more homogenous datasets.
+So when does this process stop building subsets?
+When does the algorithm stop growing the tree?
+There are several criteria that can be used to determine
+when a node should no longer be split into subsets.
+The induction algorithm can stop expanding a node
+when all samples in the node have the same class label.
+This means that this set of data is as pure as possible,
+and further splitting will not result
+in any better partition of the data.
+And since getting completely pure subsets
+is difficult to achieve with real data,
+this stopping criterion can be modified
+to when a certain percentage of the samples in the node,
+say 90%, for example, have the same class labels.
+The algorithm can stop expanding a node when the number
+of samples in the node falls below a certain minimum value.
+At this point, the number of samples is too small
+to make much difference in the classification results
+with further splitting.
+The induction algorithm can also stop expanding a node
+when the improvement in impurity measure is too small
+to make much of a difference in classification results.
+Additionally, the tree, or the algorithm, can stop expanding
+a node when the maximum tree depth is reached.
+This is to control the complexity of the resulting tree.
+There can be other criteria that can be used
+to determine when tree induction should stop,
+but we'll stop here.
+Let's take a look at an example
+to illustrate the induction process.
+Let's say we want to classify loan applicants as being
+likely to repay a loan, or not likely to repay a loan,
+based on their income and amount of debt they have.
+Building a decision tree for this classification problem
+could proceed as follows.
+Consider the input space of this problem,
+as shown in the left figure.
+One way to split this dataset into a more homogenous subset
+is to consider the decision boundary where income is t1.
+To the right of this decision boundary are mostly red
+samples, and to the left are mostly blue samples.
+The subsets are not completely homogenous,
+but that is the best way to split the original dataset
+based on the variable income.
+The decision tree boundary is represented
+in the decision tree by the condition
+income is greater than t1 at the root node.
+This is the condition used to split the original dataset.
+Samples with income greater than the threshold value of t1
+are placed in the right subset, and samples with income
+less than or equal to t1 are placed in the left subset,
+just as shown in the left diagram.
+Because the right subset almost perfectly predicts
+that lenders will repay properly,
+the right subset is now labeled as red,
+meaning that the loan applicant is likely to repay the loan.
+The second step, then, is to determine
+how to split the region outlined in red.
+As shown in the left diagram and input space,
+the best way to split this data is specified
+by the second decision boundary, with debt equals t2.
+This is represented in the decision tree on the right
+with the addition of the node
+with condition debt greater than t2.
+Samples with a value for debt greater than t2
+are shown in the region around the decision boundary.
+This region contains all blue samples,
+and so the corresponding node is labeled blue,
+meaning that the loan applicant
+is not likely to repay the loan.
+The third and final split looks at how to split
+the region outlined in red in the left diagram.
+The best split is specified
+by the boundary with income equals t3.
+This splits the red region into two pure subsets.
+The split is represented in the decision tree
+by adding a node with condition income is greater than t3,
+and the left resulting node is labeled blue,
+and the right resulting node is labeled red,
+corresponding to the resulting subsets
+with the red border in the left diagram.
+We end with the final decision tree on the right,
+which implements the decision boundaries
+shown as dashed lines in the left diagram.
+These decision boundaries partition the dataset as shown.
+The label for each region is determined
+by the label of the majority of the samples.
+These labels are reflected in the leaf nodes
+of the decision tree shown on the right.
+You may have noticed that the decision boundaries
+of a decision tree are parallel
+to the axes formed by the variables.
+This is referred to as being rectilinear.
+The boundaries are rectilinear because each split
+considers only a single variable.
+There are variants of the tree induction algorithm
+that consider more than one attribute
+when splitting a value.
+However, each split has to consider all combinations
+of combined variables, and so such induction algorithms
+are more computationally intensive,
+or we can also call them more computationally expensive.
+There are a few important things to note
+about the decision tree classifier.
+The resulting tree is often simple to understand
+and interpret, and this is one of the biggest advantages
+of decision trees for classification.
+It is often possible to look at the resulting tree
+to see which variables are important
+to the classification problem,
+and understand how the classification is performed.
+For this reason,
+many people will start out with a decision tree classifier
+to get a feel for the classification problem, even if
+they end up using a more sophisticated model later on.
+The tree induction algorithm, as described in this lesson,
+is relatively computationally inexpensive,
+so training a decision tree for classification
+can be relatively fast.
+The greedy approach used by the tree induction algorithm
+determines the best way to split the proportion
+of the data at a node, but does not guarantee
+the best solution overall for the entire dataset.
+Decision boundaries are rectilinear,
+and this can limit the expressiveness
+of the resulting model, which means it may not be able
+to solve complicated classification problems
+that require more complex decisions,
+or decision boundaries, to be formed.
+In summary, the decision tree classifier
+uses a tree-like structure to specify a series of conditions
+that are tested to determine the class label for a sample.
+The decision tree is constructed by repeatedly
+splitting the data, and partitioning the data
+into successively more homogenous subsets.
+The resulting tree can often be easy to interpret.
+So now, let's look at our notebook
+to do a decision tree classification
+on our weather dataset in Python.

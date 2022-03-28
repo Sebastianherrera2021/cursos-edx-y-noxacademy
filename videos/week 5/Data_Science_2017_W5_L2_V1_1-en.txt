@@ -1,0 +1,76 @@
+- In this lesson we'll be focused on Matplotlib.
+So by the end of this video,
+you should be able to explain the role
+that Matplotlib has in data science.
+Matplotlib is a widely used plotting library for Python.
+It's often my go-to for creating quick plots of data
+and almost all the plots I showed you in the last lesson
+were made just using Matplotlib.
+I value Matplotlib because it's easy
+to produce quick plots of data
+when I'm doing data exploration
+and because I find the plots clean
+and generally aesthetically pleasing.
+I actually really like this phrase
+from the Matplotlib homepage.
+The first part, make easy things easy,
+is what I was referring to when I said
+it's my go-to for most plots during data exploration.
+You can produce a bar chart, a line chart,
+a scatter plot, a box plot or histogram
+in just a few lines of code.
+This is fantastic as you can quickly check
+the relationship between features,
+plot trend lines, or just get a better feel
+for the distribution of data.
+The second part is why you'll find yourself
+often using Matplotlib even when
+you create complex visualizations,
+where you want it to customize your plots
+for presenting your results.
+One of my favorite stories about Matplotlib
+is that a colleague of mine took the time
+to set up scripts for the figures
+in a journal paper that we published.
+The setup took a bit of time, as he wanted
+to have an elegant design, and he wanted
+the fonts to mesh seemingly with the paper text.
+If you've read research papers,
+you'll undoubtedly have seen a figure
+which just stands out from the paper in a bad way.
+One reason why figures stand out in this way
+is that all the fonts are completely different
+in the figure from the paper.
+Another reason is that if you're using LaTeX
+for your paper, the figure may seem
+less elegant than the paper.
+So his work aimed to remedy these common problems.
+And what was so great about his work
+was that because it relied on Python scripts
+reading CSV files and Matplotlib,
+we build the scripts into the building
+of the paper using a make file.
+So we'd update the CSV with some new results,
+we'd hit build, and we'd get an updated paper
+with these really clean figures.
+And all of this is made possible by Matplotlib.
+In the larger context of Jupyter notebooks
+and the landscape of Python tools,
+you may know that Python is a,
+that Matplotlib is a fairly low-level tool for plotting.
+There are a ton of other tools out there,
+including Seaborn, ggplot, Altair,
+Bokeh, Plotly, and Folium, among many others.
+For us, we use a library that fits
+our visualization needs best, based on those needs.
+So we'll have a reading later in this lesson
+which outlines when you might wanna use
+one library versus another.
+And we'll keep updating this as new libraries come out,
+or as libraries add new features.
+Given that there are so many libraries out there,
+and we so frequently work with Matplotlib
+in our everyday work, we'll start by
+diving into a notebook showcasing Matplotlib.
+Then we'll have a short notebook later
+showing you how to work with more advanced libraries.

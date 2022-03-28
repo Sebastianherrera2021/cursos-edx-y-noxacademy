@@ -1,0 +1,155 @@
+- In this video, we'll be talking about data visualization,
+and its role in data science.
+So at the end of this video,
+you should be able to define data visualization,
+and begin to understand its important role
+in the data science process.
+Now that we're facing the explosion
+of data that Ilikai talked about on week one,
+what matters are the skills associated
+with handling all this data.
+Let me just read you a quote
+from Google's chief economist back in 2008.
+"The ability to take data, to be able to understand it,
+to process it, to extract value from it, to visualize it,
+to comminucate it, that's going to be
+a hugely important skill in the next decade.
+Because now we really do have
+essentially free and ubiquitous data.
+First, I like this quote because it points out
+well before big data and data science became buzzwords,
+the need for data scientists.
+In his full interview, he makes a clear case
+for statisticians as well.
+As you know, statistics is one of the core areas
+of data science, and using statistics
+is one way to try and understand data.
+I can't understate how important statistics is,
+but you'll be learning more about statistics
+in the next course.
+So back to his quote,
+the other part of understanding data is visualization.
+In fact, visualization is part of much of the process
+that he describes.
+Processing data and extracting value from it
+or understanding it often requires visualizing it
+to gain that kind of insight.
+And we want to communicate your results,
+you'll often want to use data visualization to do that too.
+So visualization is central to the skills that he describes.
+There are two definitions of defining visualization
+that I particularly appreciate.
+The first, "the use of computer supported,
+interactive, visual representations
+of abstract data to amplify cognition."
+And the second, "the representation and presentation of data
+to facilitate understanding."
+Both discuss the importance of
+representing and presenting data.
+Each of these is central to data visualization.
+But what I like the most about these two quotes is actually
+that end in the same key part of data visualization.
+Improving how we understand and think about the data.
+If we think about it, a pretty large chunk of our brain
+is dedicated to vision.
+And we've got some really powerful processing
+associated with that vision in our heads.
+In contrast, we're not very good at deciphering raw data.
+If you give my 100 raw XY coordinates, it could take me
+hours working by hand to see what they mean.
+But if you give me a plot with 1000 points on a trendline,
+I can often tell you in seconds what the data is telling us.
+That's the power of data visualization.
+In fact, let's do a couple of quick experiments.
+All these data points are from one data set.
+Can you see the relationship between X and Y?
+Take a few seconds.
+Here's some stats about X and Y, do they help?
+Not really.
+Correlation might help a bit, as 0.88 implies
+these values are correlated, specifically that
+they may have a linear relationship.
+We've done a lot of work and we still
+don't completely understand what's going on here.
+But now we do.
+It looks like there's exponential growth for Y with respect
+to X, from the start, zero, until it hits around X's seven.
+At that point it hits some ceiling where Y is 33,
+and increasing X no longer increases Y.
+Notice that correlation was actually a touch misleading,
+as it implied a linear relationship
+when the data on appearance doesn't apply that.
+But the key point is that human visual cortex
+is really talented.
+Let's do this one more time.
+Here's a new set of data,
+all these points are from one data set.
+If you focus on these for awhile,
+you may begin to notice that the X and Y values
+seem pretty similar with some noise.
+But again, let's see if we can
+understand it better in a graph.
+Ah ha.
+The scatter plot shows that these are really correlated,
+higher X values imply higher Y and vice versa.
+In fact, correlation as a statistic would have been helpful
+here, and would have given us the value 0.5.
+But the value is lower than you might expect
+because of the outlier.
+And visually, you'll probably notice
+that there's a strange outlier right here.
+But I don't know what to do with that information right now.
+With just the raw data points, I don't know if this is
+an error in the data or what caused that outlier.
+I'd like to dive into that value more,
+but I'm stuck without context.
+And that's the other point I wanna make here.
+Without a context, we don't know what to think
+about the data, or this outlier.
+In fact, without context,
+I'm not sure if I even care about this data.
+So we need context.
+So turns out that these are pseudo-hypothetical midterm
+and final exam scores for each student in a class.
+Now that we know that, we can recognize that
+performance in the midterm is pretty closely tied
+to performance on the final.
+For instructors, this information might lead them
+to try to intervene for students who perform poorly
+on the midterm, and for the outlier, context helps as well.
+What happened with the student?
+You could figure out which student supplied this data point
+and let's say after looking into that student,
+you find out that they didn't take the final.
+What it turns out then, is that
+when you're cleaning your data, the missing entry
+for this student was made to be a zero.
+But a zero on the exam and not
+taking the exam are two different things.
+If you remove the outlier due to missing data,
+you gain a better understanding of the data, and by the way,
+the correlation will now be a 0.89, without that outlier.
+Thinking more about that outlier,
+if we consider the correlation for the other students,
+we could infer that if this student were to take the final,
+they would have likely done quite well.
+But we'll get more into predictions at a later week.
+I also want to point out that not taking a final exam
+is odd for a strong performing student.
+So if I were their instructor,
+this data would cause me to inquire about their wellbeing,
+and I'd actually do that for any student
+missing their final exam.
+So these results tell me what I might be able to predict
+for an outcome, and to take action regarding that outlier.
+The key point is that visualization of data
+means nothing without the context of the data.
+Whhen we didn't know what X and Y were,
+we didn't really care about the data,
+context is what makes us value the visualization,
+and gives us the ability to dig deeper into the data,
+looking to explain outliers, and also to be able
+to cone to conclusions about the data itself.
+Now that we have these working definitions
+of data visualization, let's talk about the ways
+that we use visualization to conduct data science.

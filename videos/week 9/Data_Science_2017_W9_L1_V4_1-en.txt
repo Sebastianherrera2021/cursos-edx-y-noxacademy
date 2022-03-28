@@ -1,0 +1,21 @@
+- Another example notebook for this week
+is called the Protein Data Bank Analysis.
+The notebook was developed by David Dorner,
+one of our top students in the UC San Diego
+Master of Advanced Studies program
+in data science and engineering.
+Although this notebook is not in the same format
+as your final project, nor does it have all the steps
+as we outlined there, it contains a number of components
+of an excellent final project.
+Namely, this notebook provides a great example
+of using structured scientific data through an API
+and visualizing it.
+PDB is a large repository of semi-curated,
+crowdsourced protein structure data.
+The notebook uses PDB's RESTful Web Service
+to access the data available in PDB
+and uses the Boquet library to visualize the data.
+Although most of you are not biologists,
+we hope that you'll explore the notebook
+for possible ideas you might wanna use in your project.

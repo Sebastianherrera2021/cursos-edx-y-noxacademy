@@ -1,0 +1,116 @@
+- We're working with matplotlib again in this video.
+Continuing to explore that World Bank data set
+that we started with.
+So, by the end of this video,
+you should be able to create
+line charts and scatterplots using matplotlib.
+So, a question I had about the data,
+will allow us to explore using line plots
+and scatter plots.
+We saw that CO2 emissions per cap in the U.S.,
+went up in the 1960's
+and then with some minor variance
+has remained pretty steady since.
+I'm curious how that relates to the U.S. economy.
+Specifically, the U.S.'s GDP per capita.
+So, let's set up some more masks,
+as in the last video,
+to pull out the GDP per capita
+for the U.S.A., over time.
+And then what we'll do,
+is we'll check with this output is
+by running
+the head method.
+Looks like we have the data we want.
+Per year, we have
+the GDP per capita,
+based in the value of U.S. dollars in 2005.
+So, this is pretty similar to what we had
+for CO2 emissions, per capita.
+Alright,
+before we plot these against each other,
+let's first look at the trend
+in GDP per capita for the U.S.
+I'll use a line plot for that.
+For the most part,
+we're seeing solid growth, over time.
+There are a couple dips here and there
+and one, noticeable dip
+in the recession around 2008.
+But the upper trend, is restored by 2010.
+So, knowing that CO2 emissions
+over that same time period
+didn't behave the same way,
+leads me to think that they aren't closely related.
+But, let's look at a scatter plot to see.
+So first,
+wanna make sure the time frames
+are the same
+by calling min and max in these columns.
+And the reason I wanna make sure these
+are the same,
+is that scatter plots require
+the same number of years
+in the data set.
+Ugh.
+So, they both start in the same year, 1960
+but I have more data for GDP than I do for CO2.
+So,
+I need to have the same number of data points
+for the scatter plot
+and to do that I'm gonna trim off those extra ones.
+To do this trimming,
+I'll just ask for,
+the years before 2012.
+Then I'll check that our data has
+the same number of values for both
+the GDP and the CO2 emissions.
+Ah.
+Here we go.
+We have 52 years of data for both.
+To make a scatter plot,
+we'll first call out
+the fig and the axis like we did before
+using
+the
+plot that's all plots.
+Most the rest should be fairly recognizable
+except for the calls and method scatter.
+To create a scatter plot with these two arrays.
+Alright?
+Now when I run this,
+what I get back is a pretty weak relationship.
+It looks like when,
+GDP and CO2 emissions were climbing in the 60's
+they track together.
+But after that there doesn't seem to be
+much of a relationship at all.
+We could also test this using correlation.
+I'll use the correlation coefficient function
+in num pi to get back the relationship
+between these two arrays.
+The main diagonal
+is each against itself.
+So we expect to see 1.0 there
+or perfect correlation.
+But on the other diagonal,
+we see zero point,
+seven
+0.077.
+That's a really weak correlation
+between these two indicators.
+So, we just got to start looking at these relationships
+but if someone were to argue we need
+more CO2 production, per capita
+to boost our economy,
+this initial data analysis
+would not support that claim.
+I have more ideas for what to do with this data set.
+Could we look at the relationship
+between CO2 emissions per capita
+and GDP for other countries?
+What about over all CO2 and GDP,
+minus the whole per capita component?
+This is an extremely rich data set
+so I encourage you to continue to explore these,
+on your own.

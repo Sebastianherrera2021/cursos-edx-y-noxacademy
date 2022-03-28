@@ -1,0 +1,53 @@
+- Now that we talked about the basics of Machine Learning,
+let's overview a Machine Learning library in Python
+called Scikit-learn.
+By the end of this video you should be able to identify
+key strengths of Scikit-learn, explain why it is a
+leading library for Machine Learning,
+navigate your way to find the right tool in Scikit-learn,
+and search for tutorials that provide problem specific
+examples using library functions.
+Scikit-learn is an open source library in Python
+for end to end Machine Learning.
+It builds upon the strength of NumPy, SciPy,
+and matplotlib like many other Python libraries.
+It is being rapidly developed and improved
+by an active community of developers.
+For example in May 2017 as we speak, the number of
+contributors to Scikit-learn was 846.
+When I said end to end Machine Learning, what I mean is
+the entire data science process including Machine Learning,
+data cleaning, and data transformations.
+Scikit-learn supports the whole process by providing
+utility functions for data transformations, as well as
+a range of data cleaning and preparation functions
+that help with many tasks including scaling, normalization,
+feature engineering, and missing value handling.
+Scikit-learn also provides built-in functions for many
+Machine Learning algorithms ready for modeling and analysis.
+Although it requires some expertise to use these algorithms
+appropriately for the right tasks, there are many resources
+online that make the learning curve easier.
+Additionally the documentation on the website for
+Scikit-learn includes tutorials to get started.
+We find those documentation really easy to follow.
+For example, the clustering part of the documentation
+nicely overviews the available algorithms, their metrics,
+scalability, parameters and even potential use cases.
+Scikit-learn also includes specialized implementations
+for dimensionality reduction algorithms.
+Although we won't go into the details of these algorithms
+in this course, they'll be handy in your upcoming
+Machine Learning course in this MicroMasters.
+In Machine Learning we use a number of techniques
+to evaluate and select the right model.
+You will find a number of methods to help with this as well.
+As a summary, Scikit-learn provides an extensive
+set of tools for the full Machine Learning process.
+Thanks to Python we can combine these tools with
+the rest of the data science tools in Python
+that we've learned up to now.
+This open and extensible Machine Learning library
+is vibrantly being developed and documented
+by a very active community.
+We hope you will enjoy using this library as much as we do.

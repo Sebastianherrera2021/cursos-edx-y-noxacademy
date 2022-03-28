@@ -1,0 +1,208 @@
+- This week we'll dive back into our Jupiter notebooks
+and see how plotting is done using MatplotLib.
+So, by the end of this video,
+you should be able to create bar charts,
+line charts, and histograms using MatplotLib.
+And you should be able to recognize
+the common components in a MatplotLib figure.
+So, back into our Jupiter notebook
+from the last video.
+We already have a feel for what's held
+in the World development indicator's data set.
+What I'd like to do now is explore
+the CO2 emissions for the United States.
+To do that, I'll set up two masks,
+using the string method contains.
+That Ilkay introduced you to last week.
+The first will be a mask
+for all the rows for which the indicated name
+contains CO2 emissions.
+And the second is those rows
+whose country code is the USA.
+I'll keep the results of that data
+in a temporary data frame called stage.
+Let's check to see what's in our new data frame.
+We have our new data frame.
+Are all of the countries are the United States.
+The country code is US and it's CO2 emissions.
+So, it looks like we have the CO2 emissions, per capita,
+by year for the United States.
+So, now let's explore how these have changed
+over time using MatplotLib.
+I can do this, really, in two lines of code.
+What I'll do is I'll grab the years
+and then the CO2 emissions separately.
+And then I'll send those to a bar plot.
+Remember how I had said in the last lesson
+that just a couple of lines in MatplotLib
+lets me create a plot for data exploration?
+This is a perfect example of this.
+I can see that there's a rise
+in CO2 emissions per capita from 1960 to 1970.
+And that's remained fairly steady since.
+The plot isn't perfect, right?
+I don't have a y-axis label,
+which is actually really important here.
+Without knowing what I plotted,
+this plot doesn't stand alone on its own very well.
+But again, that's okay if I'm just trying
+to explore the data.
+To make this graphic a bit more appealing,
+let's use a line plot.
+So, I'll use plt to plot.
+I'll add the labels for the x and the y axes.
+And I'll add a title.
+I'm not sure if we need the x-axis label,
+it's pretty obvious that these are years.
+But we'll add it just for clarity's sake.
+And looking at these lines a bit more carefully.
+First, the plt.plot method
+asks for line plot.
+Labeling the axes in the plot itself
+is called x label and y label.
+These are methods on the plot.
+Each of these functions, takes a number of parameters.
+And you could change things like font size,
+color, and other things using those parameters.
+Similarly, we'll set up the title.
+And then, we'll just plot the graph.
+So, this is nice but notice
+that the y-axis is actually starting at 15.
+And that could be misleading,
+as we've learned from the earlier lessons.
+So, let's fix that by making a call to axis
+and passing the ranges we want plotted.
+So, I've already written this line of code.
+It's just commented out.
+What I'll is remove the comment
+and rerun.
+The plot now is arguably better
+than the original bar chart.
+And it certainly stands alone better.
+Because of the proper labeling of the y-axis.
+Next, let's use histograms to explore the data.
+I'm gonna plot all the CO2 emissions
+per capita values in our data set.
+But I've put some code in here,
+in the comments,
+which would let you just explore
+the values within one standard deviation.
+Sometimes it's helpful with histograms
+to avoid the data getting too spread out
+because of outliers.
+But let's go with plotting all the data for now.
+So, let's have the hist data
+point to all the CO2 emissions per capita values
+in our current data set.
+And calling the dot values, on the data frame,
+gives me back the num pi India ray
+representation of that data.
+So, I can ask for the number of data points using length.
+And I'll get back 52.
+Now, let's plot those 52 elements using
+the plot.hist
+method, which is the call to create a histogram.
+I'm passing the method, the India ray, then 10
+for the number of bins.
+Then I'm setting the norm to be false.
+To make sure it doesn't scale the data.
+And then, I'm setting the color to be green.
+Then, I'll label the axes and label the plot.
+What we get back
+is a histogram binning CO2 emissions
+per capita for the US.
+This is really telling me that most years fall
+between 18.5 and 20, with some outliers.
+Now if you find it hard to read,
+we could add back in the grids.
+So, let me do that.
+So, if I do plt.grid
+true and then reshow it,
+it's easier for me to
+get the counts for the number of years.
+Given that we usually fall
+between 19 and 20 metric tons per capita,
+I'm curious how the US stacks up,
+relative to other countries.
+So, let's pick a recent year
+where I have data for the US, 2011.
+I'll ask for the data where the indicator
+is the CO2 emissions per capita, and the year is 2011.
+That should give me all the countries
+that gave us data over that time window.
+Nice, it looks like I got back what we wanted.
+We have different countries
+and their CO2 emissions per capita in 2011.
+You know, just looking at these values,
+4.7,
+6.9, 5.8,
+5.3, I am already suspecting the US
+might produce more CO2 per person than other countries.
+In fact, I probably would've guessed that
+before we got into this analysis
+but let's see how this stacks up using a histogram.
+So, how many countries do we have here?
+We've got 232.
+And that would include the US
+because I didn't do anything special to exclude the US.
+Now, let's create the plot.
+Notice that I'm doing something
+slightly different at the start.
+Calling plt.subplots
+gives me back the figure and the axis separately.
+I wanna use the axis reference with annotate.
+But before we look at annotate,
+let's look at the plot that hist call.
+And see that we're setting up
+basically the same histogram as our last one.
+Except this time, we're counting the number of countries
+with a certain amount of emissions per person
+rather than a number of years.
+So, let's see what this looks like.
+Wow, it looks like the vast majority
+of countries have CO2 emissions
+in the range of zero to 10 metric tons per capita.
+The US, at around 17, in 2011,
+is actually a real outlier.
+But where'd that nice label of the USA come from?
+This is one of those features
+that we talked about with MatplotLib.
+It supports doing more complex things.
+Like, adding annotations or lines to charts.
+If we go back to the code,
+we'll notice that I added an annotation
+to the string USA.
+I placed it at the coordinates 18, 30.
+And then drew a line from corners 18, 30 to 18, 5.
+You know, there are more parameters
+to the annotate method if you wish
+to read the documentation more.
+But mainly, I wanna show you this to point out--
+Okay, sorry for the pun.
+That you can do more advanced graphics with MatplotLib.
+There are more questions I have
+about this data for now.
+But I'll leave you to explore them if you want.
+But before I wrap up the video, I wanna point out,
+after just seeing a few of these figures,
+you've probably already picked up
+on the common features of a MatplotLib plot.
+So, let's state them explicitly.
+The common features are the chart type.
+And here, we have a bar chart.
+Next, we have the ranges for the x and the y values.
+The possible labels for the axes.
+We could also possibly label the figure itself
+and provide a legend.
+And then lastly, aesthetics, like font size,
+line size, plot size.
+Even more complex things like, annotations, can be added.
+So, now that we've seen all these features
+of MatplotLib plots,
+I encourage you to use this notebook.
+Along with the others we provide
+this week for more examples.
+But before we finish with MatplotLib,
+I want to explore the relationship
+between CO2 emissions and GDP.
+But let's do that in our next video.

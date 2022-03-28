@@ -1,0 +1,20 @@
+- Data visualization is one of the primary skills
+of any data scientist,
+hence value cannot be understated.
+However, it's also a large field in itself.
+There are a number of graduate courses
+at universities and design labs around the country
+just focused on data visualization.
+So, this week is really just an introduction
+to a much, much broader topic.
+For the introduction,
+we'll first spend some time
+looking at data visualization conceptually,
+then we'll dive right into making some visualization
+using Python libraries.
+Lastly, we'll take a look at some particularly effective
+data visualizations and their impact.
+I will also mention that if this area
+is interesting to you and you want to lean more,
+we'll be sure to provide links to textbooks
+and other resources on data visualization.

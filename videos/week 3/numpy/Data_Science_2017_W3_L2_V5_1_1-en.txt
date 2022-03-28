@@ -1,0 +1,70 @@
+- As you may expect from our introductory video on Numpy,
+each ndarray has its own datatype.
+We'll quickly look how to set and inspect that type.
+Moreover, we'll look at a wide range of ndarray operations.
+So, by the end of this video,
+you should be able to examine
+and set the datatype of an ndarray,
+you should be able to use common ndarrary functions.
+As we showed you previously, datatypes matter.
+If you try to assign an element in an integer array,
+to a floating point value, you'll get an error.
+Let's start by just doing some basics with with these.
+We'll start by creating an array and giving it two integers.
+The type of the array is, unsurprisingly,
+gonna be an integer.
+Similarly, if we give it floats,
+we're gonna get back a float array.
+We can also explicitly say the type we want,
+by creating the array.
+Here, we're saying that we want the type to be integer.
+Where this gets useful
+is when you wanna force a different type in the input.
+Here, I'm providing two floats to the constructor,
+and I'm telling it to make the type integer.
+Numpy will do this,
+it just forces the floats to drop their decimal,
+effectively doing the floor function.
+Similarly, we can force ints to be floats.
+This is less problematic
+because we're not losing any information.
+The reason you might wanna do this
+is if you presently have integer data,
+but expect for the values to change to floats in the future.
+You don't want Python to pick int datatypes here,
+only to run into problems later.
+Just keep in mind that datatypes matter for ndarrays.
+Next, let's look at some of the common operations
+on ndarrays.
+Most of the arithmetic operations you might expect are here.
+Let's start by creating a couple of arrays.
+Notice that the first is integer,
+and the second is floating point.
+For most of our arithmetic operations,
+the result will be upcast to floating point,
+to avoid losing precision.
+Also notice that these arrays have the same dimensions.
+For many of these operations to work,
+there needs to be an aligning of dimensions.
+In this case, the dimensions are the same, so we'll be fine.
+But later we'll see that there's some flexibility
+about this constraint, when we learn about broadcasting.
+So let's get started by adding.
+We can do this either by using the plus sign,
+or using the np function, add.
+They'll both produce the same result,
+and the plus sign is better for code readability.
+With add, this is exactly what you'd expect:
+element zero zero of X is added to zero zero of Y,
+to produce the new zero zero value, and so forth.
+As I mentioned,
+the results here are floats to avoid losing precision.
+We can also subtract arrays;
+multiply arrays;
+divide arrays;
+we could perform square roots on the elements of an array;
+and we can also do E to the X for all the elements,
+using the exp(ar) function.
+Next we'll look at some other common functions in Numpy,
+including those for basic statistics,
+sorting, and set operations.

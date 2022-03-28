@@ -1,0 +1,73 @@
+- Before we dive into visualizations,
+remember that I said visualizations
+have little to no meaning without a context.
+So this week, we'll get started working
+with the World Development Indicators Dataset
+which is an open dataset on Kaggle.
+This is just a slightly modified version
+from the dataset that's actually available
+from the World Bank.
+So at the end of this video,
+you should be able to use
+the World Development Indicators Dataset
+to conduct data science.
+The first step with any dataset
+is to perform an initial exploration.
+So first, let's import pandas, numpy, random,
+and matplotlib.pyplot.
+Next, let's read in the csv file
+into a pandas data frame
+and display the shape of the data.
+For this to work for you,
+be sure that you've downloaded the dataset
+and placed it in the appropriate directory.
+So it's a big dataset
+and reading it may take some time.
+In fact, the dataset has 5.6 million rows
+and six columns.
+So let's now use the head method
+to see where these columns hold.
+Interesting.
+So we've got the name of the country,
+the code for the country,
+the name of an indicator,
+an indicator code,
+a year and a value.
+So this is actually a four-dimensional dataset
+where the dimensions are country,
+indicator, year and value.
+Looking at these indicators,
+I'm already seeing some really interesting things here.
+As someone who's environmentally conscientious,
+I'm pretty curious about that CO2 emissions per capita.
+We'll actually use that metric a bit later.
+I'm also curious
+how many countries are in this dataset.
+I can test that by using the unique method
+on a column of the data frame
+to find out how many unique entries are in the column.
+Looks like we've got about 247 countries.
+I'd like to do a quick sanity check on the data.
+If we've got 247 countries,
+we should have 247 country codes.
+And we do.
+I'd also like to know how many indicators we have.
+Wow 1,344 is a pretty extensive list of indicators.
+You know if you wanted to explore a full list
+of the indicators themselves and more details about them,
+we have a link for that at the top of this notebook.
+All right, so we know how many countries
+and how many indicators,
+now we need to know how many years of data we have.
+So 56 years is a pretty good time frame
+for data collection.
+Let's see what this time frame is.
+Ah 1960 through 2015,
+great.
+At this point we feel like we've
+a pretty good feel for the dataset.
+We have various indicators per country
+over the time span of 1960 to 2015.
+In the next video,
+we'll continue to explore the data
+using visualizations in matplotlib.

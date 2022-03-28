@@ -1,0 +1,182 @@
+- This lesson will focus on case studies
+of exemplar data visualizations.
+In this video, we'll focus on a data visualization
+which helped the world understand
+the true cause of cholera.
+So by the end of this video,
+you should be able to describe
+the role played by data visualization
+in understanding how cholera spread.
+As background, cholera is a bacterial infection
+which can cause severe diarrhea,
+possibly leading to death through dehydration.
+After exposure to the bacteria,
+a person shows symptoms 12 hours to five days later,
+and acute cases can kill within hours if untreated.
+Unfortunately, cholera is still a danger today,
+with millions of cases worldwide
+and deaths in the tens to hundreds of thousands.
+For those of you who are a bit squeamish,
+you may want to skip ahead to the video
+where you see the map graphic.
+Cholera is particularly dangerous,
+as it can easily cause outbreaks
+in areas with poor sanitation.
+People with cholera have diarrhea,
+which contains the bacteria
+for up to 10 days after the infection.
+If someone ingests that bacteria, they contract the disease.
+So if sewage contaminates food or water supplies,
+this can cause an outbreak.
+Today, we know how cholera is spread
+because of a scientist who had a theory
+and a terrible outbreak which occurred in 1854 in London.
+Now, in London in the 1800s,
+sanitation struggled, particularly in poor neighborhoods.
+With the rising population
+and lack of proper sewage and sanitation guidelines,
+many folks lived in terrible conditions.
+They often got their water from wells,
+but well water was susceptible to contamination.
+If they didn't know it was spread through water,
+what exactly did they think caused it?
+They actually thought it was a combination of
+smelling something bad and poor constitution.
+The first was what led to doctors wearing masks,
+like in this image.
+The artwork here actually relates
+to doctors trying to avoid the Black Death,
+but the same theory was still present in the 1800s.
+Bad smells caused disease,
+and if you could put some sort of perfume
+in the mask with you, you could avoid those smells,
+although we know now that this thinking is flawed.
+We have the benefit of germ theory.
+I suspect back in the past, the origin of this idea
+was likely just a mistaking correlation for causation.
+Areas where there were people who were ill
+or had poor sanitation likely had worse odors.
+Since people got sick in areas with poor odors,
+they falsely attributed the smell
+to the source of the disease.
+The second idea was a bit more repugnant.
+At the time, the poor tended to suffer
+more from the disease.
+Not surprising, given what we know now
+about how diseases are spread
+and the conditions in which they lived at the time.
+But at the time, some people believed
+poor people were just somehow weaker people,
+and by their own weaknesses, were susceptible to disease.
+Again, this is mistaking correlation for causation.
+However, this time it's combined with bigotry.
+So now that you have a decent idea
+of what they think caused the disease,
+that leads us to John Snow,
+who was a scientist living in London in the 19th century.
+His background was as an anesthesiologist,
+where he'd applied scientific principles
+to make the practice far safer for patients.
+He'd also published his theory
+that cholera was water born in 1849,
+but his theory gained little traction.
+So John Snow is living in London in 1854,
+near where the cholera outbreak occurred.
+The outbreak was caused by contaminated water
+entering the well sourcing the Broad Street water pump.
+After the outbreak, John Snow went door to door
+in the vicinity of the outbreak
+and followed up with every fatal case
+to find out where they lived and where they got their water.
+He plotted all these deaths onto a map.
+This is the full map.
+It's a bit harder to see, but the Broad Street pump
+is right there in the middle of all those blocks.
+Each of those little rectangular blocks
+was a death from cholera.
+If we zoom in,
+we see that there are a large number of deaths
+in the neighborhood around the pump,
+and away from the pump, the deaths declined.
+By talking with the families of the deceased,
+he was able to learn where victims got their water,
+and in a perfect example of data science,
+the outliers were critical for finding convincing answers.
+There was a workhouse or a prison
+nearby the Broad Street pump with many inmates
+but almost no fatalities.
+It turns out the workhouse had its own well
+and shipped water in from a different source,
+so they weren't using the pump.
+There was a brewery nearby, which had also escaped cholera.
+Again, they had their own water supply
+or they drank the liquor that was produced in the facility,
+so they weren't drinking from the pump.
+Lastly, there was a woman and her niece
+who lived some distance away from the pump
+and had died of cholera.
+With some investigation, he found out the aunt
+had previously lived in the area
+and liked the water from the Broad Street pump so much
+that she had it delivered to her
+and often shared it with her niece.
+The combination of this figure
+and the gathered data that John Snow had put together
+led town officials to shut down the well
+by removing its handle.
+Despite being skeptical that the pump was the cause,
+the number of new infections almost instantly declined
+and were quickly stopped.
+So even though this outbreak was stemmed
+by the action of taking off the handle from the pump,
+it took some time before John Snow's ideas
+were widely accepted.
+One key piece to this puzzle
+was provided later by a reverend in the area
+named Henry Whitehead.
+He had sought out to prove John Snow wrong,
+but in the process, he stumbled on the answer
+to the mystery of how the pump got contaminated.
+A baby had become ill from cholera in a house
+near the pump shortly before the outbreak.
+The parents had cleaned the diapers for the baby
+into a cesspool near the well,
+which then seeped into the well, contaminating it.
+Another key find related to cholera came some years later
+when a German physician, Robert Koch,
+isolated the bacteria which causes cholera.
+He did that in 1883.
+These epidemics and the realization of its cause
+led to Europe and the United States
+adopting water sanitation.
+Snow, for his work, is often regarded
+as one of the pioneers of the field of epidemiology.
+I would note that well much of the developed world
+has access to clean water,
+the story of cholera is, sadly, not over,
+as my numbers at the start of this video told you.
+The World Health Organization has estimated that
+almost 80% of people in third-world countries
+lack access to clean water supplies,
+and in many of those areas,
+there's no sewage treatment, either.
+Despite our knowing how to prevent cholera,
+it remains a global health concern.
+To end things on a positive note,
+I want to share a picture of me
+next to the Broad Street pump in London in 2013.
+I was there for a conference and appreciating the science
+and the data visualization in the story
+around the Broad Street pump.
+This was actually one of my first stops of that trip.
+I also want to end with a quick plug
+for the book The Ghost Map,
+the story of London's most terrifying epidemic,
+how it changed science, cities, and the modern world,
+by Steven Johnson.
+Much of my knowledge about this story
+came from reading this book,
+and when I was teaching the interdisciplinary course
+on scientific literacy and disease at Skidmore College,
+we used this book as required reading.
+So I really can't recommend it enough.

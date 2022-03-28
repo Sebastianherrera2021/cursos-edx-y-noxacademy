@@ -1,0 +1,82 @@
+- Now let's review some of the terminology
+related to machine learning.
+By the end of this video, you should be able to
+describe what the feature is and how it relates to a sample,
+name some alternative terms for feature
+and summarize how a categorical feature
+differs from a numerical feature.
+Before we delve into the methods for processing
+and analyzing data, let's first start with defining
+some of the terms used to describe data,
+starting samples and variables.
+A sample is an instance or example
+of an entity in your data.
+This is typically a row in your dataset.
+This figure shows part of a dataset of values
+related to weather.
+Each row is a sample representing weather data
+for a particular day.
+The table in the figure shows four samples of weather data,
+each for a different day.
+In this table, each sample has five values associated to it.
+These values are different information pieces
+about that sample, like the sample date,
+minimum temperature, maximum temperature
+and rainfall on that date.
+We call these different values variables of the sample
+and sometimes refer to them as features of the sample.
+In fact, there are many names for samples and variables,
+some of which we've already used
+in some of our previous weeks.
+Some other terms for sample that you might hear
+in the machine learning context are record, example,
+row, instance and observation among many others.
+It is good to know that all of these terms mean
+the same thing in the machine learning context.
+That is, they all refer to a specific example
+of an entity in your dataset.
+Similarly, there are many names for variables
+in addition to feature.
+Some other terms for variable are feature, column,
+dimension, attribute and field.
+All of these terms refer to the same
+specific characteristics for each sample in your dataset.
+An important point to emphasize about variables is that
+they are digital values with a type.
+Each variable has a data type associated with it.
+The most common data types are numeric and categorical.
+There are other data types as well such as string and date
+but we will focus on more common data types
+of numeric and categorical in the context of data mining.
+As the name implies, numeric variables are
+variables that take on numbers.
+They can be measured and their values can be sorted
+in order in some way.
+Note that a numeric variable can take on just integer values
+or be continuous values.
+It can also have just positive numbers,
+negative numbers or both.
+A variable with labels, names or categories for values
+instead of numbers are called categorical variables.
+For example, a variable that describes the color of an item,
+such as the color of a car, can have values such as red,
+silver, blue and black.
+These are non-numeric values that describe some quality
+or characteristics of an entity.
+These values can be thought of as names or labels
+that can be sorted into categories,
+therefore categorical variables are also referred to as
+qualitative variables or nominal variables.
+To summarize, a sample is an instance
+or example of an entity in your data.
+A variable captures specific characteristics of each entity.
+So a sample has many variables to describe it.
+Data from real applications are often multidimensional,
+meaning that there are many dimensions or variables
+describing each sample.
+Each variable has a data type associated with it
+and the most common data types are numeric and categorical.
+Note that there are many terms to describe
+these data related concepts and you'll likely find that
+different references, textbooks and data scientists
+use many of these interchangeably.

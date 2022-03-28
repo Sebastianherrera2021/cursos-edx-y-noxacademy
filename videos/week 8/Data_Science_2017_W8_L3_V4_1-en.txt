@@ -1,0 +1,152 @@
+- [Instructor] We will now talk about
+how we can use the Twitter API to search for a topic.
+By the end of this video, you should be able to
+request Twitter search results using Python,
+use a Python for a loop and list lookup
+to filter duplicates,
+and inspect a JSON data structure.
+In the next live quoting section,
+we will use the Twitter API to search for tweets
+related to specific topics or hashtags.
+We will see that each tweet is not only 140 character string
+but also comes with many other information related to it.
+Those are they keys of the dictionary of each tweet.
+So each element of the statuses lists in the notebook.
+We will use these metadata
+to extract interesting information
+about tweets that we receive
+in response to our search query.
+Let's switch to the notebook to review this.
+So we are back in our notebook
+and now we will search for some trends.
+If you go up, one of the trends was let's say here,
+flashback Friday
+or did we have endangered species day, right?
+Let's go with that.
+I'll get this hashtag and look for tweets associated to it.
+It's definitely a trending subject today.
+Here we had MTV awards.
+We can go back and see if that's still a popular subject.
+So here I'll say our topic is q.
+Or we can name this topic if we wanted.
+So there is a search that tweets under the Twitter API
+so we can search for tweets.
+And one of the arguments for it is the topic.
+I'm gonna quickly change that to topic.
+And the other argument is the count of tweets we want back
+for the function to return.
+And we store that in a variable called number, okay?
+So let's see what we get as statuses,
+as Twitter statuses for endangered species day.
+So running this should give us that statuses list or object.
+And we can find the length of it.
+We indeed got a hundred tweets back for that.
+This function returned all the recent records it finds
+up to a max of the count, which was number in our case.
+Let's switch now back to MTV awards.
+And just in case I used q later in the notebook,
+I'll switch this topic to q.
+And this was our MTV awards.
+Okay, let's see if MTV awards,
+since it's not a trending topic,
+will give us less number of records
+or if we are gonna be able to get 100 for those.
+Fair enough we got 100 records also for MTV awards.
+If maybe our number was larger, we would get less.
+Another thing Twitter does when it returns these statuses...
+Actually before that let's look at those statuses,
+what we got back, right?
+And we get a bunch of records for each tweet in JSON format.
+It was created let's say May 19th at 7:30
+and it's a retweet and things like that.
+There are lots of metadata here about the particular tweet
+including the text for that tweet.
+But I'm sure there are some duplicates in this list.
+So because Twitter often returns
+duplicate records on a subject,
+we need to use a for loop to clean the data here
+and create a slice of the data called,
+in this case for the unique statuses,
+so we'll call that statuses.
+So what we are doing here is for each status,
+for each s,
+if the text is not in all the text,
+we are keeping all the text.
+And if the same text of the tweet,
+which is the tweet message,
+is not in already in that all_text
+that we are keeping track of,
+we are going to append that to filtered_statuses.
+And in the end when we are done with this for loop,
+we'll assign this filtered_statuses to statuses
+that object we had as the response from Twitter before.
+We had 100, remember, in statuses.
+Now let's look at it's length.
+We have now 58 messages so 42 of them were dropped
+because they were duplicates.
+We can also display the statuses, all this text,
+using slicing out the text from the statuses object,
+the search results.
+But also we can use, since this was in JSON,
+we can use the JSON dumps again, right?
+The first status in there,
+we can actually preview print it.
+And as you see here, text is a lot more clear.
+Had so much fun at the MTV awards and things like that.
+It was a retweet.
+If you just use it as a JSON object,
+there are lots of things you can do with it.
+At this point in the next cell
+we see that there are statuses
+and it's a data structure that we need to know
+before we can move on.
+So please stop the video.
+We are going to end our video in a few seconds
+and explore with the data structure.
+For example if you wanted to get the retweet count
+or retweeted, we'll just take those out.
+We'll use those fields as the index
+and we'll be able to get those out.
+And remember we retweet some records for MTV awards
+and we'll use those to extract the text, screen names,
+and hashtags for all these records into lists.
+So please stop the video
+and we'll continue when you come back.
+Okay so hope you're back.
+Now we are running our example six.
+We'll use again the text screen names and hashtags
+for all these records and we'll assign them to lists.
+We'll call the first list status_texts.
+So status_texts for all statuses, right?
+Screen_names will be the next one.
+User mention screen name and the for status all statuses.
+And hashtags.
+We definitely want the hashtags to keep track of them.
+We are using the data structure
+for retrieving the data from the tweet records
+just as a summary.
+The third listed here, or fourth, is interesting
+because we are splitting the message
+to create a list of all the words.
+You've seen this in the bag of words.
+Here we are just using the split function again
+from the string class.
+Running this.
+In the next code cell, we just the JSON dumps
+to display the first five items for each list.
+So please check out the output
+to get familiar with these lists.
+So the first one will give us the status texts
+that we just sliced out.
+The second one will give us the screen names
+that are mentioned.
+The fourth one will us the hashtags.
+And remember we searched for MTV awards
+but there are other hashtags related to these tweets as well
+so we also get those ones.
+And the last one here will give us the words
+in some of these tweets.
+Next we'll find the frequencies of these words.
+But first, let's move onto the next video
+and review what we mean by frequencies
+and what are the techniques we'll be using for that.

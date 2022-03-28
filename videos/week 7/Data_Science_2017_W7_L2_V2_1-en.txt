@@ -1,0 +1,158 @@
+- Now that we learned what classification means,
+let's talk about what it means to build the
+classification model, and how building a model
+differs from applying a model.
+By the end of this video, you should be able to
+discuss what building a classification model means,
+explain the difference between building
+and applying a model, summarize why the parameters
+of a model need to be adjusted, describe the goal
+of a classification algorithm and name some common
+algorithms for classification.
+A Machine Learning model is a mathematical model
+or a parametric function over the inputs.
+In the general sense, this means that the model
+has parameters and uses equations to determine the
+relationship between its inputs and outputs.
+The parameters are used by the model
+to modify the inputs to generate the outputs.
+The model adjusts its parameters in order to correct
+or refine this input output relationship.
+Here is an example of a simple model.
+This mathematical model represents a line.
+Y is the output.
+X is the input.
+M determines the slope of the line, and B determines
+the Y intercept, or where the line crosses the Y axis.
+M and B are the model's parameters.
+Given a specific value for X, the model uses its parameters
+along with X to determine Y.
+By adjusting the values for parameters M and B,
+the model can adjust how the input X maps to the output Y.
+Here, we see how the output Y changes for the same value
+of M input X when parameters B changed.
+Recall that B is the Y intercept, or where
+the line crosses the Y axis.
+The value of B is positive one for the red line,
+and negative one for the blue line.
+For the input X equals one, the value of Y is three
+for the red line, as indicated by the red arrow.
+For the blue line, when the parameter B changes
+from positive one to negative one, for X equals one,
+the value of Y is one as indicated by the blue arrow.
+So we see that with just a simple change in one
+model parameter, the input to output mapping changes.
+A Machine Learning model works in a very similar way.
+It maps input values to output values and adjusts its
+parameters in order to correct or refine
+this input output mapping.
+The parameters of a Machine Learning model are adjusted
+or estimated from the data using a learning algorithm.
+This, in essence, is what's involved in building a model.
+This process is referred to by many terms as model building,
+model creation, model training and model fitting.
+In building a model, we want to adjust the parameters
+in order to reduce the model's error.
+In the case of supervised tasks, such as classification,
+this means getting the model's outputs to match the targets,
+or desired outputs, as much as possible.
+Since the classification task is to predict the category
+or class given the input variables,
+you can think of the classification problem visually
+as carving up the input space into regions corresponding
+to different class labels.
+In this diagram, for example, the classification model
+needs to form the boundaries to define the regions
+separating red triangles from blue diamonds
+from green circles, from yellow squares.
+In this example, if a sample falls between the region
+in the upper right corner, it will be classified
+as a blue diamond.
+Classification decisions are based on these regions,
+and the regions are defined by the boundaries, as indicated
+by the dash lines in this diagram.
+Thus, these boundaries are referred to
+as decision boundaries.
+Building a classification model then means using the data
+to adjust a model's parameters in order to form decision
+boundaries to separate the target classes.
+Note that the term classifier is often used
+to mean classification model.
+In general, building a classification model,
+as well as other Machine Learning models,
+involves two phases.
+The first is the training phase, in which the model
+is constructed, and its parameters adjusted
+using what's referred to as training data.
+Training data is a data set used to train
+or create the model.
+The second is the testing phase.
+This is where the learned model is applied to new data
+that is data not used in the training model.
+Here's another way to look at the two phases.
+In the training phase, the learning algorithm uses
+the training data to adjust a model's parameters
+to minimize errors.
+At the end of the training phase, you get the train model.
+In the testing phase, the train model
+is applied to test data, and test data
+is separate from the training data.
+Remember, training data is previously seen by the model
+and the test data is not previously seen by the model.
+The model is then evaluated on how it performs
+on the test data.
+The goal in building a classifier model is to have the model
+perform well on training, as well as test data.
+We will discuss in more detail the use of training
+and tests when we discuss model evaluation.
+To summarize what we learned until this point,
+to adjust a model's parameters, we need to apply
+a learning algorithm.
+Now, let's outline some commonly used algorithms
+for building a classification model.
+Recall that a classification task is to predict
+the category from the input variables.
+The classification model processes the input data
+it receives and provides an output.
+Since classification is a supervised task, a target
+or desired output is provided for each sample.
+The goal is to get the model outputs to match the targets
+as much as possible.
+A classification model adjusts its parameters to get
+it outputs to match the targets.
+To adjust a model's parameters,
+a learning algorithm is applied.
+This occurs in the training phase
+when the model is constructed.
+There are many algorithms to build a classification model,
+including kNN or k-nearest neighbors, Decision Trees
+and Naïve Bayes.
+kNN stands for K-nearest Neighbors.
+This technique relies on the notion that samples
+with similar characteristics, that is samples with similar
+values for input, likely belong to the same class.
+So classification of a sample is dependent
+on the target values of the neighboring points.
+Another classification technique which is very popular
+is referred to as Decision Tree.
+A Decision Tree is a classification model that uses
+a tree-like structure to represent multiple decision paths.
+Traversing each path leads to a different way
+to classify an input sample.
+Naïve Bayes model uses a probabilistic approach
+to classification.
+Bayes' Theorem is used to capture the relationships
+within the input data and the output class.
+Simply put, the Bayes' Theorem compares the probability
+of an event in the presence of another event.
+Here we see the probability of A if B is present.
+An example for this is probability of having a fire
+if the weather is hot.
+You can imagine event B depending on more than one variable,
+e.g. weather is hot and windy.
+There are many other classification techniques,
+but we will now move onto Decision Trees as a form
+of classification algorithm to do better classification
+in Scikit-learn in Python.
+So let's review Decision Trees
+before we move on with our notebook.

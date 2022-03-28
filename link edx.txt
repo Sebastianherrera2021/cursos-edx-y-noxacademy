@@ -1,0 +1,2 @@
+link:
+https://learning.edx.org/course/course-v1:UCSanDiegoX+DSE200x+3T2021/block-v1:UCSanDiegoX+DSE200x+3T2021+type@sequential+block@415f9db79b3b4564930c300789bfbba9/block-v1:UCSanDiegoX+DSE200x+3T2021+type@vertical+block@de4875e441c746ad894b50c90de3ae37

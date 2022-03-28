@@ -1,0 +1,136 @@
+- We will now start using the bag-of-words model
+we created in a classifier
+for Sentiment Analysis of movie reviews.
+By the end of this video, you should be able to explain
+what Sentiment Analysis is, train a Sentiment Analysis
+classifier with nltk, and check accuracy
+on training and test data of this model.
+So, what is Sentiment Analysis?
+The term refers to the activity of identifying attitude
+or emotion encoded in a body of text,
+like a product review or work of literature.
+Classification using machine learning
+is a technique used for sentiment models.
+In our notebook, we will build a predictor
+of sentiment using the movie review corpus.
+As you would remember, classification is a
+supervised activity and requires labels
+from a ground truth data.
+This is where we will take advantage of
+bag-of-words and a curated negative
+and positive reviews we downloaded.
+We will use our previously implemented bag-of-words function
+to create a positive or negative label
+for each review bag-of-words.
+We will use Naive Bayes Classifier for this task.
+Although we haven't reviewed Naive Bayes before,
+it is a very simple classifier with
+a probabilistic approach to classification.
+What this means is that the relationships between
+the input features and the class labels
+is expressed as probabilities.
+So, given the input features, for example,
+the probability for each class is estimated.
+The class with the highest probability
+then determines the label for the sample.
+Let's now switch to our notebook one last time
+to end with the Sentiment Classification Task
+using Naive Bayes from nltk this time, not scikit-learn.
+We will now start preparing our inputs
+and label data sets for the classifier.
+We are using, again, a Naive Bayes classifier.
+We are lucky that the database is curated
+to separate positive and negative reviews.
+So we will use this as ground truth data
+and build two dictionaries as a bag-of-words
+for positive and negative reviews.
+I'm gonna quickly do that here.
+We have a negative features, build bag-of-words features
+filtered, this is the function we've done before,
+we've created before.
+We are using that and giving the words with negative fields
+and we'll have
+a label neg associated to that.
+For each file in negative fields, we'll build a bag-of-words
+and store that in negative features.
+We can print that one record in this negative features.
+We'll see that there are a bunch of words for the reviews,
+for one review, and it's labeled negative.
+We can do the same thing for positive features,
+and print one record for positive features.
+We can now see, for example, positive features six.
+The six trivia on that frame is positive.
+Now we have our two features, and we remember we have
+1,000 records in them.
+So for each of these, we'll have about 1,000 records
+with a positive label and exactly 1,000 records
+with a negative label.
+So now, we will start using the Naive Bayes Classifier.
+Let's import that from, as you see here, this is not
+scikit-learn, this is nltk classify, so it's the
+classifier that comes in nltk.
+And remember, we had 1,000 records in them.
+We can use 80% of the data for
+classification in Naive Bayes.
+When we provide the first 800 rows
+in each feature, it's 80%, right, 1,000 times 80%.
+So we'll store that number, 800,
+in a variable called split.
+And we'll use that split to slice the first 800 for training
+and the remaining 200 for testing later on.
+So what we are doing here is we are giving the
+Naive Bayes Classifier to build a classifier
+that we will call Sentiment Classifier.
+We are using the Naive Bayes Classifier
+to train it, with the first 800 positive features
+and the first 800 negative features.
+Remember they had labels pos and neg.
+We created them like we see here, so the classifier
+will know what to do with it.
+So we create the Sentiment Classifier on the,
+oops, we need to create the split again,
+don't forget to run each cell before you move on.
+We'll use the first 800 records for positive
+and negative reviews to create our classifier
+using Naive Bayes Classifier,
+we'll call that the Sentiment Classifier.
+We'll now check the accuracy of the model we built.
+This model is called, remember,
+Sentiment Classifier on training set.
+We'll use the classification's accuracy function,
+it's the utility of the classification.
+And we are giving that the classifier and
+what we've given to train with,
+with the positive and negative features.
+Remember, we trained it.
+The model has already seen this data set.
+These are the training data sets.
+So what kind of accuracy you would expect,
+it should be high, right, because model has seen this data
+and we see that it's about 98% accuracy, so it's good.
+It's normal, but how will the model behave on the 20%
+of the data it hasn't seen yet?
+Let's go and give that 20% now to the accuracy function.
+We are applying the Sentiment Classifier to predict
+the labels for the rest of the data.
+So these are our test data.
+And the accuracy of it, if we calculate it is around 71%.
+The estimated accuracy for a human is about 80%.
+So an accuracy of around 70% is a pretty good accuracy
+for such a simple model, considering, again,
+the estimated human accuracy is about 80%.
+Remember, we had a large vocabulary and
+the Sentiment Classifier used all the words,
+but which of those words gave us this highish accuracy?
+The Sentiment Classifier, the one model we built,
+has a function, it says, show most informative features.
+We can actually run that and see what words
+or what features in those reviews were most informative.
+If you look at this output,
+we'd see outstanding, insulting, vulnerable.
+These actually affect it, the outcome, quite a bit.
+So we will stop here.
+Let's cut these to clean up our notebook.
+Well done! You're almost through week eight.
+We have one more lesson, then you'll
+move on with your projects.

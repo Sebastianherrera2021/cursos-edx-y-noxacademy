@@ -1,0 +1,40 @@
+- This is a short video introduction to the notebook
+with additional Matplotlib examples
+that will be provided for this week.
+So by the end of this video, you should be able to
+use additional Jupyter notebook resources as examples.
+In our additional notebook,
+we provide code for a number of examples.
+Still working with the rural development indicators
+we pick random indicators and compare them
+against each other using line plots and scatter plots.
+And then after working with the rural development
+indicators, we also provide an example
+of how to create 3D plots like this, in Matplotlib.
+We also provide an example using bubble plots.
+Bubble plots can be really helpful when
+you want to graph three dimensions easily.
+You can have an x, and a y, and a size of each point.
+In this example, we also use color code
+to provide a fourth dimension.
+So on this image we have: angle, distance from the center,
+size of the bubble, and color all coded here.
+Know that unlike some of our earlier figures,
+you need to spend time interpreting and understanding
+the data in a figure like this.
+But it could be incredibly valuable for data exploration
+and for conveying more complex relationships
+when you're presenting your data.
+In addition to histograms, I frequently use box plots
+when I'm trying to understand distributions.
+This example provides you with a template for boxplots
+and for placing figures side-by-side in Matplotlib.
+Boxplots tell you the median,
+values within the interquartile range,
+and elements above the third quartile, and below the first.
+As well as the maximum and minimum values.
+That's a lot of useful information all in one figure.
+So please be sure to check out these additional notebooks,
+as well as other examples online
+when you're looking for ways to visualize your data
+using Matplotlib in your upcoming project weeks.

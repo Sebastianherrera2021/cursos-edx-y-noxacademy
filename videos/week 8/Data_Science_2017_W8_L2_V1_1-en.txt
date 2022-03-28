@@ -1,0 +1,87 @@
+- In this lesson, we will focus on
+Natural Language Processing
+using a popular Python package called NLTK.
+By the end of this video, you should be able to
+describe what Natural Language Processing,
+or NLP, means,
+list a very examples of NLP in everyday life,
+and explain what NLTK is.
+Natural Language Processing, or shortly NLP,
+is a data science term used to refer
+to the interaction of computers,
+and natural language humans use.
+This is not an easy task
+because human language is ambiguous.
+As humans, we are good at understanding the context
+of something said to us,
+and link that to our understanding
+of the concepts around it.
+Doing this algorithmically, however, is not trivial.
+This is what the field of NLP tries to improve
+and develop algorithms and data techniques
+that make it possible in an effective and fast fashion.
+Chances are, you have used an NLP application,
+if you used an online summary of news or books,
+looked for keywords generated
+for most popular twitter topics,
+or used a virtual assistant on your phone.
+Let's list some of these applications.
+NLP techniques are applied in speech recognition engines,
+like Siri, Google Now, or Alexa.
+These engines are designed to learn what and how a
+human talks over time,
+and constantly improve their accuracy.
+Similarly, automatic translators,
+like Google Translate or Facebook
+automatic translation of statuses
+use an LP, using some recent very effective
+neural network based techniques
+that take not only words and phrases into account,
+but also the context, by looking at the word surrounding
+the text they are translating.
+Chat bots that can answer questions via Facebook Messenger
+are another example of NLP.
+They use NLP engines to process the questions,
+often simply categorize them,
+and match them to existing answers to your question.
+In this lesson, we will go through a notebook
+that uses NLTK for Natural Language Processing.
+NLTK is the most popular Python package for NLP.
+It is an open source library that provides modules
+for importing, cleaning, pre-processing text data,
+in human language,
+and then apply computational linguistics algorithms,
+or machine learning algorithms, like sentiment analysis,
+to these datasets.
+It also provides over 50 datasets to start working with,
+including the movie database we will be using
+in our example notebook.
+Let's get started with our notebook.
+Please now, locate the notebook called
+Natural Language Processing of movie reviews,
+using NLTK in your folder for Freegate.
+Here, we will start with the notebook.
+And, if you go to the first line, code line, code cell,
+it says import NLTK.
+That's where we are importing our
+Natural Language Processing toolkit.
+As I mentioned in the lecture video,
+NLTK offers many datasets.
+We'll use the NLTK download function to download,
+first the movie reviews dataset.
+So,
+We see that it was copied into my home folder
+users.altintas.
+I can actually go there
+and find this folder,
+if I wanted to.
+This is just one dataset.
+We can also download all the other datasets,
+or pick a few to download interactively
+by typing NLTK download.
+Please stop the video and execute this function
+in a need code cell to interact with the pop-up window
+it brings up before the you watch the next video
+on what Corpus means,
+and how now we can import this Corpus for this data
+from NLTK.

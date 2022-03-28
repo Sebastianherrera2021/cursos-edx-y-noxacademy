@@ -1,0 +1,5 @@
+- For the second lesson this week we'll be diving into
+Python libraries and data structures.
+Once you have these down you'll have the Python knowledge
+necessary to take on the rest of this course
+in data science.

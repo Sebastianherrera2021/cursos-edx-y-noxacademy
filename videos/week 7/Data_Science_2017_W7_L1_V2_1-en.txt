@@ -1,0 +1,181 @@
+- There are different categories
+of machine learning techniques
+for different types of problems.
+The main categories we'll discuss
+are classification,
+regression, cluster analysis and association analysis.
+In this video,
+we'll go over each of these in detail.
+By the end of this video,
+you should be able to describe the main categories
+of machine learning techniques,
+and summarize how supervised learning
+differs from unsupervised learning.
+In classification,
+the goal is to predict the category of the input data.
+As an example of this
+is predicting the weather as being sunny,
+rainy, windy or cloudy.
+The input data in this case
+would be sensor data specifying the temperature,
+relative humidity, atmospheric pressure,
+wind speed, wind direction etc.
+The target or what you're trying to predict
+would be the different weather categories,
+like sunny, windy, rainy and cloudy as we discussed.
+The categories to be predicted
+are called classifications.
+Another example is to classify a tumor
+is as benign or malignant.
+In this case,
+the classification is referred to as binary classification
+since there are only two categories
+but you can have many categories as well
+as the weather prediction problem shown here.
+Another example of classification
+is to identify hundreds and digits
+as we talked about in our last video
+as being one of 10 categories, zero to nine.
+When your model has to predict a numeric value
+instead of a category,
+then the task becomes a regression problem.
+An example of regression
+is to predict the price of a stock.
+The stock price is a numeric value,
+not a category, so this is a regression task.
+It is not a classification task.
+If you were to predict
+whether the stock price will rise or fall,
+then that would be a classification problem
+but if you're predicting the actual price of the stock,
+then that's a regression problem.
+That is the main difference
+between classification and regression.
+To summarize,
+in classification you're predicting a category,
+and in regression,
+you're predicting a numeric value.
+Another regression application
+in addition to the stock example here,
+is for prediction of the amount of rain for a region.
+Recall that in our discussion on classification
+we had discussed predicting
+if it will rain the next day.
+That is predicting between one of the two categories,
+rain or not rain.
+So, that's a classification problem.
+But if we are predicting the amount of rain,
+which is a numeric value,
+that would be a regression problem.
+In cluster analysis,
+the goal is to organize similar items
+in your dataset into groups.
+A very common application of cluster analysis
+is referred to as customer segmentation.
+This means that you're separating your customer base
+into different groups or segments
+based on customer types.
+For example,
+it would be beneficial to segment your customers
+into seniors, adults and teenagers.
+These groups have likely different likes and dislikes
+and have different purchasing behaviors.
+When companies segment customers
+into different groups like this,
+they may be able to provide targeted marketing ads
+for each group's particular interests.
+Note that cluster analysis
+is also referred to as clustering in different contexts.
+Next is association analysis.
+The goal here is to come up with a set of rules
+to capture associations
+between items or events.
+The rules are used to determine
+when items or events occur together.
+A common application of association analysis
+is known as market basket analysis,
+which is used to understand customer purchasing behavior.
+For example,
+association analysis can reveal
+that banking customers
+who have
+checking or deposit accounts
+also tend to be interested in other investment vehicles
+such as money market accounts.
+This information can be used for cross selling,
+so if your financial institution
+advertises money market accounts
+to your customers with CDs,
+they're likely to open such an account.
+Other common applications
+can be recommendation of similar items
+based on purchasing or browsing history of customers.
+Finding items that are often purchased together
+and offering based on these related items
+at the same time to drive sales
+of both items would be very beneficial.
+Identification of web pages
+that are often accessed together
+can also provide us
+a good basis for association analysis.
+One can imagine more efficiently
+generating offers
+on these related web pages
+to create further benefit of this information.
+We now looked at the different categories
+of machine learning techniques.
+They are classification,
+regression,
+cluster analysis and association analysis.
+We've also seen some examples of each category.
+For the techniques we've discussed here,
+there are two ways of conducting the learning itself.
+These categories
+are referred to as supervised versus unsupervised learning.
+In supervised approaches,
+the target, which is what the model is predicting,
+is provided.
+This is referred to as having labeled data
+because the target is labeled for every sample
+that you have in your dataset.
+Referring back to our example
+of predicting the weather category
+of sunny, windy, rainy or cloudy,
+every sample in the dataset
+is labeled as being one of these four categories.
+So, the data is labeled
+and predicting the weather category
+is a supervised task.
+In general,
+classification and regression
+are supervised approaches.
+In unsupervised approaches,
+on the other hand,
+the target that the model is predicting
+is unknown or unavailable.
+This means that you have unlabeled data,
+so you can't train using these labels.
+Going back to our cluster analysis example
+of segment customers into different groups,
+the samples in your data are not labeled
+with the correct group.
+Instead, the segmentation is performed
+using a clustering technique
+to group items based on characteristics
+of what they have in common.
+Thus, the data is unlabeled
+and the task of grouping customers
+into different segments
+is an unsupervised one.
+In general, cluster analysis
+and association analysis are unsupervised approaches.
+In summary,
+in this video we looked at different categories
+of machine learning techniques
+and we discussed classification, regression,
+cluster and association analysis
+as some of these techniques.
+We also defined what unsupervised and supervised approaches
+are in machine learning,
+and which one of our earlier categories
+fit in these two categories.

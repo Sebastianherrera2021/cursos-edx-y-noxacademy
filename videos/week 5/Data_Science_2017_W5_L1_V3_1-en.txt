@@ -1,0 +1,281 @@
+- Now that we know what we mean by data visualization,
+let's talk about what makes a visualization useful.
+By the end of this video,
+you should be able to recognize
+the qualities of good data visualization.
+You know, there're lots of opinions
+about criteria for good data visualization.
+By I really like these three put forth by
+a leading data scientist visualization educator, Andy Kirk.
+Data visualization needs to be
+trustworthy, accessible, and elegant.
+Let's talk through all three of these in more detail
+but, before I do, just a quick word
+about Andy Kirk's book
+which I've mentioned a few times already.
+This book is a great reference
+for all things data visualization,
+and I highly recommend it
+if you wish to dig deeper into this area of study.
+By saying a visualization is trustworthy,
+we are saying that the data presented is honestly portrayed.
+For example,
+if you're displaying something in such a way that it implies
+a relationship or a trend or a correlation,
+there should be evidence for such relationship in the data,
+otherwise you're just misleading your audience.
+Let's look at a quick example.
+Here's a hypothetical figure you might be shown
+at a business meeting.
+Take a little, and see if you can spot what's wrong with it.
+If you noticed the y-axis,
+you realize this isn't a surge at all.
+The y-axis is zoomed into just a small part of the graph.
+We're looking at a roughly 2% increase between Q1 and Q4.
+That's hardly surging.
+I suspect the author of such a chart
+of trying to be dishonest or, at the very least, misleading.
+They're trying to convince me of something which isn't true.
+Let's just look at all the flaws here.
+Surge?
+Two percent is a surge?
+The title's simply misleading.
+We already that the y-axis is being zoomed in on
+to exaggerate the growth between Q1 and Q4,
+but did you notice how the font size on the y-axis
+seems to have been made intentionally small
+just so it's harder to read.
+Lastly, the fourth quarter's when holidays occur.
+I'd expect to see a rise in profits for many industries
+during the fourth quarter.
+A more honest graph might also plot prior years' profits
+to compare against.
+So, yikes.
+By the time I'm done reading this graph,
+I simply do not believe the author anymore.
+All credibility's gone.
+So let's see how we could've done this better.
+Okay, in this figure, we setup the y-axis honestly.
+And this actually looks like pretty steady revenue
+over each quarter of 2016,
+so I fixed the title to reflect that.
+If this is the only year for which we have data,
+the story might be over,
+but, if you have data from prior years,
+we should plot them to see how things look.
+Supposing we have prior year data,
+if I plot last year's quarterly revenue,
+I see that there was a surge in profits in 2015
+which is absent in 2016.
+In 2015, the company had a 12% boost between Q1 and Q4
+which is less than 2% in 2015.
+We could've titled this in a different ways.
+We could've just said that our revenue was steady in 2016,
+and that's not misleading.
+Or we could focus in on the fact
+that we didn't see a surge in Q4.
+Either way, we want to dive into the data more
+to figure out why we didn't see the revenue boost
+in Q4 of 2016
+that we saw in Q4 of 2015.
+And we do that prior to presenting these results,
+so we have good answers of why this happened.
+So after fixing the presentation
+and pulling in more hypothetical data,
+we've actually reversed our initial misleading conclusion.
+So there are two key takeaways here
+which help echo some of the messages you heard in week one.
+First, you need to take trust seriously.
+People who are looking at your results
+are trusting you not to doctor the data
+or misrepresent results.
+They want to take action based on your findings.
+To make this even more concrete,
+as a scientist, I often review papers for publication.
+If I find one
+seemingly intentionally misleading claim or figure,
+I call into doubt everything the author said.
+And if someone similarly tries to mislead you
+with poor data visualizations,
+you shouldn't trust them either.
+The second point is just a reminder
+that honesty isn't limited to the visualization stage.
+Honesty has to be everywhere in data science.
+And this can be hard at times.
+You may have your own beliefs
+about what you'll find in the data.
+If fact, we could have an entire separate course
+on how to combat human psychological bias.
+But for now, it suffices to say
+that you should recognize the biases you have
+before you look at the data
+and do your best to have the data itself,
+not your bias, drive your inquiry.
+Our second key principle is accessibility.
+Accessibility to me is about focusing on your audience
+and their ability to use your visualization.
+Let me give you another example.
+This is a hypothetical example
+from one of my areas of research, computer architecture.
+This graph could be useless or great
+depending on your audience.
+For a computer architect,
+the y-axis is reporting instructions for cycle, or IPC,
+which is one of three major components of execution time,
+and the inverse of execution time
+is often used a measure of performance.
+We're reporting average IPC
+for an accepted benchmark suite, SPEC 2006,
+which is used by researchers in computer architecture.
+If these processor models were real,
+it's possible I'd know a lot about them
+and know how they differ architecturally.
+That'd give me intuition
+about why these results differ by model.
+So to someone who knows these processor models,
+this figure could be honest
+as there may be a compelling reason to report only IPC,
+ignoring the other two elements
+of execution time and performance.
+To an expert,
+this figure could be both honest and accessible
+depending on their use.
+Notice I said depending on their use.
+If the goal of the figure
+was to show me the IPCs by processor model,
+this works great.
+But as an expert, I might want a more complex figure
+which helps to explain
+why the x23i has such higher IPC than the others.
+So this figure fails
+if the intent to is not only report IPC
+but to also explain why we found these differences.
+Of course, that might be a separate figure,
+or it could just be part of the knowledge
+of how these processors or models differ.
+But for someone not in computer architecture,
+this graph means virtually nothing.
+You don't know what these models of processors are,
+so you don't know why they may perform differently.
+You likely don't know what IPC is
+or even what SPEC 2006 is.
+So for a non-expert, this figure is clearly not accessible.
+It's unreadable.
+It has no relevance to them.
+And if a viewer doesn't know
+that IPC is just one component of performance,
+this could be unintentionally misleading.
+So the two main things I'd stress
+are to know your audience
+and how they perceive the information.
+Understand what they understand,
+and know how they might interpret the result.
+Also be sure to know
+what the purpose is of your visualization.
+Are you exploring the data?
+Or presenting it?
+That helps you craft it in the appropriate way.
+One last point.
+Take into account the expected time
+for the audience to read and understand the result.
+That depends on whether
+this is a slide you might show
+for one minute at a presentation
+or a figure that you're sharing with a colleague
+who might spend some time really diving into it.
+These questions about your audience
+and how the visualization will be used
+allow you to craft it appropriately to make it accessible.
+What do you think of when you hear the word elegant?
+You might think about style or grace.
+You might think about something clear
+and aesthetically beautiful.
+These all reasonably apply to good data visualizations.
+I would note that in practice,
+I put a lot more time into elegant visualizations
+when I'm presenting results.
+When I'm exploring data,
+it's nice to have,
+but it is no means critical.
+I like to think of it this way.
+If my graphic is gonna be
+front and center on the New York Times,
+it better be perfect.
+If it's in a slide deck for teaching,
+it should be really solid.
+And if it's for me when I'm exploring the data,
+it should be acceptable.
+At the very least,
+the lack of elegance shouldn't get in the way
+of my interpreting the data.
+For example,
+later this week you'll be creating an overlay like this.
+Take a moment to take it in.
+There are elements of this which are elegant.
+The use of an overlay on a map
+helps an observer see the different countries quickly.
+The color coding to show numeric data
+helps the viewer quickly interpret results.
+The color scheme goes towards darker blue
+with more CO2 emissions per capita,
+so that might not actually be perfect.
+More CO2 emissions per capita is arguably a bad thing,
+so a different color scheme
+which conveys that CO2 emissions is bad
+might actually be better.
+There isn't unnecessary other data here.
+I didn't put the numbers over each country
+as that'd likely distract more than help.
+I didn't try to combine with some other measure
+like GDP per capita in the same figure
+as it'd likely be too much to process
+but might make a really nice complementary figure.
+If I added any additional decorations
+like maybe a smokestack on high CO2 per capita producers,
+I'd be sure it added to the figure rather than detracted.
+But this figure,
+I thought it actually detracted more than it added
+so I left it off.
+Overall, style and beauty is subjective,
+but I think when we look into our case studies
+at the end of this week,
+you'll be able to appreciate the elegance
+of some of their designs.
+We'll also give you links to websites and talks
+which were exceptionally elegant visualizations as well.
+For elegant visualizations,
+you should focus on what is relevant
+and remove anything that isn't adding to the figure.
+You're trying to make the design invisible
+so that the viewer can take
+as much from the visualization as possible
+without being distracted.
+Now this isn't the same thing as minimalism,
+but I've heard some folks argue for.
+I feel minimalism doesn't just remove the unnecessary
+but often starts remove things which are helpful.
+So there's a balance to be struck with how much to include.
+Think about your style.
+For those of your who read Nate Silver's website, 538,
+you know there's a distinct style
+to his presentations and graphs.
+To me, I really like that style,
+and his website's success, I think,
+is likely tied at least in part
+to how recognizable his style is and presentation.
+Decorations may seems contrary to honesty,
+and, in some cases, they kinda are.
+In scientific papers about blood donations,
+I'd be surprised to see the bars in bar chart
+intentionally made to resemble flowing blood.
+But if the graphic is put out by a charity
+encouraging folks to give blood the week before Halloween,
+decorations may bring the visualization extra attention.
+And this just goes back to knowing your intended audience.
+If this were a data visualization course in a design lab,
+we could have spent much of the course
+just on exploring these principles in depth.
+Our hope with this course
+is to just give you some concrete goals
+that you can aspire toward
+when you're creating your visualizations.

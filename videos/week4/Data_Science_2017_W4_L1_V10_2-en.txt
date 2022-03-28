@@ -1,0 +1,42 @@
+- Let's review the practical skills
+we learned in this lesson
+based on the movie database notebook.
+First we talked about data ingestion,
+in which we reviewed how to ingest data
+in multiple formats and the basic read operations
+related to these formats.
+We also talked about Series and DataFrame
+as the two basic fundamental data structures in Pandas.
+Then we overview the functions to perform basic
+statistical operations on Series and DataFrames.
+These will describe for joined descriptive statistics
+and individual functions for generating min,
+max, and standard deviation values.
+Mode of data,
+as well as functions for correlation analysis,
+they're also reviewed.
+We went through data preparation
+and exploration options in Pandas like isnull,
+any, and dropna functions.
+We also overview data visualization
+and in there we saw examples of inline plots,
+box plots, and histograms using Pandas's plot function.
+We also saw how to adjust the access formatting
+and other window properties.
+We talked about slicing out rows
+and filtering data frames,
+as well as aggregating data using the groupby operation.
+The executive examples for running
+basic statistical functions on these groups.
+We also talked about merging
+or joining data from multiple data frames
+using inner joins and other operations.
+We talked about three main string operations
+called split, contains, and extract.
+Finally, we talked about how to work with time stamps.
+In summary, in this lesson
+we went through the typical operations in data science
+to take advantage of the Pandas library.
+The movies notebook as a representative example
+to keep as a reference
+as any data science study will have similar steps.

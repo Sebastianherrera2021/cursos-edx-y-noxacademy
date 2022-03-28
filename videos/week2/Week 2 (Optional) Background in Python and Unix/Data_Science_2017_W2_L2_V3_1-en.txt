@@ -1,0 +1,34 @@
+- As with the previous quizzes, let's walk
+through the solution to this last question.
+Your question was, what would this code produce?
+To arrive at that answer, let's trace
+through a memory diagram step by step.
+We start with creating a list which holds the values,
+10, 20, and 30.
+And then we setup variable x to refer to that list.
+When we then set y to equal x,
+that simply makes y refer to the same list and memory.
+Here's where things get interesting.
+By saying x at index one is 42,
+we are gonna change in the list in memory.
+Remember that lists are mutable.
+So this change will have an effect like this.
+The listed element at index one is now changed
+to the value of 42.
+What's interesting about this example
+is that y is also pointing to that same list.
+So when we go to print the list pointed
+to by y, we'll get back this changed list.
+If you have two references pointing to the same object,
+permuting that object will obviously affect both references.
+Suppose you wanted to have y
+be an actually copy of the list.
+If you wanted to do that, you'd have to make this change.
+Saying y equals list x, causes a new list to be created,
+which is a copy of x.
+So when you change x in line three,
+it wouldn't impact your copy of the list.
+Knowing when to make copies, or just use the same reference
+can throw off even veteran programmers.
+But if you slow down, and draw a quick memory diagram,
+you'll be able to spot the error quickly.

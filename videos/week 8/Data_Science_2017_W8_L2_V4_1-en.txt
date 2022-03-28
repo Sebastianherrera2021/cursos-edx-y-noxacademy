@@ -1,0 +1,128 @@
+- In this video, we will review what bag-of-words means.
+By the end of this video, you should be able to
+explain what bag-of-words mean,
+understand how you can build machine learning
+features from words, and give examples of stopwords.
+Bag-of-words model is a very simple representation
+of a body of text as a loose set of words.
+It flattens any text into an unordered collection of words.
+Although it disregards the sentence structure
+associated to the words, this simple technique
+is pretty useful to identify a topic or sentiment in text,
+like if a product review has
+a negative or positive sentiment,
+or what a body of text talks about.
+We can use the words in a feature matrix
+where each word is a column, and each text body
+or review in our movie example,
+is a row that has boolean data values.
+A cell in the review row gets assigned true
+if the word appears in the review,
+and false if it doesn't.
+Just by looking at these three rows in this matrix,
+with a limited set of words, we can identify that
+the topic of these reviews are movies,
+and probably review 1 and review 3 are positive,
+and review 2 is negative.
+Before we move on to our notebook, I would like to mention
+that it is often practice to filter our stopwords
+and maybe even the punctuations from the bag-of-words
+before further analysis.
+Stopwords are words like the, that, and is,
+which occur a lot but don't have a big significance
+in identifying the context of the text being processed.
+Now, let's switch back to our notebook
+to execute our first bag-of-words model.
+As we just overviewed, from the bag-of-words model
+we can build features to be used by a classifier
+and here we assume that each word is a feature
+that can either be true or false.
+We implement this in Python as a dictionary,
+where each word in a sentence we associate with true,
+and if a word is missing, that would be the same
+as assigning false, or in this case we won't have anything.
+So let's do this for loop.
+Word is true for word in romeo_words.
+So we'll have, as you see here, a dictionary
+where each word in romeo_words are assigned true,
+and there are no false values
+because we are not assigning false for anything.
+You would remember from our earlier videos
+is this underscore here is the last output
+that goes into the standard out in this field.
+So if you had assigned that dictionary to a variable,
+you need to write the name
+of that variable within this type.
+To generalize what we did,
+this creation of this dictionary here,
+we can turn what we've done here
+into a Python function.
+In this code cell here, we define a Python function,
+and next we will use it.
+Let's execute this Python function.
+It's called build_bag_of_words_features,
+so we are building a bag-of-words features
+for the words that we just created as a dictionary.
+So this function will accept a dictionary, sorry,
+will accept a set of words and return a dictionary for it.
+So let's run the function and see if we get that same output
+with what you just learned in line.
+Great, we get the same output.
+This is what we wanted, but notice, here,
+punctuations like exclamation mark or comma or dot
+are still showing up,
+and those are useless for classification purposes.
+Similarly, we have words like of, that, or is, or in.
+Those don't need to be included.
+So those words are named stopwords,
+and nltk actually has a corpus of them
+for each language, or in this case English.
+So we can actually download the stopwords from nltk.
+We can now use the stopwords in English,
+and punctuation characters in the string class
+which are these characters
+that are listed in our out 24 line.
+We can use this to create a list of what we don't want.
+We'll call this list useless_words.
+Here, I create useless_words as a list,
+and it's a combination of stopwords for English
+and the punctuation characters.
+If you're having curiosity
+or maybe not completely understanding what stopwords are,
+please feel free to
+print out the stopwords that are here
+in the nltk corpus stopwords English
+to explore with those words a little bit
+and see what those words are.
+We can, of course, now uncomment useless_words and
+see the list ourselves here.
+So I, me, myself, and the list goes onwards from there.
+So for simplicity I'll comment out that line
+and run this again.
+Now we will actually update our bag-of-words function
+that we built with an if statement
+to check if the word exists in useless_words
+and skip that word if it does.
+So we have the same function word.
+It was true before, now it's 1,
+for word in words,
+but there we have a condition,
+if not word in useless_words.
+So it means, if the word is not in useless_words,
+add that to our dictionary.
+As you might have noticed, instead of true as a value
+for the word,
+here we are using 1 in this new function.
+Let's run our function,
+and now we'll use this function,
+build bag-of-words features filtered,
+features being the useless words filtered,
+to give it the romeo words as input.
+So if you do that, we see that
+the punctuation and some of those stopwords
+that we had above
+are gone, and we have a cleaner list of words
+in our dictionary.
+We are making progress.
+Next, let's see how we can calculate
+and plot the frequencies of words in this list.

@@ -1,0 +1,353 @@
+- After the short overview of clustering in this notebook,
+we will learn how to perform clustering
+using scikit-learn and Python.
+We will use cluster analysis to generate
+the big picture model of the weather at the local station
+using a minute granularity data.
+In this data set we have in the order of
+millions of records.
+It's a large data set, largish data set for some of us.
+Our goal will be to create 12 clusters from them.
+So let's first import all the necessary libraries.
+Note that again it's common to import libraries
+as you keep working down in the notebook.
+You don't have to import all the libraries
+at the beginning,
+like we did for the classification notebook,
+but it's cleaner and easier for the end user of your code
+to understand what the dependencies of these notebook are,
+so I am just gonna go ahead and do it on top here.
+We now import the minute_weather.csv into Pandas.
+Hope you were by the way able to locate your
+weather data clustering using k-Means in your package
+and also the minute_weather.csv in the weather folder
+for week seven.
+So we are importing it and calling our data frame data.
+Okay?
+Each row in this data, data frame
+will contain measurements at the minute interval.
+The minute weather data description in this markdown here
+describes the data set, the time stamps,
+what air pressure means, what kind of units are there
+for our data, and things like that.
+Let's quickly actually see the shape of the data
+after you read through the markdown.
+Hopefully you're back in the video.
+We see that there are over a million records
+in this data set, 1.58 million records.
+And then 13 rows, which are described right about,
+from row ID to average wind speed to relative humidity.
+We should also check our understanding of
+the data description by exploring with the data frame.
+I use the head function here shortly
+to get the first five rows of the data
+to look at the data values and maybe have a feeling
+of the null values,
+but I as usual encourage you to stop the video here
+and execute some more exploratory data queries
+and slices over this data,
+so you'll have a better understanding of the data
+before we move on.
+This is a very important step for any analysis,
+and I would not like to underestimate that step.
+So hopefully you're back, and you explored with the data,
+you have a good understanding of it now,
+and you already know that the data set is large.
+For analysis sake now we can further sample this data
+down to maybe every 10 minutes difference
+instead of one minutes, we'll do 10 minutes.
+Here, we assign the data sample
+to a data frame called sampled_df.
+So what we are doing is, we are getting the row ID
+and dividing it by 10, so we are getting
+every 10th data frame,
+every 10th row compared to our original data set.
+So sampled_df will have one tenth of the number of rows
+in the original data set after we do this.
+As we see here, we have about 158,000 rows now,
+instead of 1.58 million.
+So let's describe this data set.
+I'm transposing here, let me say
+sampled_df dot describe dot transpose.
+Recall, if I didn't say transpose actually,
+the original columns would be displayed as columns.
+The transpose operation that we did,
+let's go back and do that,
+turns the columns into rows and vice versa,
+the rows into columns.
+After the describe operation completes,
+let's check out some things right,
+let's check out the mean values of each measurement.
+Let's not worry about the row ID, it's an identifier,
+but let's say the mean for air pressure is 916,
+air temperature 61 in Fahrenheit,
+average wind direction is 162 degrees and things like that.
+We noticed that some readings are in hundreds,
+while others are in decimals.
+It's a large difference, especially if you make it
+a measure of clustering when you're creating
+clustering metrics.
+Let's see how many rows have the value zero for columns,
+for rain accumulation and rain duration for example.
+Rain accumulation is how much it rain and accumulated,
+and rain duration is how long it rained for.
+Here, we select all the rows that have value zero
+for these two columns, right?
+sampled_df rain accumulation and sampled_df rain duration,
+and we check if they're equal to zero.
+We select those rows that we just selected
+from the sampled_df.
+And then we look at the shape of the resulting data frame.
+We have about 157,000 rows out of 158.
+So it looks like a significant number of rows are zero
+compared to the size of the data.
+So I'd say let's drop these columns,
+and also clean any missing values for data cleaning.
+So we'll drop the lead sampled_df rain accumulation
+and rain duration, because they were mostly zero,
+and we also here drop the null values.
+Rows before will show how many rows our data frame had
+before dropping the null values.
+Rows after will show how many rows are left
+after dropping the rows with null values.
+So how many rows did we drop?
+It's about 46.
+In the end, let's see what columns are left in our
+sampled_df data frame.
+Let's remember our columns now.
+So we have the row ID, time stamp, air pressure,
+air temperature, and down to the relative humidity there.
+Out of these features we will now select
+a list of features to declare the columns
+that we want our algorithm to make use of.
+Let's tour those features in a list
+that I'll call features here,
+air pressure, air temperature, wind direction,
+wind speed, maximum wind speed, average wind speed,
+two of them, and the relative humidity.
+Great.
+Out of these features we will now select
+a list of features to declare the columns
+that we want our algorithm to make use of.
+Let's tour these features in a list
+which I'll call features, simply,
+as we did in our classification notebook before,
+you might have recognized the approach.
+The features we select here are air pressure,
+air temperature, average wind direction,
+average wind speed, max wind speed, and relative humidity.
+So out of about 11 columns we are selecting about six.
+So let's look at this what we have.
+I will use these features to create a data frame
+called select data frame.
+So remember we had our data,
+we put it in the sample data frame,
+which was a tenth of our data.
+Now we are reducing the data,
+the number of columns in the data, not rows,
+we get the six columns that we listed in the feature,
+and put it in select_df.
+Then we looked at the columns of the select_df,
+and we see those seven columns, not six, apologies,
+and if you look at the data frame itself,
+we'll see the data nicely copied over
+into this new data frame.
+Okay, now remember our scalability or scale discussion.
+To keep values of different columns comparable,
+we scale the values in these features.
+So we will use standard scaler for that.
+It's an object, and if we give a data frame to it,
+to a function of it in this case,
+we'll get a nicely scaled input data
+for our clustering operation.
+So we have the standard scaler,
+and we use the fit_transform function of it,
+and we give the select_df, let me just create it,
+as an input to that, okay?
+The fit_transform function here combines
+fit and transform operations,
+which means it first calculates how much
+the data set should be transformed to be scaled.
+So it looks at different values and finds
+how to scale that.
+Then it's going to apply that transformation
+to the data frame we give it, in this case select_df,
+and it's gonna apply the transformation it came up with
+to that data frame.
+We will assign the output of this function to X,
+just like we did here,
+and that X that we are creating in a nicely scaled fashion
+will be an input for our k-Means modeling later.
+Okay, let's scale select_df, and assign it to X,
+and if we display X we see the nicely scaled values there.
+They are not the values here anymore, right,
+they are at the certain scale between a minimum
+and a maximum number.
+So feel free to explore X further,
+and compare maybe to the other operations,
+other values in the select_df,
+and when you come back after that,
+we'll start k-Means cluster.
+Okay, now we will start with invoking the
+k-Means clustering algorithm.
+Remember our original purpose, to create 12 clusters.
+And we'll use the scale data frame X
+with the selected features as an input.
+As you see here, we created a k-Means object called Kmeans,
+and we said number of clusters for it is 12.
+And the model was generated by using
+the fit operation of that k-Means object,
+and input for it was our input data X,
+which was the scaled version of the selected data values.
+If you look at the type of this model object,
+it is a k-Means object, okay?
+Note that we use seven features to perform clustering.
+Those are stored in our features list.
+Once clustering is done, we can now look at
+each of the cluster centers.
+It will be a list of seven floating point numbers,
+which denote where the cluster center stands
+in the seven dimensions of our feature space, okay?
+So we'll assign that to a variable object called centers.
+So we are getting the model and assigning
+the cluster centers of that model into centers
+which will be an array.
+For each 12 clusters, it will have those seven values
+that represent the cluster center.
+We use the attribute cluster centers for that, right.
+It was the attribute of the model.
+When we created the model up here,
+it actually was stored as a part of that model.
+It's great, we have now the cluster centers
+for each 12 clusters, but how do we interact with it,
+how do we visualize it, right?
+It'll be great to plot these cluster centers
+so we can actually examine which clusters
+are close to each other and what separates
+different clusters from each other.
+For these here we will create two functions
+that help us transform the data
+to make it easier for plotting.
+Function one here is called pd_centers.
+It takes in the cluster centers generated by the model,
+the ones that we just displayed in centers,
+and creates a Pandas data frame.
+Returns P.
+Where the header is the name of the each feature.
+It also adds a new column
+that denotes the number of the cluster itself.
+This new column here is called prediction, okay?
+So we have the cluster centers,
+and the number of the cluster nicely in a data frame,
+and we return that as a part of this function.
+The second utility function we have here is for plotting,
+and it's called parallel_plot.
+It takes in the data for plotting,
+which is the data frame that we just generated, actually,
+out of this pd_centers,
+and generates a colorful graph
+with different colors to each cluster.
+So if you stop the video and explore this a little bit,
+you will recognize some of the plotting features
+you learn in earlier weeks.
+This function, note that it also sets
+the size of the plot and controls the range of the Y axis,
+if you look at that.
+We have the figure size and the Y axis limits.
+Okay, a parallel coordinates plot is a quick way
+to visualize cluster centers along
+all the seven dimensions, of our features space,
+that's why we created these functions.
+So, let's run them,
+and first we'll give the features and the centers,
+the pd_centers, and we'll get that nice data frame
+that we generated.
+So remember, centers had a value for each feature
+for each cluster.
+So each of these values is the cluster center,
+make up the cluster center for that particular cluster.
+We give it this but this one doesn't have
+the information on those features.
+The names of, or the labels, column labels
+of each value here is in the features list.
+That's why we give both the features used and the centers
+to pd_centers, and the pd_centers we've done
+will create a data frame for each
+and label each data frame also with the cluster number.
+So it's gonna add to the features a...
+If you display this, it's gonna add to these features
+a cluster number as well.
+Let's rerun this.
+So we see all 12 clusters, zero to 11 here in the rows,
+the features we selected, and also the prediction,
+the number of the cluster it was done for,
+which is equal to a row in this case.
+Okay.
+So now we are creating a parallel plot using this P
+for let's say, the cluster where relative humidity
+is less than minus zero five, right?
+Notice that the X axis
+denotes each of the seven features
+we used for clustering, the values for them,
+and the Y axis denotes the values of each cluster center.
+So we have the labels in the X axis for the features,
+and the values in the Y axis.
+We can now, after we plotted them,
+we can compare these clusters,
+which clusters are similar, which are not.
+Remember we are doing clustering for the features
+we selected in the features list,
+including relative humidity, like we selected here,
+and air temperature.
+For each of the three plots, we show dry days,
+relative humidity is less than zero five,
+warm days, the air temperature is above zero point five.
+Remember this data is scaled.
+And cool days,
+which show the relative humidity above zero point five.
+So these are the clusters that have the behavior, so to say,
+of dry days, warm days, and cool days,
+and the cool day is a combination of
+relative humidity above zero point five,
+and air temperature below zero point five.
+For example, let's look at red and blue clusters
+in each graph.
+If you follow the cluster line for red
+and blue clusters in each graph,
+you can notice that they're close to each other
+for a few features, and far apart on others.
+If they differ on a particular feature,
+this is one of the features which is likely helpful
+to distinguish this cluster from others.
+For example, red and blue are pretty far here,
+far here, far here, closer here.
+So they are pretty different two clusters, right?
+They are different clusters, but how different
+and which features are different for,
+this plot will help us to identify that.
+For the dry days graph, the differences are in,
+as we looked at, air pressure, air temperature,
+features related to wind speed.
+So they are pretty different.
+Let's look at the warm days, if they are closer
+than for dry days.
+If you follow the two lines and look at the labels,
+looks like they actually differ for all features
+related to wind.
+And in the cool days graph, they vary for most features,
+if you look at that, related to wind speed, right.
+These are pretty similar up to the point,
+the moment we look at average wind and maximum wind speed,
+we see that they are different.
+So remember that these parallel feature plots
+are really useful for analyzing clusters,
+which we have high dimensionality of features
+to gain an intuition about how these clusters differ.
+Feel free to play around with this notebook more,
+to see if you can get a better feel for what each cluster is
+from a weather standpoint.
+To me, for example, cluster four seems to correspond to hot
+and dry days with fairly stagnant air.
+So just look at them and try to imagine the air
+on that day, and how you could further now
+use this information.

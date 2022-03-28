@@ -1,0 +1,57 @@
+- An application on astrophysics was developed
+by our course assistant, Dr. Andrea Zonca.
+Andrea has a PhD in astrophysics
+from the University of Milan.
+He now works as a senior data scientist
+and a high-performance computing expert
+at the San Diego Supercomputer Center.
+He also teaches practical courses
+in computational data sciences
+as a part of Software Carpentry.
+Software Carpentry is a non-profit foundation
+that teaches computing skills for early career scientists,
+which could be a great resource for you.
+You can find this notebook developed by Andrea
+under your week nine directory with the filename
+of Planck Satellite Data Simulation Using pandas.
+This example is inspired by one of Andrea's projects
+here at the San Diego Supercomputer Center
+in which a collaborate group of scientists
+analyze satellite imagery of the cosmic microwave background
+to study the beginning of the universe.
+It sounds fun.
+The notebook uses Python libraries
+familiar to you from this course.
+However, it also includes
+domain-specific references in cosmology.
+This is a typical situation for data science
+where domain-specific skills get combined
+with data science skills.
+We are aware that you don't have a PhD in astrophysics,
+but please don't be discouraged
+as the notebook is self-explanatory
+and is designed with you in mind.
+It is very likely that you will find yourself
+in an interdisciplinary team
+as a data scientist in the future,
+so this is a great opportunity
+to start sharpening up your skills to take a domain problem
+and try to understand how you can apply data science methods
+and techniques to it.
+The example has three distinct sections
+using advanced functionalities of pandas,
+NumPy, and Matplotlib.
+In section one,
+we will read a map created by the Planck satellite
+and explore a scientific data format called HDF5.
+In section two, the notebook will use NumPy
+to create a simulation of how Planck scans the sky
+throughout the year of observations,
+and we will plot scanning rings
+in different reference frames.
+In section three,
+the notebook will use the scanning coordinates
+created in section two
+to simulate an observation of the map used in section one.
+We hope you have fun going through this advanced notebook
+and celebrate how far you come in the last nine weeks.
